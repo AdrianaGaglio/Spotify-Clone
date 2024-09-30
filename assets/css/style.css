@@ -133,6 +133,235 @@ body {
   -webkit-text-size-adjust: none;
 }
 
+#left {
+  width: 20%;
+  font-size: 10px;
+}
+
+#right {
+  width: 15%;
+}
+
+/* #left {
+  width: 20%;
+  height: 100vh;
+  background-color: #1c1c1c;
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 20px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+
+} */
+#left nav ul,
+#left #playlist-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+#left #playlist-section {
+  border-bottom: rgb(123, 117, 117) solid 1px;
+}
+
+#left nav ul li a,
+#left #playlist-section ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+#left nav ul li a:hover,
+#left #playlist-section ul li a:hover {
+  text-decoration: underline;
+}
+
+#playlist-section {
+  margin-top: 40px;
+  font-size: 10px;
+}
+
+#playlist-section {
+  margin-top: 40px;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+#left ul li a i {
+  margin-right: 11px;
+}
+
+#scrollable-playlists {
+  margin-top: 20px;
+  height: 400px;
+  overflow-y: scroll;
+}
+
+#scrollable-playlists ul {
+  list-style: none;
+  padding: 0;
+}
+
+#scrollable-playlists ul li {
+  margin: 10px 0;
+}
+
+#scrollable-playlists ul li a {
+  color: rgb(123, 117, 117);
+  text-decoration: none;
+}
+
+/* -----------------dx */
+.sidebar-right {
+  width: 20%;
+  background-color: #1c1c1c;
+  position: fixed;
+  top: 0;
+  right: 0;
+  padding: 10px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+}
+
+.header-right {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.title-right {
+  font-size: 15px;
+}
+
+.buttons-right button {
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  font-size: 10px;
+}
+
+/* .column-left,
+.column-center,
+.column-right {
+  flex: 1;
+  padding: 10px;
+} */
+.profile-image {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
+
+.heading-center {
+  font-size: 10px;
+  margin: 5px 0;
+}
+
+.description-center,
+.info-center,
+.additional-text {
+  margin: 5px 0;
+}
+
+.container-right {
+  display: flex;
+  padding: 0px;
+}
+
+.column-left,
+.column-center,
+.column-right {
+  flex: 1;
+  padding: 1px;
+}
+
+.description-center,
+.info-center,
+.additional-text {
+  margin: 5px 0;
+  font-size: 10px;
+}
+
+.fa-circle:before {
+  content: "\f111";
+  font-size: 7px;
+  padding-right: 5px;
+}
+
+.fa-music:before {
+  content: "\f001";
+  font-size: 7px;
+  padding-right: 5px;
+}
+
+.column-left,
+.column-center,
+.column-right {
+  flex: 1;
+  padding: 0px;
+  margin: 0;
+}
+
+.description-center {
+  margin: 1px 0;
+  font-size: 8px;
+}
+
+.additional-text {
+  margin: 1px 0;
+  font-size: 8px;
+  padding: 0;
+}
+
+.info-center {
+  margin: 8px 0;
+  font-size: 6px;
+  padding-top: 3;
+}
+
+.profile-image {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  padding-right: 6px;
+}
+
+#right {
+  width: 15%;
+  background-color: #1c1c1c;
+  color: white;
+}
+
+.branip {
+  background-color: #0000ff;
+  width: 30px;
+  height: 30px;
+  border-radius: 8px;
+  border: none;
+}
+
+.tuoiEpisodi {
+  background-color: rgb(0, 69, 55);
+  width: 30px;
+  height: 30px;
+  border-radius: 8px;
+  border: none;
+}
+
+#heart {
+  font-weight: 900;
+  color: green;
+  position: relative;
+}
+
+#left a {
+  font-size: 10px;
+}
+
 body {
   font-family: "Circular";
   display: flex;
@@ -143,16 +372,8 @@ body {
   display: flex;
 }
 
-#left {
-  width: 20%;
-}
-
 #central {
   width: 65%;
-}
-
-#right {
-  width: 15%;
 }
 
 footer {
