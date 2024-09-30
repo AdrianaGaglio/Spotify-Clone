@@ -121,9 +121,9 @@
   }
 
   .right-column {
+    width: 40%;
     > div {
       display: flex;
-      justify-content: center;
     }
 
     .group-pic {
