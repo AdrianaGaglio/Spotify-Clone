@@ -133,23 +133,26 @@ body {
   -webkit-text-size-adjust: none;
 }
 
+body {
+  font-family: "Circular";
+  display: flex;
+  flex-direction: column;
+}
+
 .wrapper {
   display: flex;
 }
 
 #left {
   width: 20%;
-  height: 100vh;
 }
 
 #central {
   width: 65%;
-  height: 100vh;
 }
 
 #right {
   width: 15%;
-  height: 100vh;
 }
 
 footer {
@@ -166,6 +169,195 @@ footer {
 .bg-main {
   background: rgb(42, 42, 42);
   background: linear-gradient(180deg, rgba(42, 42, 42, 0.8968837535) 35%, rgb(40, 40, 40) 45%, rgb(39, 39, 39) 60%, rgb(37, 37, 37) 70%, rgb(35, 35, 35) 80%, rgb(34, 34, 34) 90%, rgb(33, 33, 33) 100%);
+}
+
+.main-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-block: 0.7rem;
+}
+
+.arrow-group {
+  display: flex;
+  gap: 0.2rem;
+}
+
+.arrow {
+  color: rgba(255, 255, 255, 0.5);
+  height: 25px;
+  width: 25px;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.profile {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 100px;
+  padding-right: 0.5rem;
+}
+.profile img {
+  height: 25px;
+  width: 25px;
+  border-radius: 50%;
+}
+.profile span {
+  color: white;
+  font-size: 0.7rem;
+}
+
+.home {
+  padding-inline: 1.5rem;
+}
+.home .hero {
+  background: rgb(0, 0, 0);
+  background: linear-gradient(30deg, rgba(0, 0, 0, 0.7) 30%, rgba(0, 0, 0, 0.5) 50%, rgba(0, 0, 0, 0.1629901961) 100%);
+  padding: 1rem 1.5rem;
+  display: flex;
+}
+.home .hero img {
+  padding: 1rem;
+}
+.home .hero > div {
+  padding-inline: 1rem;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.home .hero > div > *:not(:last-child) {
+  margin-bottom: 2rem;
+}
+.home .hero h3 {
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: white;
+}
+.home .hero .artist {
+  font-size: 1.5rem;
+}
+.home .hero .duration {
+  font-size: 0.9rem;
+  font-weight: 300;
+}
+.home .hero .advice {
+  font-size: 0.7rem;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.home .hero .advice div {
+  background-color: rgba(0, 0, 0, 0.1);
+  padding: 0.5rem;
+  border-radius: 100px;
+}
+.home .hero p {
+  color: white;
+}
+.home .btn-group {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.home .btn-group .btn {
+  border: none;
+  border-radius: 100px;
+  padding: 0.5rem 1rem;
+  font-weight: 700;
+}
+.home .btn-group .btn-green {
+  color: black;
+  background: #1ccc59;
+  border: 1px solid #1ccc59;
+}
+.home .btn-group .btn-outline {
+  background: none;
+  border: 1px solid white;
+  color: white;
+}
+.home .btn-group .dots {
+  margin-left: 0.5rem;
+  color: white;
+}
+
+.recents {
+  padding-block: 0.7rem;
+}
+.recents h4 {
+  color: white;
+  margin-bottom: 0.5rem;
+}
+
+.grid-sm {
+  display: flex;
+  flex-wrap: wrap;
+}
+.grid-sm .card {
+  width: 33.333%;
+  padding: 0.2rem;
+  display: flex;
+}
+.grid-sm .card img {
+  width: 70ox;
+  height: 70px;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+.grid-sm .card > div {
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  flex-grow: 1;
+  background-color: rgba(255, 255, 255, 0.03);
+  display: flex;
+  align-items: center;
+  color: white;
+  letter-spacing: 0.5px;
+  font-size: 0.7rem;
+  padding: 0.5rem;
+}
+
+.grid-lg {
+  display: flex;
+  flex-wrap: wrap;
+}
+.grid-lg .card-wrapper {
+  width: 20%;
+  padding: 0.3rem;
+}
+.grid-lg .card-wrapper .card {
+  background: rgba(255, 255, 255, 0.03);
+  padding: 0.5rem;
+  border-radius: 5px;
+}
+.grid-lg .card-wrapper .card .card-body {
+  padding-top: 0.5rem;
+  font-size: 0.8rem;
+}
+.grid-lg .card-wrapper .card .card-body a {
+  text-decoration: none;
+}
+.grid-lg .card-wrapper .card .card-body .playlist-title {
+  color: white;
+  font-weight: 500;
+  margin-bottom: 0.3rem;
+  text-wrap: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.grid-lg .card-wrapper .card .card-body .playlist-artist {
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.5);
+}
+.grid-lg img {
+  border-radius: 5px;
+  width: 100%;
 }
 
 #hero,
@@ -228,7 +420,6 @@ footer {
 }
 
 .under-hero {
-  height: 100%;
   background: rgb(0, 0, 0);
   background: linear-gradient(0deg, rgba(0, 0, 0, 0.8491771709) 75%, rgba(0, 0, 0, 0.2889530812) 100%);
 }
