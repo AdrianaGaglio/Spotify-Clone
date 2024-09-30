@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./assets/css/circular-font.css" />
+
+    <title>Spotify Clone</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <link rel="stylesheet" href="./assets/css/sidebar.css" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <aside id="left" class="bg-black">
+        <nav>
+          <ul>
+            <li>
+              <a href="./index.html"><i class="fa-solid fa-ellipsis"></i> </a>
+            </li>
+            <li>
+              <a href="./index.html"><i class="fa-solid fa-house"></i> Home</a>
+            </li>
+            <li>
+              <a href="#"><i class="fa-solid fa-magnifying-glass"></i> Cerca</a>
+            </li>
+            <li>
+              <a href="#"><i class="fa-solid fa-book"></i> La tua libreria</a>
+            </li>
+          </ul>
+        </nav>
+
+        <section id="playlist-section">
+          <ul>
+            <li>
+              <a href="#"><i class="fa-solid fa-square-plus"></i> Crea playlist</a>
+            </li>
+            <li>
+              <button class="branip">
+                <a href="#"><i class="fas fa-heart"></i></a>
+              </button>
+              Brani che ti piacciono
+            </li>
+            <li>
+              <button class="tuoiEpisodi">
+                <a href="#"><i class="fa-solid fa-bookmark"></i></a>
+              </button>
+            </li>
+            I tuoi episodi
+          </ul>
+        </section>
+        <section id="scrollable-playlists">
+          <ul>
+            <li><a href="#">early stage emily syndrome(sett-ott 2022)</a></li>
+            <li><a href="#">Be The Young </a></li>
+            <li><a href="#">"..." cit.Kimko (lug-ago 2022)</a></li>
+            <li><a href="#">saggio vibes</a></li>
+            <li><a href="#">main character energy(mag-giu2022)</a></li>
+            <li><a href="#">that fucking mood </a></li>
+            <li><a href="#">VEE, CARLOTTA E GIACOMO VANNO A BOSIO</a></li>
+            <li><a href="#">An Emily Winchester kind of mood</a></li>
+            <li><a href="#">landing page(mar-apr 2022) </a></li>
+            <li><a href="#">2021 lol</a></li>
+            <li><a href="#">cosa cazzo vuol dire questa affermazione </a></li>
+            <li><a href="#">honey and glass(nov-dic 2021)</a></li>
+            <li><a href="#">(Revenge)Training Arc</a></li>
+            <li><a href="#">Lidia Emily </a></li>
+            <li><a href="#">minecraft e nintendo switch(sept-oct 2021)</a></li>
+            <li><a href="#">silvano d'orba? I hardly know her(lu-ago 2021) </a></li>
+            <li><a href="#">Culo 2021 </a></li>
+            <li><a href="#">Frah Quintale Mix </a></li>
+            <li><a href="#">Francesco Guccini mix </a></li>
+          </ul>
+        </section>
+      </aside>
+
+      <!-- </aside> -->
+
+      <main id="central" class="bg-main"></main>
+      <!-- <aside id="right" class="bg-black"> -->
+      <aside id="right" class="sidebar-right">
+        <div class="header-right">
+          <h2 class="title-right">Attività amici</h2>
+          <div class="buttons-right">
+            <button class="btn-add"><i class="fa-solid fa-x"></i></button>
+            <button class="btn-settings"><i class="fa-solid fa-user-plus"></i></button>
+          </div>
+        </div>
+
+        <div class="container-right">
+          <div class="column-left">
+            <img src="./assets/imgs/main/image-2.jpg" alt="Image" class="profile-image" />
+          </div>
+          <div class="column-center">
+            <h3 class="heading-center">Charlie Hookman</h3>
+            <p class="description-center">In camera . Youmy zouma</p>
+            <p class="info-center"><i class="fa-solid fa-circle"></i>Ep III</p>
+          </div>
+          <div class="column-right">
+            <p class="additional-text">4 ore</p>
+          </div>
+        </div>
+        <div class="container-right">
+          <div class="column-left">
+            <img src="./assets/imgs/main/image-2.jpg" alt="Image" class="profile-image" />
+          </div>
+          <div class="column-center">
+            <h3 class="heading-center">Charlie Hookman</h3>
+            <p class="description-center">In camera . Youmy zouma</p>
+            <p class="info-center"><i class="fa-solid fa-circle"></i>Ep III</p>
+          </div>
+          <div class="column-right">
+            <p class="additional-text">8 ore</p>
+          </div>
+        </div>
+        <div class="container-right">
+          <div class="column-left">
+            <img src="./assets/imgs/main/image-2.jpg" alt="Image" class="profile-image" />
+          </div>
+          <div class="column-center">
+            <h3 class="heading-center">Charlie Hookman</h3>
+            <p class="description-center">In camera . Youmy zouma</p>
+            <p class="info-center"><i class="fa-solid fa-music"></i>Ep III</p>
+          </div>
+          <div class="column-right">
+            <p class="additional-text">3 giorni</p>
+          </div>
+        </div>
+      </aside>
+
+      <!-- </aside> -->
+    </div>
+    <footer>
+      <div id="player"></div>
+    </footer>
+  </body>
+</html>
