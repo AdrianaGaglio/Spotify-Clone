@@ -165,17 +165,137 @@ footer {
 
 .bg-main {
   background: rgb(42, 42, 42);
-  background: linear-gradient(
-    180deg,
-    rgba(42, 42, 42, 0.8968837535) 35%,
-    rgb(40, 40, 40) 45%,
-    rgb(39, 39, 39) 60%,
-    rgb(37, 37, 37) 70%,
-    rgb(35, 35, 35) 80%,
-    rgb(34, 34, 34) 90%,
-    rgb(33, 33, 33) 100%
-  );
-} /*# sourceMappingURL=style.css.map */
+  background: linear-gradient(180deg, rgba(42, 42, 42, 0.8968837535) 35%, rgb(40, 40, 40) 45%, rgb(39, 39, 39) 60%, rgb(37, 37, 37) 70%, rgb(35, 35, 35) 80%, rgb(34, 34, 34) 90%, rgb(33, 33, 33) 100%);
+}
+
+#hero,
+.under-hero {
+  padding-top: 15px;
+  padding-inline: 25px;
+  font-family: "Circular";
+}
+
+.bg-album {
+  background: rgb(166, 143, 59);
+  background: linear-gradient(0deg, rgba(166, 143, 59, 0) 0%, rgba(193, 166, 69, 0.6530987395) 54%, rgb(228, 197, 82) 100%);
+}
+
+.arrow-leftRight {
+  font-size: 20px;
+  color: rgba(0, 0, 0, 0.342);
+}
+.arrow-leftRight:hover {
+  color: rgba(0, 0, 0, 0.76);
+}
+
+.albumInfo {
+  padding-top: 25px;
+  display: flex;
+  padding-bottom: 20px;
+}
+.albumInfo img {
+  width: 200px;
+  box-shadow: 1px 1px 40px rgba(0, 0, 0, 0.337254902), -1px -1px 40px rgba(0, 0, 0, 0.3294117647);
+}
+.albumInfo .albumName {
+  color: rgb(255, 255, 255);
+  padding-left: 30px;
+  align-self: flex-end;
+}
+.albumInfo .albumName .dot {
+  font-size: 8px;
+  padding-inline: 5px;
+}
+.albumInfo .albumName h5 {
+  font-size: 10px;
+  padding-bottom: 10px;
+}
+.albumInfo .albumName h1 {
+  font-size: 72px;
+  font-weight: 900;
+  letter-spacing: -2px;
+  padding-bottom: 25px;
+}
+.albumInfo .albumName .moreInfo {
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+}
+.albumInfo .albumName .moreInfo img {
+  border-radius: 50%;
+  width: 20px;
+  padding-right: 3px;
+}
+
+.under-hero {
+  height: 100%;
+  background: rgb(0, 0, 0);
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.8491771709) 75%, rgba(0, 0, 0, 0.2889530812) 100%);
+}
+
+.other-icons i:not(:first-child) {
+  color: white;
+  padding: 10px;
+  font-size: 20px;
+}
+
+.fa-play {
+  color: black;
+  font-size: 18px;
+}
+
+.track-list {
+  padding-top: 25px;
+  color: rgba(255, 255, 255, 0.575);
+  font-size: 14px;
+}
+.track-list table {
+  width: 100%;
+  text-align: start;
+}
+.track-list th {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.575);
+  padding-bottom: 5px;
+  font-size: 12px;
+}
+.track-list .track-title {
+  padding-top: 16px;
+}
+.track-list .track-title p:first-child {
+  color: white;
+  font-size: 16px;
+}
+.track-list .track-title p:nth-child(2) {
+  padding-top: 5px;
+}
+.track-list .explicitLang-icon {
+  color: black;
+  font-weight: 900;
+  background-color: rgba(255, 255, 255, 0.575);
+  font-size: 8px;
+  padding-block: 3px;
+  padding-inline: 4px;
+  border-radius: 3px;
+  margin-right: 4px;
+}
+.track-list .track-numbers {
+  width: 5%;
+  padding-left: 10px;
+  text-align: start;
+}
+.track-list .track-title {
+  width: 55%;
+  text-align: start;
+}
+.track-list .times-played {
+  width: 15%;
+  text-align: end;
+}
+.track-list .track-lenght {
+  width: 25%;
+  padding-right: 20px;
+  text-align: end;
+}
 
 .spotify-button {
   background-color: #1db954;
@@ -191,4 +311,4 @@ footer {
 
 .spotify-button:hover {
   background-color: #1ccc59;
-}
+}/*# sourceMappingURL=style.css.map */
