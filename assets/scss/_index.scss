@@ -1,1 +1,44 @@
+.wrapper {
+  display: flex;
+}
 
+#left {
+  width: 20%;
+  height: 100vh;
+}
+
+#central {
+  width: 65%;
+  height: 100vh;
+}
+
+#right {
+  width: 15%;
+  height: 100vh;
+}
+
+footer {
+  position: sticky;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.bg-black {
+  background-color: #000000;
+}
+
+//da modificare le percentuali del gradiente!
+.bg-main {
+  background: rgb(42, 42, 42);
+  background: linear-gradient(
+    180deg,
+    rgba(42, 42, 42, 0.8968837535014006) 35%,
+    rgba(40, 40, 40, 1) 45%,
+    rgba(39, 39, 39, 1) 60%,
+    rgba(37, 37, 37, 1) 70%,
+    rgba(35, 35, 35, 1) 80%,
+    rgba(34, 34, 34, 1) 90%,
+    rgba(33, 33, 33, 1) 100%
+  );
+}
