@@ -295,10 +295,15 @@ footer {
   display: flex;
 }
 .recents .grid-sm .card img {
-  width: 50ox;
-  height: 50px;
+  width: 70ox;
+  height: 70px;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
 }
 .recents .grid-sm .card > div {
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  flex-grow: 1;
   background-color: rgba(255, 255, 255, 0.1);
   display: flex;
   align-items: center;
@@ -310,14 +315,30 @@ footer {
   display: flex;
   flex-wrap: wrap;
 }
-.recents .grid-lg .card {
+.recents .grid-lg .card-wrapper {
   width: 20%;
-  padding: 0.2rem;
+  padding: 0.3rem;
 }
-.recents .grid-lg .card p {
+.recents .grid-lg .card-wrapper .card {
+  background: rgba(255, 255, 255, 0.03);
+  padding: 0.5rem;
+  border-radius: 5px;
+}
+.recents .grid-lg .card-wrapper .card .card-body {
+  padding-top: 0.5rem;
+  font-size: 0.8rem;
+}
+.recents .grid-lg .card-wrapper .card .card-body .playlist-title {
   color: white;
+  font-weight: 500;
+  margin-bottom: 0.3rem;
+}
+.recents .grid-lg .card-wrapper .card .card-body .playlist-description {
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.5);
 }
 .recents .grid-lg img {
+  border-radius: 5px;
   width: 100%;
 }
 
