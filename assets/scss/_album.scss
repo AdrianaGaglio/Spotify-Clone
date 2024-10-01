@@ -5,6 +5,10 @@
   font-family: "Circular";
 }
 
+.under-hero {
+  padding-bottom: 10px;
+}
+
 .bg-album {
   background: rgb(166, 143, 59);
   background: linear-gradient(0deg, rgba(166, 143, 59, 0) 0%, rgba(193, 166, 69, 0.6530987394957983) 54%, rgba(228, 197, 82, 1) 100%);
@@ -44,6 +48,7 @@
       font-size: 12px;
       display: flex;
       align-items: center;
+      gap: 3px;
       img {
         border-radius: 50%;
         width: 20px;
