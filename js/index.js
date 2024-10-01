@@ -1,29 +1,12 @@
 // endpoint di ricerca
 const searchUrl = "https://striveschool-api.herokuapp.com/api/deezer/search?q=";
 // artisti predefiniti per aggiornare la pagina al caricamento )
-const previewArray = [
-  "radiohead",
-  "led zeppelin",
-  "beatles",
-  "jamiroquay",
-  "queen",
-];
+const previewArray = ["radiohead", "led zeppelin", "beatles", "jamiroquay", "queen"];
 // artista predefinito per aggiornare la parte hero
 const suggestedArtist = "Eric Clapton";
 
 // array brani preferiti
 const favourites = [];
-
-// oggetto track
-class TrackObj {
-  constructor(_title, _artist, _cover, _track, _duration) {
-    this.title = _title;
-    this.artist = _artist;
-    this.cover = _cover;
-    this.track = _track;
-    this.duration = _duration;
-  }
-}
 
 const indexPreview = () => {
   // ciclo l'array di artisti per la preview
@@ -104,13 +87,7 @@ const heroSection = (data) => {
       const firstTrackPreview = data.tracks.data[0].preview;
       const playBtn = document.getElementById("play");
       playBtn.onclick = () => {
-        const track = new TrackObj(
-          firstTrackTitle,
-          artistName,
-          albumCoverSmall,
-          firstTrackPreview,
-          duration
-        );
+        const track = new TrackObj(firstTrackTitle, artistName, albumCoverSmall, firstTrackPreview, duration);
         localStorage.setItem("track", JSON.stringify(track));
         playTrack();
 

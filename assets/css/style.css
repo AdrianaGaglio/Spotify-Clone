@@ -271,7 +271,8 @@ a {
 .profile-image {
   width: 25px;
   height: 25px;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   border-radius: 50%;
 }
 
@@ -632,6 +633,9 @@ footer {
   width: 20px;
   padding-right: 3px;
 }
+.albumInfo .albumName .album-duration {
+  color: rgba(255, 255, 255, 0.678);
+}
 
 .under-hero {
   background: rgb(0, 0, 0);
@@ -658,13 +662,21 @@ footer {
   width: 100%;
   text-align: start;
 }
+.track-list table tr:hover {
+  background-color: #4d4d4d;
+  border-radius: 5px;
+}
+.track-list table td > div > p:first-child {
+  cursor: pointer;
+  margin-bottom: 0.3rem;
+}
 .track-list th {
   border-bottom: 1px solid rgba(255, 255, 255, 0.575);
   padding-bottom: 5px;
   font-size: 12px;
 }
-.track-list .track-title {
-  padding-top: 16px;
+.track-list div {
+  margin-block: 0.5rem;
 }
 .track-list .track-title p:first-child {
   color: white;
@@ -848,7 +860,8 @@ footer {
 .artist-section .right-column img {
   width: 80px;
   height: 80px;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   border-radius: 50%;
   margin-right: 1rem;
 }
@@ -987,7 +1000,9 @@ footer {
 }
 
 input[type=range] {
-  appearance: none;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
   width: 100%;
   height: 6px;
   background: linear-gradient(to right, #1ed760 50%, #404040 50%);
@@ -997,7 +1012,8 @@ input[type=range] {
 }
 
 input[type=range]::-webkit-slider-thumb {
-  appearance: none;
+  -webkit-appearance: none;
+          appearance: none;
   height: 12px;
   width: 12px;
   border-radius: 50%;
