@@ -232,7 +232,7 @@ a {
 }
 
 #scrollable-playlists ul {
-  height: 400px;
+  height: 50vh;
   overflow-y: scroll;
   padding-block: 0.5rem;
 }
@@ -573,7 +573,7 @@ footer {
   width: 100%;
 }
 
-#hero,
+#album-info,
 .under-hero {
   padding-top: 15px;
   padding-inline: 25px;
@@ -606,10 +606,6 @@ footer {
   color: rgb(255, 255, 255);
   padding-left: 30px;
   align-self: flex-end;
-}
-.albumInfo .albumName .dot {
-  font-size: 8px;
-  padding-inline: 5px;
 }
 .albumInfo .albumName h5 {
   font-size: 10px;
@@ -954,7 +950,7 @@ footer {
   cursor: pointer;
 }
 
-.progress-bar div {
+.progress-bar > div {
   height: 100%;
   width: 30%;
   background-color: white;

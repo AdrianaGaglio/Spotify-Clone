@@ -5,6 +5,20 @@ const previewArray = ["radiohead", "led zeppelin", "beatles", "jamiroquay", "que
 // artista predefinito per aggiornare la parte hero
 const suggestedArtist = "Eric Clapton";
 
+// array brani preferiti
+const favourites = [];
+
+// oggetto track
+class TrackObj {
+  constructor(_title, _artist, _cover, _track, _duration) {
+    this.title = _title;
+    this.artist = _artist;
+    this.cover = _cover;
+    this.track = _track;
+    this.duration = _duration;
+  }
+}
+
 const indexPreview = () => {
   // ciclo l'array di artisti per la preview
   for (let i = 0; i < previewArray.length; i++) {
@@ -55,6 +69,7 @@ const heroSection = (data) => {
   const albumUrl = "https://striveschool-api.herokuapp.com/api/deezer/album/";
   const albumTitle = data.album.title;
   const albumCover = data.album.cover_big;
+  const albumCoverSmall = data.album.cover_small;
   const artistName = data.artist.name;
   // prendo l'id dell'album
   const albumID = data.album.id;
@@ -79,8 +94,16 @@ const heroSection = (data) => {
       const firstTrack = data.tracks.data[0];
       const firstTrackTitle = data.tracks.data[0].title;
       // prendo il file audio della prima traccia dell'album selezionato
+      const duration = data.tracks.data[0].duration;
       const firstTrackPreview = data.tracks.data[0].preview;
-      localStorage.setItem("track", firstTrackPreview);
+      const playBtn = document.getElementById("play");
+      playBtn.onclick = () => {
+        const track = new TrackObj(firstTrackTitle, artistName, albumCoverSmall, firstTrackPreview, duration);
+        localStorage.setItem("track", JSON.stringify(track));
+        playTrack();
+        const playerAudio = document.getElementById("playerAudio");
+        playerAudio.play();
+      };
       const firstTrackElement = document.createElement("p");
       firstTrackElement.style.marginTop = "1rem";
       firstTrackElement.innerHTML = `Titolo traccia: <span>${firstTrackTitle}</span>`;
