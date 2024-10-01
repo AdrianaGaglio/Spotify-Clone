@@ -133,6 +133,11 @@ body {
   -webkit-text-size-adjust: none;
 }
 
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
 #left {
   width: 20%;
   font-size: 10px;
@@ -428,28 +433,26 @@ footer {
 }
 .home .hero img {
   padding: 1rem;
+  width: 100%;
 }
-.home .hero > div {
+.home .hero > div:first-of-type {
+  width: 40%;
+  min-width: 300px;
+}
+.home .hero > div:nth-of-type(2) {
   padding-inline: 1rem;
   flex-grow: 1;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-evenly;
 }
-.home .hero > div > *:not(:last-child) {
-  margin-bottom: 2rem;
+.home .hero > div:nth-of-type(2) > *:not(:last-child) {
+  margin-bottom: 1rem;
 }
 .home .hero h3 {
-  font-size: 3.5rem;
+  font-size: 3rem;
   font-weight: 700;
   color: white;
-}
-.home .hero .artist {
-  font-size: 1.5rem;
-}
-.home .hero .duration {
-  font-size: 0.9rem;
-  font-weight: 300;
 }
 .home .hero .advice {
   font-size: 0.7rem;
@@ -465,6 +468,11 @@ footer {
 }
 .home .hero p {
   color: white;
+  font-size: 0.8rem;
+  font-weight: 300;
+}
+.home .hero p span {
+  font-weight: 700;
 }
 .home .btn-group {
   display: flex;

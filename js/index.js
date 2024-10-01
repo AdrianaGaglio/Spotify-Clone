@@ -2,6 +2,8 @@
 const searchUrl = "https://striveschool-api.herokuapp.com/api/deezer/search?q=";
 // artisti predefiniti per aggiornare la pagina al caricamento )
 const previewArray = ["radiohead", "led zeppelin", "beatles", "jamiroquay", "queen"];
+// artista predefinito per aggiornare la parte hero
+const suggestedArtist = "Eric Clapton";
 
 const indexPreview = () => {
   // ciclo l'array di artisti per la preview
@@ -27,7 +29,66 @@ const indexPreview = () => {
   }
 };
 
-// const heroSection = () => {}; // TODO
+const suggestedAlbum = () => {
+  // genero url per l'endpoint in base all'artista predefinito
+  fetch(searchUrl + suggestedArtist)
+    .then((response) => {
+      if (response.ok) {
+        return response.json();
+      } else {
+        throw new Error(response.status);
+      }
+    })
+    .then((data) => {
+      // genero index per selezionare randomicamente uno tra i primi 10 album dell'artista
+      const index = Math.floor(Math.random() * 15);
+      // chiamo la funzione per la generazione della hero
+      heroSection(data.data[index]);
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+};
+
+const heroSection = (data) => {
+  // url per l'endpoint dell'album
+  const albumUrl = "https://striveschool-api.herokuapp.com/api/deezer/album/";
+  const albumTitle = data.album.title;
+  const albumCover = data.album.cover_big;
+  const artistName = data.artist.name;
+  // prendo l'id dell'album
+  const albumID = data.album.id;
+  const title = document.querySelector(".hero h3");
+  title.innerHTML = `<a href="./album.html?albumID=${albumID}">${albumTitle}</a>`;
+  const coverImg = document.querySelector(".hero img");
+  coverImg.src = albumCover;
+  coverImg.alt = albumTitle;
+  const artist = document.querySelector(".hero h3 + p");
+  artist.innerHTML = `Artista: <span><a href="./artist.html?artistID=${data.artist.id}">${artistName}</a></span>`;
+  // genero l'url per l'endpoint dell'album selezionato
+  fetch(albumUrl + albumID)
+    .then((response) => {
+      if (response.ok) {
+        return response.json();
+      } else {
+        throw new Error(response.status);
+      }
+    })
+    .then((data) => {
+      // prendo le info della prima traccia dell'album selezionato
+      const firstTrack = data.tracks.data[0];
+      const firstTrackTitle = data.tracks.data[0].title;
+      // prendo il file audio della prima traccia dell'album selezionato
+      const firstTrackPreview = data.tracks.data[0].preview;
+      const firstTrackElement = document.createElement("p");
+      firstTrackElement.style.marginTop = "1rem";
+      firstTrackElement.innerHTML = `Titolo traccia: <span>${firstTrackTitle}</span>`;
+      artist.append(firstTrackElement);
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+};
 
 const generateAlbumCards = (data) => {
   // genero randomicamente un indice tra 0 e 4 (serve per mostrare in ordine sempre diverso le card nella pagina)
@@ -72,4 +133,5 @@ const generateArtistCards = (data) => {
   artists.appendChild(cardWrapper);
 };
 
+suggestedAlbum();
 indexPreview();
