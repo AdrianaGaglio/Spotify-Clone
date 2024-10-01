@@ -120,6 +120,7 @@
                 <p>2017</p>
                 <span class="dot"></span>
                 <p class="numOfTracks"></p>
+                <p class="album-duration"></p>
               </div>
             </div>
           </div>
@@ -198,8 +199,8 @@
         <div class="song-info">
           <img src="./assets/imgs/main/image-1.jpg" alt="Album" />
           <div class="song-details">
-            <div class="song-title">Fat Funny Friend</div>
-            <div class="song-artist">Maddie Zahm</div>
+            <div class="song-title"></div>
+            <div class="song-artist"></div>
           </div>
           <button><i class="fa-regular fa-heart"></i></button>
         </div>
@@ -208,7 +209,9 @@
           <div class="controls">
             <button><i class="fas fa-random"></i></button>
             <button><i class="fas fa-step-backward"></i></button>
-            <button><i class="fas fa-play-circle"></i></button>
+            <button class="playPauseBtn">
+              <i class="fas fa-play-circle btnPauseTrack"></i>
+            </button>
             <button><i class="fas fa-step-forward"></i></button>
             <button><i class="fa-solid fa-repeat"></i></button>
           </div>
@@ -216,16 +219,18 @@
             <div class="progress-bar">
               <div></div>
             </div>
-            <div class="time">3:20</div>
+            <div class="time"></div>
           </div>
         </div>
-
+        <audio id="playerAudio">
+          <source src="" type="audio/mp3" />
+        </audio>
         <div class="volume-control">
           <button><i class="fa-solid fa-microphone"></i></button>
           <button><i class="fa-solid fa-bars"></i></button>
           <button><i class="fa-solid fa-tablet-screen-button"></i></button>
           <button class="speaker"><i class="fas fa-volume-up"></i></button>
-          <input type="range" min="0" max="100" />
+          <input id="progress-bar" type="range" min="0" max="100" />
           <button>
             <i class="fa-solid fa-up-right-and-down-left-from-center"></i>
           </button>

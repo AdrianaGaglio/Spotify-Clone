@@ -23,6 +23,7 @@ const getAlbum = () => {
     });
 };
 
+//  qui rendo dinamico l'hero di ogni album
 const generateAlbumHero = (data) => {
   const albumTitle = data.title;
   const albumCover = data.cover_big;
@@ -38,10 +39,15 @@ const generateAlbumHero = (data) => {
   artist.innerText = `${artistName}`;
 };
 
+// qui rendo dinamiche le traccie di ogni album
 const generateTracks = (allTracks) => {
   const numOfTracks = document.querySelector(".numOfTracks");
   allTracks.forEach((track, i) => {
-    numOfTracks.innerHTML = `${i} brani, <span style="color: rgba(255, 255, 255, 0.678)">${track.duration}</span>`;
+    let seconds = track.duration % 60;
+    if (seconds < 10) {
+      seconds = "0" + seconds.toString();
+    }
+    numOfTracks.innerHTML = `${i + 1} brani`;
     const trackRow = document.createElement("tr");
     trackRow.innerHTML = `<td class="track-numbers">${i + 1}</td>
         <td class="track-title">
@@ -50,11 +56,15 @@ const generateTracks = (allTracks) => {
             <p>${track.artist.name}</p>
           </div>
         </td>
-        <td class="times-played">${track.rank}</td>
-        <td class="track-lenght">${track.duration}</td>`;
+        <td class="times-played">${new Intl.NumberFormat("it-IT").format(track.rank)}</td>
+        <td class="track-lenght">${Math.trunc(track.duration / 60)}:${seconds}</td>`;
     const table = document.querySelector("table");
     table.appendChild(trackRow);
   });
 };
 
 getAlbum();
+
+{
+  /* <span style="color: rgba(255, 255, 255, 0.678)">${Math.trunc(track.duration / 60)} min ${seconds} sec.</span> */
+}
