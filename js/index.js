@@ -5,6 +5,9 @@ const previewArray = ["radiohead", "led zeppelin", "beatles", "jamiroquay", "que
 // artista predefinito per aggiornare la parte hero
 const suggestedArtist = "Eric Clapton";
 
+// array brani preferiti
+const favourites = [];
+
 const indexPreview = () => {
   // ciclo l'array di artisti per la preview
   for (let i = 0; i < previewArray.length; i++) {
@@ -80,7 +83,10 @@ const heroSection = (data) => {
       const firstTrackTitle = data.tracks.data[0].title;
       // prendo il file audio della prima traccia dell'album selezionato
       const firstTrackPreview = data.tracks.data[0].preview;
-      localStorage.setItem("track", firstTrackPreview);
+      const playBtn = document.getElementById("play");
+      playBtn.onclick = () => {
+        localStorage.setItem("track", firstTrackPreview);
+      };
       const firstTrackElement = document.createElement("p");
       firstTrackElement.style.marginTop = "1rem";
       firstTrackElement.innerHTML = `Titolo traccia: <span>${firstTrackTitle}</span>`;

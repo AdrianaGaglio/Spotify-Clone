@@ -232,7 +232,7 @@ a {
 }
 
 #scrollable-playlists ul {
-  height: 400px;
+  height: 50vh;
   overflow-y: scroll;
   padding-block: 0.5rem;
 }
