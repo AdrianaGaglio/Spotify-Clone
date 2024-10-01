@@ -25,10 +25,10 @@ const artistDefinition = (data) => {
   const artistH1 = document.querySelector("h1");
   const artistH5 = document.querySelector(".right-column h5");
   const heroH5 = document.querySelector("#hero h5");
+  const artistImage = document.querySelector(".group-pic img");
   artistH1.innerText = data.name;
   artistH5.innerText = "Di " + data.name;
   heroH5.innerText = data.nb_fan + " ascoltatori mensili";
-  const artistImage = document.querySelector(".group-pic img");
   artistImage.src = data.picture_small;
 };
 
@@ -63,10 +63,20 @@ const tracksDefinition = (tracksArray) => {
     const newRow = document.createElement("tr");
     newRow.innerHTML = `<td>${i + 1}</td>
         <td><img src="${track.album.cover_small}" alt="" /></td>
-        <td>${track.title}</td>
+        <td id="${i + 1}">${track.title}</td>
         <td>${new Intl.NumberFormat("it-IT").format(track.rank)}</td>
         <td>${Math.trunc(track.duration / 60)}:${seconds}</td>`;
     tableBody.appendChild(newRow);
+
+    const selectedTrack = document.getElementById(`${i + 1}`);
+    selectedTrack.onclick = () => {
+      const artistTrack = new TrackObj(track.title, track.artist.name, track.album.cover_small, track.preview, track.duration);
+      console.log(track);
+      localStorage.setItem("track", JSON.stringify(artistTrack));
+      playTrack();
+
+      switchBtn();
+    };
   });
 };
 
