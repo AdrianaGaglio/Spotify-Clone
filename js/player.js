@@ -12,7 +12,9 @@ const playTrack = () => {
   const artist = trackInfo.artist;
   const cover = trackInfo.cover;
   const track = trackInfo.track;
-  const duration = `${Math.trunc(trackInfo.duration / 60)}:${trackInfo.duration % 60}`;
+  const duration = `${Math.trunc(trackInfo.duration / 60)}:${
+    trackInfo.duration % 60
+  }`;
   const trackTitle = document.querySelector(".song-title");
   trackTitle.innerText = title;
   const trackArtist = document.querySelector(".song-artist");
@@ -26,5 +28,21 @@ const playTrack = () => {
   playerTrack.src = track;
   playerAudio.load();
 };
+
+const playPauseBtn = document.querySelector(".playPauseBtn");
+
+const switchBtn = function () {
+  if (playerAudio.paused) {
+    playerAudio.play();
+    playPauseBtn.innerHTML = `<i class="fas fa-pause-circle btnPauseTrack "></i>`;
+  } else {
+    playerAudio.pause();
+    playPauseBtn.innerHTML = `<i class="fas fa-play-circle btnPauseTrack"></i>`;
+  }
+};
+
+playPauseBtn.addEventListener("click", function () {
+  switchBtn();
+});
 
 playTrack();
