@@ -733,7 +733,6 @@ footer {
 #hero {
   height: 400px;
   background-size: cover;
-  background-image: url("https://mrwallpaper.com/images/hd/radiohead-amnesiac-album-cover-landscape-pdgo0y3sdpkikwaw.jpg");
   display: flex;
   flex-direction: column;
   align-items: start;
@@ -828,10 +827,6 @@ footer {
   text-align: start;
   cursor: pointer;
 }
-.artist-section .left-column tr:hover {
-  background-color: #4d4d4d;
-  border-radius: 5px;
-}
 .artist-section .left-column td:nth-child(4),
 .artist-section .left-column td:nth-child(5) {
   width: 20%;
@@ -843,6 +838,17 @@ footer {
   margin-top: 1rem;
   text-decoration: none;
   color: white;
+}
+.artist-section .left-column tr:hover {
+  background-color: #4d4d4d;
+}
+.artist-section .left-column td:nth-child(1) {
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+.artist-section .left-column td:nth-child(5) {
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
 }
 .artist-section .right-column {
   width: 40%;
