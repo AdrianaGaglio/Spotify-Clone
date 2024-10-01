@@ -34,8 +34,8 @@ const generateAlbumCards = (data) => {
     <div class="card">
       <img src="${album.cover_medium}" alt="" />
       <div class="card-body">
-          <a href="./album.html/?albumID=${album.id}"><h6 class="playlist-title" title="${album.title}">${album.title}</h6></a>
-          <a href="./artist.html/?artistID=${artist.id}"><p class="playlist-artist">${artist.name}</p></a>
+          <a href="./album.html?albumID=${album.id}"><h6 class="playlist-title" title="${album.title}">${album.title}</h6></a>
+          <a href="./artist.html?artistID=${artist.id}"><p class="playlist-artist">${artist.name}</p></a>
       </div>
     `;
   albums.appendChild(cardWrapper);
@@ -51,7 +51,7 @@ const generateArtistCards = (data) => {
     <div class="card">
       <img src="${artist.picture_medium}" alt="" />
       <div class="card-body">
-          <a href="./artist.html/?artistID=${artist.id}"><h6 class="playlist-title" title="${artist.name}">${artist.name}</h6></a>
+          <a href="./artist.html?artistID=${artist.id}"><h6 class="playlist-title" title="${artist.name}">${artist.name}</h6></a>
       </div>
     `;
   artists.appendChild(cardWrapper);

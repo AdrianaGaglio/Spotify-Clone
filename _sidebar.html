@@ -14,47 +14,69 @@
       referrerpolicy="no-referrer"
     />
     <link rel="stylesheet" href="./assets/css/style.css" />
-    <link rel="stylesheet" href="./assets/css/sidebar.css" />
   </head>
   <body>
     <div class="wrapper">
       <aside id="left" class="bg-black">
-        <nav>
-          <ul>
-            <li>
-              <a href="./index.html"><i class="fa-solid fa-ellipsis"></i> </a>
-            </li>
-            <li>
-              <a href="./index.html"><i class="fa-solid fa-house"></i> Home</a>
-            </li>
-            <li>
-              <a href="#"><i class="fa-solid fa-magnifying-glass"></i> Cerca</a>
-            </li>
-            <li>
-              <a href="#"><i class="fa-solid fa-book"></i> La tua libreria</a>
-            </li>
-          </ul>
-        </nav>
-
-        <section id="playlist-section">
-          <ul>
-            <li>
-              <a href="#"><i class="fa-solid fa-square-plus"></i> Crea playlist</a>
-            </li>
-            <li>
-              <button class="branip">
-                <a href="#"><i class="fas fa-heart"></i></a>
-              </button>
-              Brani che ti piacciono
-            </li>
-            <li>
-              <button class="tuoiEpisodi">
-                <a href="#"><i class="fa-solid fa-bookmark"></i></a>
-              </button>
-            </li>
-            I tuoi episodi
-          </ul>
-        </section>
+        <div>
+          <nav>
+            <ul>
+              <li>
+                <a href="./index.html">
+                  <div class="icons">
+                    <i class="fa-solid fa-ellipsis"></i>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="./index.html">
+                  <div class="icons">
+                    <i class="fa-solid fa-house"></i>
+                  </div>
+                  <span>Home</span>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <div class="icons">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                  </div>
+                  <span>Cerca</span>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <div class="icons">
+                    <i class="fa-solid fa-book"></i>
+                  </div>
+                  <span>La tua libreria</span>
+                </a>
+              </li>
+            </ul>
+          </nav>
+          <nav>
+            <ul>
+              <li>
+                <a href="#"
+                  ><div class="icons creaPlaylist"><i class="fa-solid fa-plus"></i></div>
+                  <span>Crea playlist</span>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <div class="icons branip"><i class="fas fa-heart"></i></div>
+                  <span>Brani che ti piacciono</span>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <div class="icons tuoiEpisodi"><i class="fa-solid fa-bookmark"></i></div>
+                  <span>I tuoi episodi</span>
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </div>
         <section id="scrollable-playlists">
           <ul>
             <li><a href="#">early stage emily syndrome(sett-ott 2022)</a></li>
@@ -94,42 +116,42 @@
         </div>
 
         <div class="container-right">
-          <div class="column-left">
+          <div>
             <img src="./assets/imgs/main/image-2.jpg" alt="Image" class="profile-image" />
           </div>
-          <div class="column-center">
-            <h3 class="heading-center">Charlie Hookman</h3>
-            <p class="description-center">In camera . Youmy zouma</p>
-            <p class="info-center"><i class="fa-solid fa-circle"></i>Ep III</p>
+          <div>
+            <h3>Charlie Hookman</h3>
+            <p>In camera <span class="dot"></span> Youmy zouma</p>
+            <p><i class="fa-regular fa-circle-stop"></i>Ep III</p>
           </div>
-          <div class="column-right">
-            <p class="additional-text">4 ore</p>
+          <div>
+            <p>4 ore</p>
           </div>
         </div>
         <div class="container-right">
-          <div class="column-left">
+          <div>
             <img src="./assets/imgs/main/image-2.jpg" alt="Image" class="profile-image" />
           </div>
-          <div class="column-center">
-            <h3 class="heading-center">Charlie Hookman</h3>
-            <p class="description-center">In camera . Youmy zouma</p>
-            <p class="info-center"><i class="fa-solid fa-circle"></i>Ep III</p>
+          <div>
+            <h3>Charlie Hookman</h3>
+            <p>In camera <span class="dot"></span> Youmy zouma</p>
+            <p><i class="fa-regular fa-circle-stop"></i>Ep III</p>
           </div>
           <div class="column-right">
-            <p class="additional-text">8 ore</p>
+            <p>8 ore</p>
           </div>
         </div>
         <div class="container-right">
-          <div class="column-left">
+          <div>
             <img src="./assets/imgs/main/image-2.jpg" alt="Image" class="profile-image" />
           </div>
-          <div class="column-center">
-            <h3 class="heading-center">Charlie Hookman</h3>
-            <p class="description-center">In camera . Youmy zouma</p>
-            <p class="info-center"><i class="fa-solid fa-music"></i>Ep III</p>
+          <div>
+            <h3>Charlie Hookman</h3>
+            <p><span>In camera</span> <span class="dot"></span> <span>Youmy zouma</span></p>
+            <p><i class="fa-solid fa-music"></i>Ep III</p>
           </div>
           <div class="column-right">
-            <p class="additional-text">3 giorni</p>
+            <p>3 giorni</p>
           </div>
         </div>
       </aside>

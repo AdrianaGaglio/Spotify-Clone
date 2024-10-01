@@ -1,0 +1,147 @@
+#player {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #121212;
+  padding: 20px 20px;
+  width: 100%;
+}
+
+.song-info {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  color: #fff;
+}
+
+.song-info img {
+  width: 50px;
+  height: 50px;
+  margin-right: 10px;
+  border-radius: 5px;
+}
+
+.song-info button {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.song-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.song-title {
+  font-size: 16px;
+}
+
+.song-artist {
+  margin-top: 5px;
+  font-size: 14px;
+  color: #b3b3b3;
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 5px;
+}
+
+.controls button {
+  background: none;
+  border: none;
+
+  font-size: 18px;
+  cursor: pointer;
+  margin-bottom: 5px;
+}
+
+.fa-step-backward,
+.fa-step-forward {
+  color: grey;
+}
+.fa-random,
+.fa-repeat {
+  color: #1ed760;
+}
+
+.fa-play-circle {
+  font-size: 30px;
+  color: white;
+}
+
+.progress-bar-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-grow: 1;
+  margin: 0 20px;
+}
+
+.progressBar-time-container {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+
+.progress-bar {
+  width: 70%;
+  height: 5px;
+  background-color: #505050;
+
+  cursor: pointer;
+}
+
+.progress-bar div {
+  height: 100%;
+  width: 30%;
+  background-color: white;
+}
+
+.time {
+  position: relative;
+  left: 5px;
+  bottom: 3px;
+  color: #b3b3b3;
+  font-size: 14px;
+}
+
+.volume-control {
+  display: flex;
+  align-items: center;
+  color: #fff;
+}
+.volume-control button {
+  background: none;
+  border: none;
+  color: grey;
+  cursor: pointer;
+}
+
+.volume-control input[type="range"] {
+  width: 100px;
+  margin-left: 10px;
+}
+
+input[type="range"] {
+  appearance: none;
+  width: 100%;
+  height: 6px;
+  background: linear-gradient(to right, #1ed760 50%, #404040 50%);
+  border-radius: 5px;
+  outline: none;
+  cursor: pointer;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  appearance: none;
+  height: 12px;
+  width: 12px;
+  border-radius: 50%;
+  background: #1ed760;
+  cursor: pointer;
+}
