@@ -1,4 +1,4 @@
-//gestisce il riempimento della barra di imput-range
+gestisce il riempimento della barra di imput-range
 const rangeInput = document.getElementById("progress-bar");
 
 rangeInput.addEventListener("input", function () {

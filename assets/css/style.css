@@ -621,6 +621,7 @@ footer {
   font-size: 12px;
   display: flex;
   align-items: center;
+  gap: 3px;
 }
 .albumInfo .albumName .moreInfo img {
   border-radius: 50%;
