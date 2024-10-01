@@ -1,4 +1,4 @@
-// gestisce il riempimento della barra di imput-range
+//gestisce il riempimento della barra di imput-range
 const rangeInput = document.getElementById("progress-bar");
 
 rangeInput.addEventListener("input", function () {
@@ -12,7 +12,9 @@ const playTrack = () => {
   const artist = trackInfo.artist;
   const cover = trackInfo.cover;
   const track = trackInfo.track;
-  const duration = `${Math.trunc(trackInfo.duration / 60)}:${trackInfo.duration % 60}`;
+  const duration = `${Math.trunc(trackInfo.duration / 60)}:${
+    trackInfo.duration % 60
+  }`;
   const trackTitle = document.querySelector(".song-title");
   trackTitle.innerText = title;
   const trackArtist = document.querySelector(".song-artist");
