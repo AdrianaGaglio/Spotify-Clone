@@ -17,6 +17,7 @@ const getAlbum = () => {
       console.log(data);
       generateAlbumHero(data);
       generateTracks(data.tracks.data);
+      trackList(data.tracks.data);
     })
     .catch((error) => {
       console.log(error);

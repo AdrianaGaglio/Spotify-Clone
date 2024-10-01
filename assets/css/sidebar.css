@@ -1,5 +1,0 @@
-/* Imposta l'overflow per la sezione */
-#scrollable-playlists {
-  height: 300px; 
-  overflow-y: auto; 
-  scrollbar-color: #060606

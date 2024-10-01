@@ -90,7 +90,6 @@ const heroSection = (data) => {
         const track = new TrackObj(firstTrackTitle, artistName, albumCoverSmall, firstTrackPreview, duration);
         localStorage.setItem("track", JSON.stringify(track));
         playTrack();
-
         switchBtn();
       };
       const firstTrackElement = document.createElement("p");

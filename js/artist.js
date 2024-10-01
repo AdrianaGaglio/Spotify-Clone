@@ -44,6 +44,7 @@ const getTracks = () => {
     .then((data) => {
       console.log(data.data);
       tracksDefinition(data.data);
+      trackList(data.data);
     })
     .catch((err) => {
       console.log(err);
