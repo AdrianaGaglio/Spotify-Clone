@@ -580,6 +580,10 @@ footer {
   font-family: "Circular";
 }
 
+.under-hero {
+  padding-bottom: 10px;
+}
+
 .bg-album {
   background: rgb(166, 143, 59);
   background: linear-gradient(0deg, rgba(166, 143, 59, 0) 0%, rgba(193, 166, 69, 0.6530987395) 54%, rgb(228, 197, 82) 100%);
@@ -621,6 +625,7 @@ footer {
   font-size: 12px;
   display: flex;
   align-items: center;
+  gap: 3px;
 }
 .albumInfo .albumName .moreInfo img {
   border-radius: 50%;
