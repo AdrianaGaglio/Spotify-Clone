@@ -951,7 +951,7 @@ footer {
   cursor: pointer;
 }
 
-.progress-bar div {
+.progress-bar > div {
   height: 100%;
   width: 30%;
   background-color: white;
