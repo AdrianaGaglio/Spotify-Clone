@@ -5,6 +5,9 @@ const previewArray = ["radiohead", "led zeppelin", "beatles", "jamiroquay", "que
 // artista predefinito per aggiornare la parte hero
 const suggestedArtist = "Eric Clapton";
 
+// array brani preferiti
+const favourites = [];
+
 const indexPreview = () => {
   // ciclo l'array di artisti per la preview
   for (let i = 0; i < previewArray.length; i++) {
