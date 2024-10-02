@@ -1,3 +1,11 @@
+.play-pause.play::before {
+  content: "\f04b";
+}
+
+.play-pause.pause::before {
+  content: "\f04c";
+}
+
 .spotify-button {
   background-color: #1db954;
   font-size: 24px;
@@ -20,8 +28,6 @@
   }
   min-height: 295px;
   background-size: cover;
-  background-image: url("https://mrwallpaper.com/images/hd/radiohead-amnesiac-album-cover-landscape-pdgo0y3sdpkikwaw.jpg");
-  color: white;
   display: flex;
   flex-direction: column;
   padding-bottom: 1.5rem;
@@ -122,6 +128,15 @@
     width: 60%;
     margin-right: 4rem;
 
+    .track-played {
+      color: #1ccc59;
+    }
+
+    .fa-play {
+      color: white;
+      font-size: 14px;
+    }
+
     td {
       padding: 5px;
 
@@ -135,17 +150,11 @@
     td:nth-child(3) {
       width: 60%;
       text-align: start;
-      cursor: pointer;
-    }
-
-    tr:hover {
-      background-color: #4d4d4d;
-      border-radius: 5px;
     }
 
     td:nth-child(4),
     td:nth-child(5) {
-      width: 20%;
+      width: 15%;
       text-align: end;
     }
 
@@ -155,6 +164,23 @@
       margin-top: 1rem;
       text-decoration: none;
       color: white;
+    }
+
+    //reso i bordi della tr rounded lavorando sul primo e ultimo td della row!
+    tr:hover {
+      background-color: #4d4d4d;
+      cursor: pointer;
+    }
+
+    td:nth-child(1) {
+      width: 5%;
+      border-top-left-radius: 5px;
+      border-bottom-left-radius: 5px;
+    }
+
+    td:nth-child(5) {
+      border-top-right-radius: 5px;
+      border-bottom-right-radius: 5px;
     }
   }
 

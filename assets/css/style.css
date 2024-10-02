@@ -721,6 +721,14 @@ footer {
   text-align: end;
 }
 
+.play-pause.play::before {
+  content: "\f04b";
+}
+
+.play-pause.pause::before {
+  content: "\f04c";
+}
+
 .spotify-button {
   background-color: #1db954;
   font-size: 24px;
@@ -740,8 +748,6 @@ footer {
 #hero {
   min-height: 295px;
   background-size: cover;
-  background-image: url("https://mrwallpaper.com/images/hd/radiohead-amnesiac-album-cover-landscape-pdgo0y3sdpkikwaw.jpg");
-  color: white;
   display: flex;
   flex-direction: column;
   padding-bottom: 1.5rem;
@@ -838,6 +844,13 @@ footer {
   width: 60%;
   margin-right: 4rem;
 }
+.artist-section .left-column .track-played {
+  color: #1ccc59;
+}
+.artist-section .left-column .fa-play {
+  color: white;
+  font-size: 14px;
+}
 .artist-section .left-column td {
   padding: 5px;
   text-align: center;
@@ -849,15 +862,10 @@ footer {
 .artist-section .left-column td:nth-child(3) {
   width: 60%;
   text-align: start;
-  cursor: pointer;
-}
-.artist-section .left-column tr:hover {
-  background-color: #4d4d4d;
-  border-radius: 5px;
 }
 .artist-section .left-column td:nth-child(4),
 .artist-section .left-column td:nth-child(5) {
-  width: 20%;
+  width: 15%;
   text-align: end;
 }
 .artist-section .left-column a {
@@ -866,6 +874,19 @@ footer {
   margin-top: 1rem;
   text-decoration: none;
   color: white;
+}
+.artist-section .left-column tr:hover {
+  background-color: #4d4d4d;
+  cursor: pointer;
+}
+.artist-section .left-column td:nth-child(1) {
+  width: 5%;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+.artist-section .left-column td:nth-child(5) {
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
 }
 .artist-section .right-column {
   width: 40%;
