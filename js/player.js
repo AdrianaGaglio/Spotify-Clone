@@ -58,4 +58,11 @@ rangeAudio.addEventListener("input", function () {
   playerAudio.volume = value / 100;
 });
 
+//gestisce il button Loop della traccia
+const loopButton = document.querySelector(".loopButton");
+
+loopButton.addEventListener("click", () => {
+  playerAudio.loop = !playerAudio.loop; // Alterna tra ripetere o no la traccia
+});
+
 playTrack();
