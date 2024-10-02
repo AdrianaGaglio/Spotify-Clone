@@ -82,10 +82,8 @@ const generateTracks = (allTracks) => {
     const selectedTrack = document.getElementById(`${i + 1}`);
     selectedTrack.onclick = () => {
       const newTrack = new TrackObj(track.title, track.artist.name, track.album.cover_small, track.preview, track.duration);
-      console.log(track);
       localStorage.setItem("track", JSON.stringify(newTrack));
       playTrack();
-
       switchBtn();
     };
     const artist = document.querySelector(".moreInfo .artist-name");

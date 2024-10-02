@@ -1,14 +1,3 @@
-// oggetto track
-class TrackObj {
-  constructor(_title, _artist, _cover, _track, _duration) {
-    this.title = _title;
-    this.artist = _artist;
-    this.cover = _cover;
-    this.track = _track;
-    this.duration = _duration;
-  }
-}
-
 const trackListArray = [];
 
 const trackList = (tracklist) => {
