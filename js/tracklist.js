@@ -1,3 +1,4 @@
+let counter = 0;
 const trackListArray = [];
 
 const trackList = (tracklist) => {
@@ -8,14 +9,13 @@ const trackList = (tracklist) => {
   localStorage.setItem("tracklist", JSON.stringify(trackListArray));
 };
 
-const spotifyBtn = document.querySelector(".spotify-button");
-spotifyBtn.addEventListener("click", () => {
+const handleTrackList = () => {
   const trackList = JSON.parse(localStorage.getItem("tracklist"));
-  let counter = 0;
   const track = trackList[counter];
   localStorage.setItem("track", JSON.stringify(track));
   playTrack();
   switchBtn();
+
   const audioPlayer = document.getElementById("playerAudio");
   audioPlayer.addEventListener("loadedmetadata", function () {
     // La durata in secondi
@@ -34,4 +34,21 @@ spotifyBtn.addEventListener("click", () => {
       }
     }, 1000);
   });
+};
+
+const spotifyBtn = document.querySelector(".spotify-button");
+spotifyBtn.addEventListener("click", () => {
+  handleTrackList();
+});
+
+const prevTrack = document.getElementById("prevTrack");
+prevTrack.addEventListener("click", () => {
+  counter--;
+  handleTrackList();
+});
+
+const nextTrack = document.getElementById("nextTrack");
+nextTrack.addEventListener("click", () => {
+  counter++;
+  handleTrackList();
 });
