@@ -43,7 +43,7 @@ footer {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-block: 0.7rem;
+  padding: 0.7rem 1.5rem;
 }
 
 .arrow-group {
@@ -85,18 +85,13 @@ footer {
   .hero {
     background: rgb(0, 0, 0);
     background: linear-gradient(30deg, rgba(0, 0, 0, 0.7) 30%, rgba(0, 0, 0, 0.5) 50%, rgba(0, 0, 0, 0.16299019607843135) 100%);
-    padding: 1rem 1.5rem;
+    padding: 1.5rem;
     display: flex;
     img {
-      padding: 1rem;
-      width: 100%;
-    }
-    & > div:first-of-type {
-      width: 40%;
-      min-width: 300px;
+      width: 250px;
     }
     & > div:nth-of-type(2) {
-      padding-inline: 1rem;
+      padding-inline: 2rem;
       flex-grow: 1;
       display: flex;
       flex-direction: column;

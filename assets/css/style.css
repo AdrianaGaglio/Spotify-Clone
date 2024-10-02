@@ -386,7 +386,7 @@ footer {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-block: 0.7rem;
+  padding: 0.7rem 1.5rem;
 }
 
 .arrow-group {
@@ -429,19 +429,14 @@ footer {
 .home .hero {
   background: rgb(0, 0, 0);
   background: linear-gradient(30deg, rgba(0, 0, 0, 0.7) 30%, rgba(0, 0, 0, 0.5) 50%, rgba(0, 0, 0, 0.1629901961) 100%);
-  padding: 1rem 1.5rem;
+  padding: 1.5rem;
   display: flex;
 }
 .home .hero img {
-  padding: 1rem;
-  width: 100%;
-}
-.home .hero > div:first-of-type {
-  width: 40%;
-  min-width: 300px;
+  width: 250px;
 }
 .home .hero > div:nth-of-type(2) {
-  padding-inline: 1rem;
+  padding-inline: 2rem;
   flex-grow: 1;
   display: flex;
   flex-direction: column;
@@ -576,7 +571,6 @@ footer {
 
 #album-info,
 .under-hero {
-  padding-top: 15px;
   padding-inline: 25px;
   font-family: "Circular";
 }
@@ -599,31 +593,33 @@ footer {
 }
 
 .albumInfo {
-  padding-top: 25px;
+  padding: 1.5rem;
   display: flex;
-  padding-bottom: 20px;
 }
-.albumInfo img {
+.albumInfo > img {
   width: 200px;
+  height: 200px;
   box-shadow: 1px 1px 40px rgba(0, 0, 0, 0.337254902), -1px -1px 40px rgba(0, 0, 0, 0.3294117647);
 }
 .albumInfo .albumName {
   color: rgb(255, 255, 255);
-  padding-left: 30px;
-  align-self: flex-end;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding-inline: 2rem;
 }
 .albumInfo .albumName h5 {
   font-size: 10px;
   padding-bottom: 10px;
 }
 .albumInfo .albumName h1 {
-  font-size: 72px;
+  font-size: 4rem;
   font-weight: 900;
   letter-spacing: -2px;
   padding-bottom: 25px;
 }
 .albumInfo .albumName .moreInfo {
-  font-size: 12px;
+  font-size: 0.8rem;
   display: flex;
   align-items: center;
   gap: 3px;
@@ -631,7 +627,6 @@ footer {
 .albumInfo .albumName .moreInfo img {
   border-radius: 50%;
   width: 20px;
-  padding-right: 3px;
 }
 .albumInfo .albumName .album-duration {
   color: rgba(255, 255, 255, 0.678);
@@ -731,38 +726,51 @@ footer {
 }
 
 #hero {
+  height: 295px;
   background-size: cover;
   background-image: url("https://mrwallpaper.com/images/hd/radiohead-amnesiac-album-cover-landscape-pdgo0y3sdpkikwaw.jpg");
+  color: white;
   display: flex;
   flex-direction: column;
-  align-items: start;
-  justify-content: end;
-  color: white;
-  font-family: "Circular";
+  padding-bottom: 1.5rem;
+  position: relative;
 }
-#hero div {
+#hero .hero-content {
+  flex-grow: 1;
   display: flex;
-  margin-bottom: 0.5rem;
+  flex-direction: column;
+  justify-content: flex-end;
   margin-left: 2rem;
-  align-items: center;
 }
-#hero div img {
+#hero .hero-content img {
   width: 25px;
 }
+#hero::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.05);
+}
 #hero h1 {
-  font-size: 80px;
-  margin-left: 2rem;
-  margin-bottom: 1rem;
+  font-size: 5rem;
   font-weight: 900;
+  margin-bottom: 2rem;
+}
+#hero .verified {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
 }
 #hero h4 {
   margin-left: 0.5rem;
   font-weight: 300;
 }
 #hero h5 {
-  margin-left: 2rem;
-  margin-top: 1rem;
-  margin-bottom: 1rem;
   font-weight: 300;
 }
 

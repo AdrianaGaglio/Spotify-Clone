@@ -1,6 +1,5 @@
 #album-info,
 .under-hero {
-  padding-top: 15px;
   padding-inline: 25px;
   font-family: "Circular";
 }
@@ -23,36 +22,37 @@
 }
 
 .albumInfo {
-  padding-top: 25px;
+  padding: 1.5rem;
   display: flex;
-  padding-bottom: 20px;
-  img {
+  & > img {
     width: 200px;
+    height: 200px;
     box-shadow: 1px 1px 40px #00000056, -1px -1px 40px #00000054;
   }
   .albumName {
     color: rgb(255, 255, 255);
-    padding-left: 30px;
-    align-self: flex-end;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding-inline: 2rem;
     h5 {
       font-size: 10px;
       padding-bottom: 10px;
     }
     h1 {
-      font-size: 72px;
+      font-size: 4rem;
       font-weight: 900;
       letter-spacing: -2px;
       padding-bottom: 25px;
     }
     .moreInfo {
-      font-size: 12px;
+      font-size: 0.8rem;
       display: flex;
       align-items: center;
       gap: 3px;
       img {
         border-radius: 50%;
         width: 20px;
-        padding-right: 3px;
       }
     }
     .album-duration {
