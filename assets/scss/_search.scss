@@ -1,0 +1,104 @@
+
+
+.hero {
+    background-color: #333;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+}
+.hero h1 {
+    margin-right: 80px;
+    margin-left: 50px;
+}
+
+.hero-img {
+    max-width: 150px;
+    margin-right: 20px;
+}
+
+.hero-title {
+    font-size: 2em;
+    color: white;
+}
+
+#search-results {
+    background-color: #333;
+    color: white;
+    padding: 20px;
+}
+
+#search-info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+
+
+
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.search-bar input {
+    padding: 10px;
+    font-size: 1em;
+    border: 1px solid #555;
+    background-color: #444;
+    color: white;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+.search-button {
+    background-color: #2b2b2b;
+    border: none;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+
+
+.under-hero {
+    background-color: #222;
+    color: white;
+    padding: 20px;
+    border-top: 1px solid #444;
+}
+
+.result-list table {
+    width: 100%;
+   
+}
+
+.result-list th,
+.result-list td {
+    padding: 15px;
+    text-align: left;
+}
+
+.result-list th {
+    background-color: #2b2b2b;
+    color: white;
+    font-weight: bold;
+}
+
+.result-list td {
+    background-color: #333;
+    color: white;
+    border-bottom: 1px solid #444;
+}
+
+
+
+.song-title,
+.artist-name,
+.album-name {
+    font-size: 1em;
+}

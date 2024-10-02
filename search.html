@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./assets/css/circular-font.css" />
     <title>Spotify Clone</title>
-
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
@@ -13,12 +12,54 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-    <!-- <link rel="stylesheet" href="./assets/css/player.css" /> -->
     <link rel="stylesheet" href="./assets/css/style.css" />
   </head>
   <body>
-    <!-- INSERIRE QUI STRUTTURA PAGINA -->
-
+    <section class="hero">
+      <img src="immagine.jpg" alt="Immagine" class="hero-img" />
+      <h1 class="hero-title">Elemento da cercare</h1>
+      <div class="search-bar">
+        <input type="text" id="search-input" placeholder="Inserisci parola chiave" />
+        <button class="search-button">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
+      </div>
+    </section>
+    <main id="search-results" class="bg-main bg-results">
+      <div id="search-info" class="bg-results">
+        <div class="resultInfo">
+          <div class="resultName">
+            <h5>RISULTATI</h5>
+            <h1>Ricerca per: [parola chiave]</h1>
+          </div>
+        </div>
+      </div>
+      <div class="under-hero">
+        <div class="result-list">
+          <table>
+            <thead>
+              <tr>
+                <th class="result-title">TITOLO CANZONE</th>
+                <th class="result-artist">ARTISTA</th>
+                <th class="result-album">ALBUM</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="song-title">Titolo Esempio 1</td>
+                <td class="artist-name">Artista Esempio 1</td>
+                <td class="album-name">Album Esempio 1</td>
+              </tr>
+              <tr>
+                <td class="song-title">Titolo Esempio 2</td>
+                <td class="artist-name">Artista Esempio 2</td>
+                <td class="album-name">Album Esempio 2</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </main>
     <footer>
       <div id="player">
         <div class="song-info">
@@ -29,7 +70,6 @@
           </div>
           <button><i class="fa-regular fa-heart"></i></button>
         </div>
-
         <div class="progress-bar-container">
           <div class="controls">
             <button><i class="fas fa-random"></i></button>
