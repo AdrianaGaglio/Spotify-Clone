@@ -11,6 +11,12 @@ body {
 #central {
   margin-left: 20%;
   width: 65%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  & > div:nth-of-type(2) {
+    flex-grow: 1;
+  }
 }
 
 footer {
@@ -40,10 +46,11 @@ footer {
 }
 
 .main-head {
+  z-index: 999;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0.7rem 1.5rem;
+  padding-block: 0.7rem;
 }
 
 .arrow-group {
@@ -83,6 +90,7 @@ footer {
 .home {
   padding-inline: 1.5rem;
   .hero {
+    min-height: 301px;
     background: rgb(0, 0, 0);
     background: linear-gradient(30deg, rgba(0, 0, 0, 0.7) 30%, rgba(0, 0, 0, 0.5) 50%, rgba(0, 0, 0, 0.16299019607843135) 100%);
     padding: 1.5rem;
@@ -161,7 +169,7 @@ footer {
     color: white;
     margin-bottom: 0.5rem;
   }
-  padding-block: 0.7rem;
+  padding-block: 1.5rem;
 }
 
 .grid-sm {

@@ -364,6 +364,12 @@ body {
 #central {
   margin-left: 20%;
   width: 65%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+#central > div:nth-of-type(2) {
+  flex-grow: 1;
 }
 
 footer {
@@ -383,10 +389,11 @@ footer {
 }
 
 .main-head {
+  z-index: 999;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0.7rem 1.5rem;
+  padding-block: 0.7rem;
 }
 
 .arrow-group {
@@ -427,6 +434,7 @@ footer {
   padding-inline: 1.5rem;
 }
 .home .hero {
+  min-height: 301px;
   background: rgb(0, 0, 0);
   background: linear-gradient(30deg, rgba(0, 0, 0, 0.7) 30%, rgba(0, 0, 0, 0.5) 50%, rgba(0, 0, 0, 0.1629901961) 100%);
   padding: 1.5rem;
@@ -497,7 +505,7 @@ footer {
 }
 
 .recents {
-  padding-block: 0.7rem;
+  padding-block: 1.5rem;
 }
 .recents h4 {
   color: white;
@@ -593,7 +601,7 @@ footer {
 }
 
 .albumInfo {
-  padding: 1.5rem;
+  padding-block: 1.5rem;
   display: flex;
 }
 .albumInfo > img {
@@ -635,6 +643,10 @@ footer {
 .under-hero {
   background: rgb(0, 0, 0);
   background: linear-gradient(0deg, rgba(0, 0, 0, 0.8491771709) 75%, rgba(0, 0, 0, 0.2889530812) 100%);
+}
+
+.other-icons {
+  padding-top: 2rem;
 }
 
 .other-icons i:not(:first-child) {
@@ -726,7 +738,7 @@ footer {
 }
 
 #hero {
-  height: 295px;
+  min-height: 295px;
   background-size: cover;
   background-image: url("https://mrwallpaper.com/images/hd/radiohead-amnesiac-album-cover-landscape-pdgo0y3sdpkikwaw.jpg");
   color: white;
@@ -735,7 +747,11 @@ footer {
   padding-bottom: 1.5rem;
   position: relative;
 }
+#hero .main-head {
+  padding-inline: 1.5rem;
+}
 #hero .hero-content {
+  z-index: 999;
   flex-grow: 1;
   display: flex;
   flex-direction: column;
@@ -754,7 +770,7 @@ footer {
   right: 0;
   bottom: 0;
   width: 100%;
-  background-color: rgba(0, 0, 0, 0.05);
+  background-color: rgba(0, 0, 0, 0.3);
 }
 #hero h1 {
   font-size: 5rem;

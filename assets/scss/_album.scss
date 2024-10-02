@@ -22,7 +22,7 @@
 }
 
 .albumInfo {
-  padding: 1.5rem;
+  padding-block: 1.5rem;
   display: flex;
   & > img {
     width: 200px;
@@ -64,6 +64,10 @@
 .under-hero {
   background: rgb(0, 0, 0);
   background: linear-gradient(0deg, rgba(0, 0, 0, 0.8491771708683473) 75%, rgba(0, 0, 0, 0.28895308123249297) 100%);
+}
+
+.other-icons {
+  padding-top: 2rem;
 }
 
 .other-icons i:not(:first-child) {
