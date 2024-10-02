@@ -416,6 +416,10 @@ footer {
   align-items: center;
 }
 
+#play {
+  cursor: pointer;
+}
+
 .profile {
   display: flex;
   align-items: center;
