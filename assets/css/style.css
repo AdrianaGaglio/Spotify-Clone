@@ -454,7 +454,7 @@ footer {
   margin-bottom: 1rem;
 }
 .home .hero h3 {
-  font-size: 3rem;
+  font-size: 3.5rem;
   font-weight: 700;
   color: white;
 }
@@ -760,6 +760,7 @@ footer {
 }
 
 #hero {
+  color: white;
   min-height: 295px;
   background-size: cover;
   display: flex;
@@ -790,7 +791,7 @@ footer {
   right: 0;
   bottom: 0;
   width: 100%;
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: rgba(0, 0, 0, 0.5);
 }
 #hero h1 {
   font-size: 5rem;
