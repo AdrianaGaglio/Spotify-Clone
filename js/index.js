@@ -92,9 +92,14 @@ const heroSection = (data) => {
       const playBtn = document.getElementById("play");
       playBtn.onclick = () => {
         const track = new TrackObj(firstTrackTitle, artistName, albumCoverSmall, firstTrackPreview, duration);
-        localStorage.setItem("track", JSON.stringify(track));
-        playTrack();
-        switchBtn();
+        // localStorage.setItem("track", JSON.stringify(track));
+        const stringOfTrackList = localStorage.getItem("tracklist");
+        trackListArray.push(...JSON.parse(stringOfTrackList));
+        trackListArray.unshift(track);
+        localStorage.setItem("tracklist", JSON.stringify(trackListArray));
+        handleTrackList();
+        // playTrack();
+        // switchBtn();
       };
       const firstTrackElement = document.createElement("p");
       firstTrackElement.style.marginTop = "1rem";

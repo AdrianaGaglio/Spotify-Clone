@@ -94,9 +94,9 @@
 //   height: calc(50vh);
 //   overflow: hidden;
 //   padding-block: 0.5rem;
-//   // height: 300px; 
-//   // overflow-y: auto; 
-//   scrollbar-color: #060606 #060606 
+//   // height: 300px;
+//   // overflow-y: auto;
+//   scrollbar-color: #060606 #060606
 
 // }
 
@@ -209,20 +209,12 @@
 
 #right {
   width: 15%;
-
-  background-color: #1c1c1c;
   color: white;
 }
 
-
-
 #scrollable-playlists {
-  height: 50vh; 
-  overflow-y: auto; 
-  scrollbar-width: thin; 
-  scrollbar-color: #4D4D4D #000000; 
-  
+  height: 50vh;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #4d4d4d #000000;
 }
-
-
-
