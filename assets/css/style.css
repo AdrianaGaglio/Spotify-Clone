@@ -662,13 +662,27 @@ footer {
   width: 100%;
   text-align: start;
 }
-.track-list table tr:hover {
+.track-list table tr > td {
+  vertical-align: middle;
+}
+.track-list table tr:hover:not(:first-child) {
   background-color: #4d4d4d;
-  border-radius: 5px;
+  cursor: pointer;
+}
+.track-list table td:nth-child(1) {
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+.track-list table td:nth-child(4) {
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
 }
 .track-list table td > div > p:first-child {
-  cursor: pointer;
   margin-bottom: 0.3rem;
+}
+.track-list .fa-play {
+  color: white;
+  font-size: 14px;
 }
 .track-list th {
   border-bottom: 1px solid rgba(255, 255, 255, 0.575);

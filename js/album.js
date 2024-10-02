@@ -44,7 +44,12 @@ const generateAlbumHero = (data) => {
   if (seconds < 10) {
     seconds = "0" + seconds.toString();
   }
-  durationAllTracks.innerHTML = `${Math.trunc(albumDuration / 3600)} h ${Math.trunc(albumDuration / 60)} min ${seconds} sec.`;
+
+  if (albumDuration < 3600) {
+    durationAllTracks.innerHTML = `${Math.trunc(albumDuration / 60)} min ${seconds} sec.`;
+  } else {
+    durationAllTracks.innerHTML = `${Math.trunc(albumDuration / 3600)} h ${Math.trunc((albumDuration % 3600) / 60)} min ${seconds} sec.`;
+  }
 };
 
 // qui rendo dinamiche le traccie di ogni album
@@ -57,7 +62,7 @@ const generateTracks = (allTracks) => {
     }
     numOfTracks.innerHTML = `${i + 1} brani, `;
     const trackRow = document.createElement("tr");
-    trackRow.innerHTML = `<td class="track-numbers">${i + 1}</td>
+    trackRow.innerHTML = `<td class="track-numbers listNum">${i + 1}</td>
         <td class="track-title">
           <div>
             <p id="${i + 1}">${track.title}</p>
@@ -65,27 +70,30 @@ const generateTracks = (allTracks) => {
           </div>
         </td>
         <td class="times-played">
-        <div>
-        <p>&nbsp;</p>
         <p>${new Intl.NumberFormat("it-IT").format(track.rank)}</p>
-        </div>
-       </td>
+        </td>
         <td class="track-lenght">
-        <div>
-        <p>&nbsp;</p>
         <p>${Math.trunc(track.duration / 60)}:${seconds}</p>
-        </div>
         </td>`;
     const table = document.querySelector("table");
     table.appendChild(trackRow);
 
-    const selectedTrack = document.getElementById(`${i + 1}`);
-    selectedTrack.onclick = () => {
+    trackRow.onmouseenter = (event) => {
+      const listPlayTrack = event.target.querySelector(".listNum");
+      listPlayTrack.innerHTML = `<i class="fa-solid fa-play"></i>`;
+    };
+
+    trackRow.onmouseleave = (event) => {
+      const listPlayTrack = event.target.querySelector(".listNum");
+      listPlayTrack.innerHTML = `${i + 1}`;
+    };
+
+    // const selectedTrack = document.getElementById(`${i + 1}`);
+    trackRow.onclick = () => {
       const newTrack = new TrackObj(track.title, track.artist.name, track.album.cover_small, track.preview, track.duration);
       console.log(track);
       localStorage.setItem("track", JSON.stringify(newTrack));
       playTrack();
-
       switchBtn();
     };
     const artist = document.querySelector(".moreInfo .artist-name");
