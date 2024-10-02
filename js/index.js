@@ -66,6 +66,10 @@ const heroSection = (data) => {
   title.innerHTML = `<a href="./album.html?albumID=${albumID}">${albumTitle}</a>`;
   const coverImg = document.querySelector(".hero img");
   coverImg.src = albumCover;
+  coverImg.onclick = () => {
+    location.href = `./album.html?albumID=${albumID}`;
+  };
+  coverImg.style.cursor = "pointer";
   coverImg.alt = albumTitle;
   const artist = document.querySelector(".hero h3 + p");
   artist.innerHTML = `Artista: <span><a href="./artist.html?artistID=${data.artist.id}">${artistName}</a></span>`;
