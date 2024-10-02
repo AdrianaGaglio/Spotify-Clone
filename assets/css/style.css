@@ -247,6 +247,7 @@ a {
   top: 0;
   right: 0;
   bottom: 0;
+  background-color: #000000;
 }
 
 .header-right {
@@ -339,7 +340,7 @@ a {
 
 #right {
   width: 15%;
-  background-color: #1c1c1c;
+
   color: white;
 }
 
@@ -347,7 +348,7 @@ a {
   height: 50vh;
   overflow-y: auto;
   scrollbar-width: thin;
-  scrollbar-color: #4D4D4D #000000;
+  scrollbar-color: #4d4d4d #000000;
 }
 
 body {
@@ -378,7 +379,16 @@ footer {
 
 .bg-main {
   background: rgb(42, 42, 42);
-  background: linear-gradient(180deg, rgba(42, 42, 42, 0.8968837535) 35%, rgb(40, 40, 40) 45%, rgb(39, 39, 39) 60%, rgb(37, 37, 37) 70%, rgb(35, 35, 35) 80%, rgb(34, 34, 34) 90%, rgb(33, 33, 33) 100%);
+  background: linear-gradient(
+    180deg,
+    rgba(42, 42, 42, 0.8968837535) 35%,
+    rgb(40, 40, 40) 45%,
+    rgb(39, 39, 39) 60%,
+    rgb(37, 37, 37) 70%,
+    rgb(35, 35, 35) 80%,
+    rgb(34, 34, 34) 90%,
+    rgb(33, 33, 33) 100%
+  );
 }
 
 .main-head {
@@ -997,12 +1007,12 @@ footer {
   cursor: pointer;
 }
 
-.volume-control input[type=range] {
+.volume-control input[type="range"] {
   width: 100px;
   margin-left: 10px;
 }
 
-input[type=range] {
+input[type="range"] {
   appearance: none;
   width: 100%;
   height: 6px;
@@ -1012,7 +1022,7 @@ input[type=range] {
   cursor: pointer;
 }
 
-input[type=range]::-webkit-slider-thumb {
+input[type="range"]::-webkit-slider-thumb {
   appearance: none;
   height: 12px;
   width: 12px;
@@ -1114,4 +1124,4 @@ input[type=range]::-webkit-slider-thumb {
 .artist-name,
 .album-name {
   font-size: 1em;
-}/*# sourceMappingURL=style.css.map */
+} /*# sourceMappingURL=style.css.map */
