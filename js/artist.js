@@ -13,7 +13,6 @@ const getArtist = () => {
       }
     })
     .then((data) => {
-      console.log(data);
       artistDefinition(data);
     })
     .catch((err) => {
@@ -42,7 +41,6 @@ const getTracks = () => {
       }
     })
     .then((data) => {
-      console.log(data.data);
       tracksDefinition(data.data);
       trackList(data.data);
     })
