@@ -15,9 +15,17 @@ const playTrack = () => {
   const artist = trackInfo.artist;
   const cover = trackInfo.cover;
   const track = trackInfo.track;
-  const duration = `${Math.trunc(trackInfo.duration / 60)}:${
-    trackInfo.duration % 60
-  }`;
+
+  const seconds = trackInfo.duration % 60;
+  let formattedSeconds;
+
+  if (seconds < 10) {
+    formattedSeconds = "0" + seconds;
+  } else {
+    formattedSeconds = seconds;
+  }
+  const duration = `${Math.trunc(trackInfo.duration / 60)}:${formattedSeconds}`;
+
   const trackTitle = document.querySelector(".song-title");
   trackTitle.innerText = title;
   const trackArtist = document.querySelector(".song-artist");

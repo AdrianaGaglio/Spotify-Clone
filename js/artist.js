@@ -59,6 +59,7 @@ const tracksDefinition = (tracksArray) => {
     if (seconds < 10) {
       seconds = "0" + seconds.toString();
     }
+
     const newRow = document.createElement("tr");
     newRow.innerHTML = `<td>${i + 1}</td>
         <td><img src="${track.album.cover_small}" alt="" /></td>
