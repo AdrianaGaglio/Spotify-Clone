@@ -115,7 +115,7 @@ const generateAlbumCards = (data) => {
   cardWrapper.classList.add("card-wrapper");
   cardWrapper.innerHTML = `
     <div class="card">
-      <img src="${album.cover_medium}" alt="" />
+      <a href="./album.html?albumID=${album.id}"><img src="${album.cover_medium}" alt="${album.title}" /></a>
       <div class="card-body">
           <a href="./album.html?albumID=${album.id}"><h6 class="playlist-title" title="${album.title}">${album.title}</h6></a>
           <a href="./artist.html?artistID=${artist.id}"><p class="playlist-artist">${artist.name}</p></a>
@@ -136,7 +136,7 @@ const generateArtistCards = (data) => {
   cardWrapper.classList.add("card-wrapper");
   cardWrapper.innerHTML = `
     <div class="card">
-      <img src="${artist.picture_medium}" alt="" />
+      <a href="./artist.html?artistID=${artist.id}"><img src="${artist.picture_medium}" alt="${artist.name}" /></a>
       <div class="card-body">
           <a href="./artist.html?artistID=${artist.id}"><h6 class="playlist-title" title="${artist.name}">${artist.name}</h6></a>
       </div>
