@@ -221,3 +221,103 @@
     scrollbar-color: #4d4d4d #000000;
   }
 }
+
+.header-right {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.title-right {
+  font-size: 15px;
+}
+
+.buttons-right button {
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  font-size: 10px;
+}
+
+.profile-image {
+  width: 25px;
+  height: 25px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.heading-center {
+  font-size: 10px;
+  margin: 5px 0;
+}
+
+.description-center,
+.info-center,
+.additional-text {
+  margin: 5px 0;
+}
+
+.description-center,
+.info-center,
+.additional-text {
+  margin: 5px 0;
+  font-size: 10px;
+}
+
+.container-right {
+  display: flex;
+  margin-bottom: 1rem;
+}
+
+.container-right h3 {
+  font-size: 0.8rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+.container-right p {
+  font-size: 0.7rem;
+  font-weight: 300;
+  margin-bottom: 0.5rem;
+}
+
+.container-right > div:first-of-type {
+  padding-right: 0.5rem;
+}
+
+.container-right > div:nth-of-type(2) {
+  flex-grow: 1;
+}
+
+.container-right > div:nth-of-type(2) > p:nth-of-type(2) {
+  display: flex;
+  gap: 0.2rem;
+}
+
+.container-right > div > p:first-of-type {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.dot {
+  width: 0.2rem;
+  height: 0.2rem;
+  display: inline-block;
+  background-color: white;
+  border-radius: 50%;
+}
+
+#right {
+  width: 15%;
+  color: white;
+}
+
+#scrollable-playlists {
+  height: 50vh;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #4d4d4d #000000;
+}

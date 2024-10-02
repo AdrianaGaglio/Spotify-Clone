@@ -1,16 +1,9 @@
 let counter = 0;
-const trackListArray = [];
 
 // crea oggetto traccia da aggiungere all'array tracklist
 const trackList = (tracklist) => {
   tracklist.forEach((track) => {
-    const newTrack = new TrackObj(
-      track.title,
-      track.artist.name,
-      track.album.cover_small,
-      track.preview,
-      track.duration
-    );
+    const newTrack = new TrackObj(track.title, track.artist.name, track.album.cover_small, track.preview, track.duration);
     trackListArray.push(newTrack);
   });
   localStorage.setItem("tracklist", JSON.stringify(trackListArray));
@@ -25,27 +18,27 @@ const handleTrackList = () => {
   switchBtn();
 
   const audioPlayer = document.getElementById("playerAudio");
-
   //gestisce il button Loop della traccia
   const loopButton = document.querySelector(".loopButton");
-
   loopButton.addEventListener("click", () => {
     loopButton.classList.toggle("activeButton");
-
     audioPlayer.loop = !audioPlayer.loop; // Alterna tra ripetere o no la traccia
   });
-
-  // gestisce il passaggio alla traccia successiva quando finisce la traccai
+  // gestisce il passaggio alla traccia successiva quando finisce la traccia
   audioPlayer.addEventListener("loadedmetadata", function () {
     // durata totale della traccia in riproduzione
     let duration = audioPlayer.duration;
+    let progressWidth = 0;
     setInterval(() => {
       // secondi correnti della traccia in riproduzione
       let seconds = audioPlayer.currentTime;
+      progressWidth = Math.trunc((100 * seconds) / duration);
+      const progressBar = document.querySelector(".progress-bar > div");
+      progressBar.style.width = `${progressWidth}%`;
       // controlla se i secondi correnti sono uguali alla durata totale
       if (duration === seconds) {
         // controlla se è l'ultima traccia
-        if (counter === trackList.length) {
+        if (counter === trackList.length - 1) {
           // se si, riparte dalla prima
           counter = 0;
         } else {
@@ -61,10 +54,12 @@ const handleTrackList = () => {
   });
 };
 
-const spotifyBtn = document.querySelector(".spotify-button");
-spotifyBtn.addEventListener("click", () => {
-  handleTrackList();
-});
+if (document.querySelector(".spotify-button")) {
+  const spotifyBtn = document.querySelector(".spotify-button");
+  spotifyBtn.addEventListener("click", () => {
+    handleTrackList();
+  });
+}
 
 // gestisce passaggio a traccia precedente con pulsante
 const prevTrack = document.getElementById("prevTrack");
