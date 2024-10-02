@@ -822,6 +822,9 @@ footer {
   width: 60%;
   margin-right: 4rem;
 }
+.artist-section .left-column .track-played {
+  color: #1ccc59;
+}
 .artist-section .left-column .fa-play {
   color: white;
   font-size: 14px;

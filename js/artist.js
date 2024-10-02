@@ -69,17 +69,19 @@ const tracksDefinition = (tracksArray) => {
         <td>${Math.trunc(track.duration / 60)}:${seconds}</td>`;
     tableBody.appendChild(newRow);
 
-    const currentSong = document.querySelector(".song-title").innerHTML;
+    // let currentSong = document.querySelector(".song-title").innerHTML;
     const audio = document.getElementById("playerAudio");
 
     newRow.onmouseenter = (e) => {
       newRow.onclick = () => {
         const artistTrack = new TrackObj(track.title, track.artist.name, track.album.cover_small, track.preview, track.duration);
         localStorage.setItem("track", JSON.stringify(artistTrack));
-
         playTrack();
         switchBtn();
       };
+
+      const currentSong = document.querySelector(".song-title").innerHTML;
+
       const playListButton = e.currentTarget.querySelector("td:nth-child(1)");
       if (currentSong === track.title && !audio.paused) {
         playListButton.innerHTML = `<i class="fa-solid fa-pause"></i>`;
@@ -91,6 +93,13 @@ const tracksDefinition = (tracksArray) => {
     newRow.onmouseleave = (e) => {
       const playListButton = e.currentTarget.querySelector("td:nth-child(1)");
       playListButton.innerHTML = `${i + 1}`;
+
+      const currentSong = document.querySelector(".song-title").innerHTML;
+      const icon = e.target.querySelector("tr>td:nth-child(1)");
+
+      if (currentSong === track.title && !audio.paused) {
+        icon.classList.add("track-played");
+      }
     };
   });
 };
