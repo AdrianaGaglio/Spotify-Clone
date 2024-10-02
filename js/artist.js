@@ -68,7 +68,7 @@ const tracksDefinition = (tracksArray) => {
         <td>${Math.trunc(track.duration / 60)}:${seconds}</td>`;
     tableBody.appendChild(newRow);
 
-    // let currentSong = document.querySelector(".song-title").innerHTML;
+    //collegamento tra il play della lista di canzoni e il player in basso
     const audio = document.getElementById("playerAudio");
 
     newRow.onmouseenter = (e) => {
@@ -77,6 +77,12 @@ const tracksDefinition = (tracksArray) => {
         localStorage.setItem("track", JSON.stringify(artistTrack));
         playTrack();
         switchBtn();
+
+        if (document.querySelector(".track-played")) {
+          //controlla se un elemento ha la classe e se esiste la toglie!
+          const classAdded = document.querySelector(".track-played");
+          classAdded.classList.remove("track-played");
+        }
       };
 
       const currentSong = document.querySelector(".song-title").innerHTML;
@@ -94,10 +100,9 @@ const tracksDefinition = (tracksArray) => {
       playListButton.innerHTML = `${i + 1}`;
 
       const currentSong = document.querySelector(".song-title").innerHTML;
-      const icon = e.target.querySelector("tr>td:nth-child(1)");
 
       if (currentSong === track.title && !audio.paused) {
-        icon.classList.add("track-played");
+        newRow.classList.add("track-played");
       }
     };
   });
