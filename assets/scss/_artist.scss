@@ -1,3 +1,11 @@
+.play-pause.play::before {
+  content: "\f04b";
+}
+
+.play-pause.pause::before {
+  content: "\f04c";
+}
+
 .spotify-button {
   background-color: #1db954;
   font-size: 24px;

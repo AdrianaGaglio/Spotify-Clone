@@ -72,30 +72,26 @@ const tracksDefinition = (tracksArray) => {
     const currentSong = document.querySelector(".song-title").innerHTML;
     const audio = document.getElementById("playerAudio");
 
-    newRow.onmouseover = (e) => {
+    newRow.onmouseenter = (e) => {
+      newRow.onclick = () => {
+        const artistTrack = new TrackObj(track.title, track.artist.name, track.album.cover_small, track.preview, track.duration);
+        localStorage.setItem("track", JSON.stringify(artistTrack));
+
+        playTrack();
+        switchBtn();
+      };
       const playListButton = e.currentTarget.querySelector("td:nth-child(1)");
-      playListButton.innerHTML = `<i class="fa-solid fa-play"></i>`;
-
-      // newRow.onclick = () => {
-      //   playListButton.innerHTML = `<i class="fa-solid fa-pause"></i>`;
-      //   const artistTrack = new TrackObj(track.title, track.artist.name, track.album.cover_small, track.preview, track.duration);
-
-      //   localStorage.setItem("track", JSON.stringify(artistTrack));
-
-      //   playTrack();
-      //   switchBtn();
-      // };
+      if (currentSong === track.title && !audio.paused) {
+        playListButton.innerHTML = `<i class="fa-solid fa-pause"></i>`;
+      } else {
+        playListButton.innerHTML = `<i class="fa-solid fa-play"></i>`;
+      }
     };
 
-    // newRow.onmouseleave = (e) => {
-    //   const playListButton = e.currentTarget.querySelector("td:nth-child(1)");
-
-    //   if (currentSong === track.title && !audio.paused) {
-    //     playListButton.innerHTML = `<i class="fa-solid fa-pause"></i>`;
-    //   } else {
-    //     playListButton.innerHTML = `${i + 1}`;
-    //   }
-    // };
+    newRow.onmouseleave = (e) => {
+      const playListButton = e.currentTarget.querySelector("td:nth-child(1)");
+      playListButton.innerHTML = `${i + 1}`;
+    };
   });
 };
 
