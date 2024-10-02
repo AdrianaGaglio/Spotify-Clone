@@ -78,10 +78,16 @@ const tracksDefinition = (tracksArray) => {
         playTrack();
         switchBtn();
 
-        if (document.querySelector(".track-played")) {
+        const classAdded = document.querySelector(".track-played");
+        if (classAdded) {
           //controlla se un elemento ha la classe e se esiste la toglie!
-          const classAdded = document.querySelector(".track-played");
           classAdded.classList.remove("track-played");
+        }
+
+        const currentSong = document.querySelector(".song-title").innerHTML;
+
+        if (currentSong === track.title && !audio.paused) {
+          newRow.classList.add("track-played");
         }
       };
 
@@ -98,12 +104,6 @@ const tracksDefinition = (tracksArray) => {
     newRow.onmouseleave = (e) => {
       const playListButton = e.currentTarget.querySelector("td:nth-child(1)");
       playListButton.innerHTML = `${i + 1}`;
-
-      const currentSong = document.querySelector(".song-title").innerHTML;
-
-      if (currentSong === track.title && !audio.paused) {
-        newRow.classList.add("track-played");
-      }
     };
   });
 };
