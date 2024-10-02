@@ -13,7 +13,7 @@ const getArtist = () => {
       }
     })
     .then((data) => {
-      console.log(data);
+      // console.log(data);
       artistDefinition(data);
     })
     .catch((err) => {
@@ -42,7 +42,7 @@ const getTracks = () => {
       }
     })
     .then((data) => {
-      console.log(data.data);
+      // console.log(data.data);
       tracksDefinition(data.data);
       trackList(data.data);
     })
@@ -69,15 +69,33 @@ const tracksDefinition = (tracksArray) => {
         <td>${Math.trunc(track.duration / 60)}:${seconds}</td>`;
     tableBody.appendChild(newRow);
 
-    const selectedTrack = document.getElementById(`${i + 1}`);
-    selectedTrack.onclick = () => {
-      const artistTrack = new TrackObj(track.title, track.artist.name, track.album.cover_small, track.preview, track.duration);
-      console.log(track);
-      localStorage.setItem("track", JSON.stringify(artistTrack));
-      playTrack();
+    const currentSong = document.querySelector(".song-title").innerHTML;
+    const audio = document.getElementById("playerAudio");
 
-      switchBtn();
+    newRow.onmouseover = (e) => {
+      const playListButton = e.currentTarget.querySelector("td:nth-child(1)");
+      playListButton.innerHTML = `<i class="fa-solid fa-play"></i>`;
+
+      // newRow.onclick = () => {
+      //   playListButton.innerHTML = `<i class="fa-solid fa-pause"></i>`;
+      //   const artistTrack = new TrackObj(track.title, track.artist.name, track.album.cover_small, track.preview, track.duration);
+
+      //   localStorage.setItem("track", JSON.stringify(artistTrack));
+
+      //   playTrack();
+      //   switchBtn();
+      // };
     };
+
+    // newRow.onmouseleave = (e) => {
+    //   const playListButton = e.currentTarget.querySelector("td:nth-child(1)");
+
+    //   if (currentSong === track.title && !audio.paused) {
+    //     playListButton.innerHTML = `<i class="fa-solid fa-pause"></i>`;
+    //   } else {
+    //     playListButton.innerHTML = `${i + 1}`;
+    //   }
+    // };
   });
 };
 

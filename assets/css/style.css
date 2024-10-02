@@ -814,6 +814,10 @@ footer {
   width: 60%;
   margin-right: 4rem;
 }
+.artist-section .left-column .fa-play {
+  color: white;
+  font-size: 14px;
+}
 .artist-section .left-column td {
   padding: 5px;
   text-align: center;
@@ -825,11 +829,10 @@ footer {
 .artist-section .left-column td:nth-child(3) {
   width: 60%;
   text-align: start;
-  cursor: pointer;
 }
 .artist-section .left-column td:nth-child(4),
 .artist-section .left-column td:nth-child(5) {
-  width: 20%;
+  width: 15%;
   text-align: end;
 }
 .artist-section .left-column a {
@@ -841,8 +844,10 @@ footer {
 }
 .artist-section .left-column tr:hover {
   background-color: #4d4d4d;
+  cursor: pointer;
 }
 .artist-section .left-column td:nth-child(1) {
+  width: 5%;
   border-top-left-radius: 5px;
   border-bottom-left-radius: 5px;
 }
