@@ -59,6 +59,8 @@ const tracksDefinition = (tracksArray) => {
     if (seconds < 10) {
       seconds = "0" + seconds.toString();
     }
+    console.log(seconds);
+
     const newRow = document.createElement("tr");
     newRow.innerHTML = `<td>${i + 1}</td>
         <td><img src="${track.album.cover_small}" alt="" /></td>
@@ -69,7 +71,13 @@ const tracksDefinition = (tracksArray) => {
 
     const selectedTrack = document.getElementById(`${i + 1}`);
     selectedTrack.onclick = () => {
-      const artistTrack = new TrackObj(track.title, track.artist.name, track.album.cover_small, track.preview, track.duration);
+      const artistTrack = new TrackObj(
+        track.title,
+        track.artist.name,
+        track.album.cover_small,
+        track.preview,
+        track.duration
+      );
       localStorage.setItem("track", JSON.stringify(artistTrack));
       playTrack();
       switchBtn();
