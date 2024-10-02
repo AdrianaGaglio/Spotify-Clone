@@ -88,14 +88,29 @@
   table {
     width: 100%;
     text-align: start;
-    tr:hover {
+    tr > td {
+      vertical-align: middle;
+    }
+    tr:hover:not(:first-child) {
       background-color: #4d4d4d;
-      border-radius: 5px;
+      cursor: pointer;
+    }
+    td:nth-child(1) {
+      border-top-left-radius: 5px;
+      border-bottom-left-radius: 5px;
+    }
+
+    td:nth-child(4) {
+      border-top-right-radius: 5px;
+      border-bottom-right-radius: 5px;
     }
     td > div > p:first-child {
-      cursor: pointer;
       margin-bottom: 0.3rem;
     }
+  }
+  .fa-play {
+    color: white;
+    font-size: 14px;
   }
   th {
     border-bottom: 1px solid rgba(255, 255, 255, 0.575);
