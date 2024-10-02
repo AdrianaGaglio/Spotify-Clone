@@ -119,8 +119,8 @@
           <h5></h5>
         </div>
         <div class="play">
-          <a class="spotify-button" href=""><i class="fa-solid fa-play"></i></a>
-          <button>FOLLOWING</button>
+          <button class="spotify-button"><i class="fa-solid fa-play"></i></button>
+          <button class="following">FOLLOWING</button>
           <i class="fa-solid fa-ellipsis"></i>
         </div>
         <section class="artist-section">
@@ -217,7 +217,7 @@
     <footer>
       <div id="player">
         <div class="song-info">
-          <img src="./assets/imgs/x1.png" alt="Album" />
+          <img src="./assets/imgs/main/image-1.jpg" alt="Album" />
           <div class="song-details">
             <div class="song-title"></div>
             <div class="song-artist"></div>
@@ -228,11 +228,11 @@
         <div class="progress-bar-container">
           <div class="controls">
             <button><i class="fas fa-random"></i></button>
-            <button><i class="fas fa-step-backward"></i></button>
+            <button id="prevTrack"><i class="fas fa-step-backward"></i></button>
             <button class="playPauseBtn">
               <i class="fas fa-play-circle btnPauseTrack"></i>
             </button>
-            <button><i class="fas fa-step-forward"></i></button>
+            <button id="nextTrack"><i class="fas fa-step-forward"></i></button>
             <button><i class="fa-solid fa-repeat"></i></button>
           </div>
           <div class="progressBar-time-container">
@@ -258,7 +258,7 @@
       </div>
     </footer>
     <script src="./js/player.js"></script>
+    <script src="./js/tracklist.js"></script>
     <script src="./js/artist.js"></script>
-    <!-- <script src="./js/tracklist.js"></script> -->
   </body>
 </html>

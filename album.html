@@ -13,7 +13,6 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-    <!-- <link rel="stylesheet" href="./assets/css/player.css" /> -->
     <link rel="stylesheet" href="./assets/css/style.css" />
   </head>
   <body>
@@ -231,11 +230,11 @@
         <div class="progress-bar-container">
           <div class="controls">
             <button><i class="fas fa-random"></i></button>
-            <button><i class="fas fa-step-backward"></i></button>
+            <button id="prevTrack"><i class="fas fa-step-backward"></i></button>
             <button class="playPauseBtn">
               <i class="fas fa-play-circle btnPauseTrack"></i>
             </button>
-            <button><i class="fas fa-step-forward"></i></button>
+            <button id="nextTrack"><i class="fas fa-step-forward"></i></button>
             <button><i class="fa-solid fa-repeat"></i></button>
           </div>
           <div class="progressBar-time-container">
@@ -261,7 +260,7 @@
       </div>
     </footer>
     <script src="./js/player.js"></script>
-    <script src="./js/album.js"></script>
     <script src="./js/tracklist.js"></script>
+    <script src="./js/album.js"></script>
   </body>
 </html>

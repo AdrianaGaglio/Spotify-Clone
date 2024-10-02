@@ -13,7 +13,6 @@ const getArtist = () => {
       }
     })
     .then((data) => {
-      console.log(data);
       artistDefinition(data);
     })
     .catch((err) => {
@@ -42,7 +41,6 @@ const getTracks = () => {
       }
     })
     .then((data) => {
-      console.log(data.data);
       tracksDefinition(data.data);
       trackList(data.data);
     })
@@ -72,10 +70,8 @@ const tracksDefinition = (tracksArray) => {
     const selectedTrack = document.getElementById(`${i + 1}`);
     selectedTrack.onclick = () => {
       const artistTrack = new TrackObj(track.title, track.artist.name, track.album.cover_small, track.preview, track.duration);
-      console.log(track);
       localStorage.setItem("track", JSON.stringify(artistTrack));
       playTrack();
-
       switchBtn();
     };
   });
