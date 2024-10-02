@@ -8,17 +8,6 @@ const suggestedArtist = "Eric Clapton";
 // array brani preferiti
 const favourites = [];
 
-// oggetto track
-class TrackObj {
-  constructor(_title, _artist, _cover, _track, _duration) {
-    this.title = _title;
-    this.artist = _artist;
-    this.cover = _cover;
-    this.track = _track;
-    this.duration = _duration;
-  }
-}
-
 const indexPreview = () => {
   // ciclo l'array di artisti per la preview
   for (let i = 0; i < previewArray.length; i++) {
