@@ -64,10 +64,8 @@ const generateTracks = (allTracks) => {
     const trackRow = document.createElement("tr");
     trackRow.innerHTML = `<td class="track-numbers listNum">${i + 1}</td>
         <td class="track-title">
-          <div>
             <p id="${i + 1}">${track.title}</p>
             <a href="artist.html?artistID=${track.artist.id}">${track.artist.name}</a>
-          </div>
         </td>
         <td class="times-played">
         <p>${new Intl.NumberFormat("it-IT").format(track.rank)}</p>
@@ -78,25 +76,63 @@ const generateTracks = (allTracks) => {
     const table = document.querySelector("table");
     table.appendChild(trackRow);
 
-    trackRow.onmouseenter = (event) => {
-      const listPlayTrack = event.target.querySelector(".listNum");
-      listPlayTrack.innerHTML = `<i class="fa-solid fa-play"></i>`;
+    // trackRow.onmouseenter = (event) => {
+    //   const listPlayTrack = event.target.querySelector(".listNum");
+    //   listPlayTrack.innerHTML = `<i class="fa-solid fa-play"></i>`;
+    // };
+
+    // trackRow.onmouseleave = (event) => {
+    //   const listPlayTrack = event.target.querySelector(".listNum");
+    //   listPlayTrack.innerHTML = `${i + 1}`;
+    // };
+
+    // // const selectedTrack = document.getElementById(`${i + 1}`);
+    // trackRow.onclick = () => {
+    //   const newTrack = new TrackObj(track.title, track.artist.name, track.album.cover_small, track.preview, track.duration);
+    //   localStorage.setItem("track", JSON.stringify(newTrack));
+    //   playTrack();
+    //   switchBtn();
+    // };
+    // const artist = document.querySelector(".moreInfo .artist-name");
+    // artist.setAttribute("href", `artist.html?artistID=${track.artist.id}`);
+
+    //collegamento tra il play della lista di canzoni e il player in basso
+    const audio = document.getElementById("playerAudio");
+
+    trackRow.onmouseenter = (e) => {
+      trackRow.onclick = () => {
+        const newTrack = new TrackObj(track.title, track.artist.name, track.album.cover_small, track.preview, track.duration);
+        localStorage.setItem("track", JSON.stringify(newTrack));
+        playTrack();
+        switchBtn();
+
+        if (document.querySelector(".track-played")) {
+          //controlla se un elemento ha la classe e se esiste la toglie!
+          const classAdded = document.querySelector(".track-played");
+          classAdded.classList.remove("track-played");
+        }
+      };
+
+      const currentSong = document.querySelector(".song-title").innerHTML;
+
+      const listPlayTrack = e.target.querySelector(".listNum");
+      if (currentSong === track.title && !audio.paused) {
+        listPlayTrack.innerHTML = `<i class="fa-solid fa-pause"></i>`;
+      } else {
+        listPlayTrack.innerHTML = `<i class="fa-solid fa-play"></i>`;
+      }
     };
 
-    trackRow.onmouseleave = (event) => {
-      const listPlayTrack = event.target.querySelector(".listNum");
+    trackRow.onmouseleave = (e) => {
+      const listPlayTrack = e.currentTarget.querySelector(".listNum");
       listPlayTrack.innerHTML = `${i + 1}`;
-    };
 
-    // const selectedTrack = document.getElementById(`${i + 1}`);
-    trackRow.onclick = () => {
-      const newTrack = new TrackObj(track.title, track.artist.name, track.album.cover_small, track.preview, track.duration);
-      localStorage.setItem("track", JSON.stringify(newTrack));
-      playTrack();
-      switchBtn();
+      const currentSong = document.querySelector(".song-title").innerHTML;
+
+      if (currentSong === track.title && !audio.paused) {
+        trackRow.classList.add("track-played");
+      }
     };
-    const artist = document.querySelector(".moreInfo .artist-name");
-    artist.setAttribute("href", `artist.html?artistID=${track.artist.id}`);
   });
 };
 

@@ -677,6 +677,9 @@ footer {
   width: 100%;
   text-align: start;
 }
+.track-list table tr:first-of-type td {
+  padding-top: 2rem;
+}
 .track-list table tr > td {
   vertical-align: middle;
 }
@@ -707,11 +710,12 @@ footer {
 .track-list div {
   margin-block: 0.5rem;
 }
-.track-list .track-title p:first-child {
+.track-list p {
   color: white;
   font-size: 16px;
+  margin-bottom: 0.5rem;
 }
-.track-list .track-title p:nth-child(2) {
+.track-list a {
   padding-top: 5px;
 }
 .track-list .explicitLang-icon {
@@ -732,6 +736,7 @@ footer {
 .track-list .track-title {
   width: 55%;
   text-align: start;
+  padding-block: 0.5rem;
 }
 .track-list .times-played {
   width: 15%;
@@ -741,6 +746,11 @@ footer {
   width: 25%;
   padding-right: 20px;
   text-align: end;
+}
+
+.track-list .track-played p,
+.track-list .track-played {
+  color: #1ccc59;
 }
 
 .play-pause.play::before {
