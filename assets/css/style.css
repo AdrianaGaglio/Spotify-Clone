@@ -669,13 +669,10 @@ footer {
   width: 100%;
   text-align: start;
 }
-.track-list table tr:first-of-type td {
-  padding-top: 2rem;
-}
 .track-list table tr > td {
   vertical-align: middle;
 }
-.track-list table tr:hover:not(:first-child) {
+.track-list table tr:hover:not(:nth-last-of-type(1), :nth-last-of-type(2)) {
   background-color: #4d4d4d;
   cursor: pointer;
 }
@@ -698,6 +695,7 @@ footer {
   border-bottom: 1px solid rgba(255, 255, 255, 0.575);
   padding-bottom: 5px;
   font-size: 12px;
+  margin-bottom: 2rem;
 }
 .track-list div {
   margin-block: 0.5rem;

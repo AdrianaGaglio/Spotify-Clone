@@ -60,7 +60,7 @@ const generateTracks = (allTracks) => {
     if (seconds < 10) {
       seconds = "0" + seconds.toString();
     }
-    numOfTracks.innerHTML = `${i + 1} brani, `;
+    numOfTracks.innerHTML = `${i} brani, `; //i e non (i+1) perchè c'è una riga vuota in più per creare lo spazio sopra la prima riga
     const trackRow = document.createElement("tr");
     trackRow.innerHTML = `<td class="track-numbers listNum">${i + 1}</td>
         <td class="track-title">
@@ -76,27 +76,6 @@ const generateTracks = (allTracks) => {
     const table = document.querySelector("table");
     table.appendChild(trackRow);
 
-    // trackRow.onmouseenter = (event) => {
-    //   const listPlayTrack = event.target.querySelector(".listNum");
-    //   listPlayTrack.innerHTML = `<i class="fa-solid fa-play"></i>`;
-    // };
-
-    // trackRow.onmouseleave = (event) => {
-    //   const listPlayTrack = event.target.querySelector(".listNum");
-    //   listPlayTrack.innerHTML = `${i + 1}`;
-    // };
-
-    // // const selectedTrack = document.getElementById(`${i + 1}`);
-    // trackRow.onclick = () => {
-    //   const newTrack = new TrackObj(track.title, track.artist.name, track.album.cover_small, track.preview, track.duration);
-    //   localStorage.setItem("track", JSON.stringify(newTrack));
-    //   playTrack();
-    //   switchBtn();
-    // };
-    // const artist = document.querySelector(".moreInfo .artist-name");
-    // artist.setAttribute("href", `artist.html?artistID=${track.artist.id}`);
-
-    //collegamento tra il play della lista di canzoni e il player in basso
     const audio = document.getElementById("playerAudio");
 
     trackRow.onmouseenter = (e) => {
@@ -110,6 +89,11 @@ const generateTracks = (allTracks) => {
           //controlla se un elemento ha la classe e se esiste la toglie!
           const classAdded = document.querySelector(".track-played");
           classAdded.classList.remove("track-played");
+        }
+        const currentSong = document.querySelector(".song-title").innerHTML;
+
+        if (currentSong === track.title && !audio.paused) {
+          trackRow.classList.add("track-played");
         }
       };
 
@@ -126,12 +110,6 @@ const generateTracks = (allTracks) => {
     trackRow.onmouseleave = (e) => {
       const listPlayTrack = e.currentTarget.querySelector(".listNum");
       listPlayTrack.innerHTML = `${i + 1}`;
-
-      const currentSong = document.querySelector(".song-title").innerHTML;
-
-      if (currentSong === track.title && !audio.paused) {
-        trackRow.classList.add("track-played");
-      }
     };
   });
 };
