@@ -9,11 +9,13 @@ const suggestedArtist = "Eric Clapton";
 const favourites = [];
 
 const indexPreview = () => {
+
   // ciclo l'array di artisti per la preview
   for (let i = 0; i < previewArray.length; i++) {
     // concateno la url e il nome dell'artista
     fetch(searchUrl + previewArray[i])
       .then((response) => {
+
         if (response.ok) {
           return response.json();
         } else {
@@ -21,6 +23,7 @@ const indexPreview = () => {
         }
       })
       .then((data) => {
+        console.log(data);
         // chiamo la funzione per la generazione delle card degli album (sezione "altro di ciò che ti piace")
         generateAlbumCards(data.data);
         // chiamo la funzione per la generazione delle card degli album (sezione "i tuoi artisti preferiti")
@@ -31,6 +34,7 @@ const indexPreview = () => {
       });
   }
 };
+
 
 const suggestedAlbum = () => {
   // genero url per l'endpoint in base all'artista predefinito
