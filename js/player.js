@@ -15,9 +15,7 @@ const playTrack = () => {
   const artist = trackInfo.artist;
   const cover = trackInfo.cover;
   const track = trackInfo.track;
-  const duration = `${Math.trunc(trackInfo.duration / 60)}:${
-    trackInfo.duration % 60
-  }`;
+  const duration = `${Math.trunc(trackInfo.duration / 60)}:${trackInfo.duration % 60}`;
   const trackTitle = document.querySelector(".song-title");
   trackTitle.innerText = title;
   const trackArtist = document.querySelector(".song-artist");
@@ -50,7 +48,6 @@ playPauseBtn.addEventListener("click", function () {
 
 //gestisce il riempimento della barra di Audio-range
 const rangeAudio = document.getElementById("rangeAudio");
-
 rangeAudio.addEventListener("input", function () {
   const value = this.value;
   this.style.background = `linear-gradient(to right, #1ed760 ${value}%, #404040 ${value}%)`;
