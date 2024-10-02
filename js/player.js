@@ -24,9 +24,7 @@ const playTrack = () => {
   } else {
     formattedSeconds = seconds;
   }
-
   const duration = `${Math.trunc(trackInfo.duration / 60)}:${formattedSeconds}`;
-  console.log(duration);
 
   const trackTitle = document.querySelector(".song-title");
   trackTitle.innerText = title;

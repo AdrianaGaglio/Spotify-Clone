@@ -59,7 +59,6 @@ const tracksDefinition = (tracksArray) => {
     if (seconds < 10) {
       seconds = "0" + seconds.toString();
     }
-    console.log(seconds);
 
     const newRow = document.createElement("tr");
     newRow.innerHTML = `<td>${i + 1}</td>
