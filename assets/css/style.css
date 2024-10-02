@@ -943,6 +943,10 @@ footer {
 
 .fa-random,
 .fa-repeat {
+  color: white;
+}
+
+.activeButton i {
   color: #1ed760;
 }
 

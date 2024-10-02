@@ -15,7 +15,9 @@ const playTrack = () => {
   const artist = trackInfo.artist;
   const cover = trackInfo.cover;
   const track = trackInfo.track;
-  const duration = `${Math.trunc(trackInfo.duration / 60)}:${trackInfo.duration % 60}`;
+  const duration = `${Math.trunc(trackInfo.duration / 60)}:${
+    trackInfo.duration % 60
+  }`;
   const trackTitle = document.querySelector(".song-title");
   trackTitle.innerText = title;
   const trackArtist = document.querySelector(".song-artist");
@@ -53,13 +55,6 @@ rangeAudio.addEventListener("input", function () {
   this.style.background = `linear-gradient(to right, #1ed760 ${value}%, #404040 ${value}%)`;
 
   playerAudio.volume = value / 100;
-});
-
-//gestisce il button Loop della traccia
-const loopButton = document.querySelector(".loopButton");
-
-loopButton.addEventListener("click", () => {
-  playerAudio.loop = !playerAudio.loop; // Alterna tra ripetere o no la traccia
 });
 
 playTrack();

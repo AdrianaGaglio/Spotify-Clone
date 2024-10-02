@@ -4,7 +4,13 @@ const trackListArray = [];
 // crea oggetto traccia da aggiungere all'array tracklist
 const trackList = (tracklist) => {
   tracklist.forEach((track) => {
-    const newTrack = new TrackObj(track.title, track.artist.name, track.album.cover_small, track.preview, track.duration);
+    const newTrack = new TrackObj(
+      track.title,
+      track.artist.name,
+      track.album.cover_small,
+      track.preview,
+      track.duration
+    );
     trackListArray.push(newTrack);
   });
   localStorage.setItem("tracklist", JSON.stringify(trackListArray));
@@ -17,8 +23,19 @@ const handleTrackList = () => {
   localStorage.setItem("track", JSON.stringify(track));
   playTrack();
   switchBtn();
-  // gestisce il passaggio alla traccia successiva quando finisce la traccai
+
   const audioPlayer = document.getElementById("playerAudio");
+
+  //gestisce il button Loop della traccia
+  const loopButton = document.querySelector(".loopButton");
+
+  loopButton.addEventListener("click", () => {
+    loopButton.classList.toggle("activeButton");
+
+    audioPlayer.loop = !audioPlayer.loop; // Alterna tra ripetere o no la traccia
+  });
+
+  // gestisce il passaggio alla traccia successiva quando finisce la traccai
   audioPlayer.addEventListener("loadedmetadata", function () {
     // durata totale della traccia in riproduzione
     let duration = audioPlayer.duration;
