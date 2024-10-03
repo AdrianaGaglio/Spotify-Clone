@@ -22,7 +22,7 @@ const getSearchResult = (keyWord) => {
 };
 
 const getArtistTopTracks = (artistID) => {
-  fetch(artistTracklist + artistID + "/top?limit=10")
+  fetch(artistTracklist + artistID + "/top?limit=20")
     .then((response) => {
       if (response.ok) {
         return response.json();
@@ -32,6 +32,7 @@ const getArtistTopTracks = (artistID) => {
     })
     .then((topTracks) => {
       showTopTracks(topTracks.data);
+      trackList(topTracks.data);
     })
     .catch((err) => {
       console.log(err);
