@@ -268,7 +268,7 @@ a {
   width: 25px;
   height: 25px;
   -o-object-fit: cover;
-  object-fit: cover;
+     object-fit: cover;
   border-radius: 50%;
 }
 .sidebar-right .heading-center {
@@ -356,7 +356,7 @@ a {
   width: 25px;
   height: 25px;
   -o-object-fit: cover;
-  object-fit: cover;
+     object-fit: cover;
   border-radius: 50%;
 }
 
@@ -492,16 +492,7 @@ footer {
 
 .bg-main {
   background: rgb(42, 42, 42);
-  background: linear-gradient(
-    180deg,
-    rgba(42, 42, 42, 0.8968837535) 35%,
-    rgb(40, 40, 40) 45%,
-    rgb(39, 39, 39) 60%,
-    rgb(37, 37, 37) 70%,
-    rgb(35, 35, 35) 80%,
-    rgb(34, 34, 34) 90%,
-    rgb(33, 33, 33) 100%
-  );
+  background: linear-gradient(180deg, rgba(42, 42, 42, 0.8968837535) 35%, rgb(40, 40, 40) 45%, rgb(39, 39, 39) 60%, rgb(37, 37, 37) 70%, rgb(35, 35, 35) 80%, rgb(34, 34, 34) 90%, rgb(33, 33, 33) 100%);
 }
 
 .main-head {
@@ -703,16 +694,7 @@ footer {
 @media screen and (max-width: 576px) {
   .bg-main {
     background-color: #000000;
-    background: linear-gradient(
-      180deg,
-      rgb(0, 0, 0) 100%,
-      rgb(0, 0, 0) 100%,
-      rgb(0, 0, 0) 100%,
-      rgb(0, 0, 0) 100%,
-      rgb(0, 0, 0) 100%,
-      rgb(0, 0, 0) 100%,
-      rgb(0, 0, 0) 100%
-    );
+    background: linear-gradient(180deg, rgb(0, 0, 0) 100%, rgb(0, 0, 0) 100%, rgb(0, 0, 0) 100%, rgb(0, 0, 0) 100%, rgb(0, 0, 0) 100%, rgb(0, 0, 0) 100%, rgb(0, 0, 0) 100%);
   }
   .recents h4 {
     font-size: 24px;
@@ -817,16 +799,7 @@ footer {
 @media screen and (max-width: 992px) and (min-width: 576px) {
   .bg-main {
     background-color: #000000;
-    background: linear-gradient(
-      180deg,
-      rgb(0, 0, 0) 100%,
-      rgb(0, 0, 0) 100%,
-      rgb(0, 0, 0) 100%,
-      rgb(0, 0, 0) 100%,
-      rgb(0, 0, 0) 100%,
-      rgb(0, 0, 0) 100%,
-      rgb(0, 0, 0) 100%
-    );
+    background: linear-gradient(180deg, rgb(0, 0, 0) 100%, rgb(0, 0, 0) 100%, rgb(0, 0, 0) 100%, rgb(0, 0, 0) 100%, rgb(0, 0, 0) 100%, rgb(0, 0, 0) 100%, rgb(0, 0, 0) 100%);
   }
   .grid-sm .card div {
     background-color: rgba(255, 255, 255, 0.0392156863);
@@ -1257,7 +1230,7 @@ footer {
   width: 80px;
   height: 80px;
   -o-object-fit: cover;
-  object-fit: cover;
+     object-fit: cover;
   border-radius: 50%;
   margin-right: 1rem;
 }
@@ -1398,15 +1371,15 @@ footer {
   cursor: pointer;
 }
 
-.volume-control input[type="range"] {
+.volume-control input[type=range] {
   width: 100px;
   margin-left: 10px;
 }
 
-input[type="range"] {
+input[type=range] {
   -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
+     -moz-appearance: none;
+          appearance: none;
   height: 6px;
   background: linear-gradient(to right, #1ed760 50%, #404040 50%);
   border-radius: 5px;
@@ -1414,9 +1387,9 @@ input[type="range"] {
   cursor: pointer;
 }
 
-input[type="range"]::-webkit-slider-thumb {
+input[type=range]::-webkit-slider-thumb {
   -webkit-appearance: none;
-  appearance: none;
+          appearance: none;
   height: 12px;
   width: 12px;
   border-radius: 50%;
@@ -1474,6 +1447,11 @@ input[type="range"]::-webkit-slider-thumb {
     display: none;
   }
 }
+#central {
+  background: rgb(0, 0, 0);
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.8856792717) 47%, rgba(0, 0, 0, 0.6447829132) 100%);
+}
+
 .hero {
   display: flex;
   justify-content: space-between;
@@ -1639,4 +1617,4 @@ main {
   border-radius: 10px;
   width: 100%;
   padding-bottom: 0.5rem;
-} /*# sourceMappingURL=style.css.map */
+}/*# sourceMappingURL=style.css.map */
