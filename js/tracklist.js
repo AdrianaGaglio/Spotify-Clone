@@ -16,7 +16,7 @@ const trackList = (tracklist) => {
   }
   localStorage.setItem("track", JSON.stringify(trackListArray[0]));
   localStorage.setItem("tracklist", JSON.stringify(trackListArray));
-  playTrack();
+  // playTrack();
 };
 
 // gestisce riproduzione tracklist
