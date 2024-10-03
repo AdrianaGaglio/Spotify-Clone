@@ -1,6 +1,7 @@
 const searchUrl = "https://striveschool-api.herokuapp.com/api/deezer/search?q=";
 const artistTracklist = "https://striveschool-api.herokuapp.com/api/deezer/artist/";
-const searchKeyWord = "dean martin";
+const windowUrl = new URLSearchParams(location.search);
+const searchKeyWord = windowUrl.get("searchKeyWord");
 
 const getSearchResult = (keyWord) => {
   fetch(searchUrl + keyWord)
@@ -13,6 +14,7 @@ const getSearchResult = (keyWord) => {
     })
     .then((searchObj) => {
       getSearch(searchObj.data);
+      relatedAlbumsRow(searchObj.data);
     })
     .catch((err) => {
       console.log(err);
@@ -29,7 +31,6 @@ const getArtistTopTracks = (artistID) => {
       }
     })
     .then((topTracks) => {
-      console.log(topTracks.data);
       showTopTracks(topTracks.data);
     })
     .catch((err) => {
@@ -73,12 +74,31 @@ const showTopTracks = (topTracks) => {
   }
 };
 
+const relatedAlbumsRow = (relatedAlbums) => {
+  const albumRow = document.querySelector(".album-row");
+  albumRow.innerHTML = "";
+  for (let i = 0; i < 10; i++) {
+    const singleAlbum = relatedAlbums[i];
+    const albumDiv = document.createElement("div");
+    albumDiv.innerHTML = `
+<div>
+  <div class="albums-poster">
+  <a href="./album.html?albumID=${singleAlbum.album.id}"><img src="${singleAlbum.album.cover}" alt="album poster" /></a>
+  <p><a href="./album.html?albumID=${singleAlbum.album.id}">${singleAlbum.album.title}</a></p>
+  <p> <a href="./album.html?artistID=${singleAlbum.artist.id}">${singleAlbum.artist.name}</a></p>
+  </div>
+</div>
+              `;
+    albumRow.appendChild(albumDiv);
+  }
+};
+
 const searchForm = document.querySelector("form");
 searchForm.addEventListener("submit", (e) => {
   e.preventDefault();
   const inputValue = document.querySelector("input").value;
   getSearchResult(inputValue);
-  // form.reset();
+  form.reset();
 });
 
 getSearchResult(searchKeyWord);
