@@ -9,13 +9,11 @@ const suggestedArtist = "Eric Clapton";
 const favourites = [];
 
 const indexPreview = () => {
-
   // ciclo l'array di artisti per la preview
   for (let i = 0; i < previewArray.length; i++) {
     // concateno la url e il nome dell'artista
     fetch(searchUrl + previewArray[i])
       .then((response) => {
-
         if (response.ok) {
           return response.json();
         } else {
@@ -23,7 +21,6 @@ const indexPreview = () => {
         }
       })
       .then((data) => {
-        console.log(data);
         // chiamo la funzione per la generazione delle card degli album (sezione "altro di ciò che ti piace")
         generateAlbumCards(data.data);
         // chiamo la funzione per la generazione delle card degli album (sezione "i tuoi artisti preferiti")
@@ -34,7 +31,6 @@ const indexPreview = () => {
       });
   }
 };
-
 
 const suggestedAlbum = () => {
   // genero url per l'endpoint in base all'artista predefinito
@@ -96,10 +92,13 @@ const heroSection = (data) => {
       const playBtn = document.getElementById("play");
       playBtn.onclick = () => {
         const track = new TrackObj(firstTrackTitle, artistName, albumCoverSmall, firstTrackPreview, duration);
-        // localStorage.setItem("track", JSON.stringify(track));
-        const stringOfTrackList = localStorage.getItem("tracklist");
-        trackListArray.push(...JSON.parse(stringOfTrackList));
-        trackListArray.unshift(track);
+        if (localStorage.getItem("tracklist")) {
+          const stringOfTrackList = localStorage.getItem("tracklist");
+          trackListArray = JSON.parse(stringOfTrackList);
+          trackListArray.unshift(track);
+        } else {
+          trackListArray.push(track);
+        }
         localStorage.setItem("tracklist", JSON.stringify(trackListArray));
         handleTrackList();
         // playTrack();

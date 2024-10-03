@@ -1,11 +1,20 @@
 let counter = 0;
+let tempArray = [];
 
 // crea oggetto traccia da aggiungere all'array tracklist
 const trackList = (tracklist) => {
   tracklist.forEach((track) => {
     const newTrack = new TrackObj(track.title, track.artist.name, track.album.cover_small, track.preview, track.duration);
-    trackListArray.push(newTrack);
+    tempArray.push(newTrack);
   });
+  if (localStorage.getItem("tracklist")) {
+    const stringOfTrackList = localStorage.getItem("tracklist");
+    trackListArray = JSON.parse(stringOfTrackList);
+    trackListArray = tempArray.concat(trackListArray);
+  } else {
+    trackListArray = tempArray.concat(trackListArray);
+  }
+
   localStorage.setItem("tracklist", JSON.stringify(trackListArray));
 };
 

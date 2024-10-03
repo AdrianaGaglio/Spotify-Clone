@@ -14,7 +14,6 @@ const getAlbum = () => {
       }
     })
     .then((data) => {
-      console.log(data);
       generateAlbumHero(data);
       generateTracks(data.tracks.data);
       trackList(data.tracks.data);
@@ -62,7 +61,7 @@ const generateTracks = (allTracks) => {
     }
     numOfTracks.innerHTML = `${i} brani, `; //i e non (i+1) perchè c'è una riga vuota in più per creare lo spazio sopra la prima riga
     const trackRow = document.createElement("tr");
-    trackRow.innerHTML = `<td class="track-numbers listNum">${i + 1}</td>
+    trackRow.innerHTML = `<td id="${i + 1}" class="track-numbers listNum">${i + 1}</td>
         <td class="track-title">
             <p id="${i + 1}">${track.title}</p>
             <a href="artist.html?artistID=${track.artist.id}">${track.artist.name}</a>
@@ -80,11 +79,12 @@ const generateTracks = (allTracks) => {
 
     trackRow.onmouseenter = (e) => {
       trackRow.onclick = () => {
-        const newTrack = new TrackObj(track.title, track.artist.name, track.album.cover_small, track.preview, track.duration);
-        localStorage.setItem("track", JSON.stringify(newTrack));
-        playTrack();
-        switchBtn();
-
+        counter = trackRow.querySelector("td").id - 1;
+        // const newTrack = new TrackObj(track.title, track.artist.name, track.album.cover_small, track.preview, track.duration);
+        // localStorage.setItem("track", JSON.stringify(newTrack));
+        // playTrack();
+        // switchBtn();
+        handleTrackList();
         if (document.querySelector(".track-played")) {
           //controlla se un elemento ha la classe e se esiste la toglie!
           const classAdded = document.querySelector(".track-played");

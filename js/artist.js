@@ -73,10 +73,21 @@ const tracksDefinition = (tracksArray) => {
 
     newRow.onmouseenter = (e) => {
       newRow.onclick = () => {
-        const artistTrack = new TrackObj(track.title, track.artist.name, track.album.cover_small, track.preview, track.duration);
-        localStorage.setItem("track", JSON.stringify(artistTrack));
-        playTrack();
-        switchBtn();
+        counter = newRow.querySelector("td:nth-of-type(3)").id - 1;
+        // const artistTrack = new TrackObj(track.title, track.artist.name, track.album.cover_small, track.preview, track.duration);
+        // if (localStorage.getItem("tracklist")) {
+        //   const stringOfTrackList = localStorage.getItem("tracklist");
+        //   trackListArray = JSON.parse(stringOfTrackList);
+        //   trackListArray.unshift(artistTrack);
+        // } else {
+        //   trackListArray.push(artistTrack);
+        // }
+        // localStorage.setItem("tracklist", JSON.stringify(trackListArray));
+        handleTrackList();
+
+        // localStorage.setItem("track", JSON.stringify(artistTrack));
+        // playTrack();
+        // switchBtn();
 
         const classAdded = document.querySelector(".track-played");
         if (classAdded) {
