@@ -2,7 +2,6 @@
 const albumUrl = "https://striveschool-api.herokuapp.com/api/deezer/album/";
 const windowUrl = new URLSearchParams(location.search);
 const albumId = windowUrl.get("albumID");
-console.log(albumId);
 
 const getAlbum = () => {
   fetch(albumUrl + albumId)
@@ -128,3 +127,38 @@ searchLink.addEventListener("click", () => {
     location.href = `./search.html?searchKeyWord=${inputValue}`;
   });
 });
+
+// evidenzia canzone in riproduzione dalla lista
+nextTrack.onclick = () => {
+  const currentTrackObj = JSON.parse(localStorage.getItem("track"));
+  const currentTitle = currentTrackObj.title;
+  const allRows = document.querySelectorAll("tr");
+  console.log(allRows);
+  for (let i = 2; i < allRows.length; i++) {
+    row = allRows[i];
+    const title = row.querySelector("td:nth-of-type(2) p").innerHTML;
+    console.dir(title);
+    if (currentTitle === title && !playerAudio.paused) {
+      row.classList.add("track-played");
+    } else {
+      row.classList.remove("track-played");
+    }
+  }
+};
+
+prevTrack.onclick = () => {
+  const currentTrackObj = JSON.parse(localStorage.getItem("track"));
+  const currentTitle = currentTrackObj.title;
+  const allRows = document.querySelectorAll("tr");
+  console.log(allRows);
+  for (let i = 2; i < allRows.length; i++) {
+    row = allRows[i];
+    const title = row.querySelector("td:nth-of-type(2) p").innerHTML;
+    console.dir(title);
+    if (currentTitle === title && !playerAudio.paused) {
+      row.classList.add("track-played");
+    } else {
+      row.classList.remove("track-played");
+    }
+  }
+};

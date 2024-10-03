@@ -1307,6 +1307,11 @@ footer {
   color: grey;
 }
 
+.fa-step-backward:hover,
+.fa-step-forward:hover {
+  color: white;
+}
+
 .fa-random,
 .fa-repeat {
   color: white;
