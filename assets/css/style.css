@@ -434,6 +434,14 @@ a {
   scrollbar-color: #4d4d4d #000000;
 }
 
+@media screen and (max-width: 992px) {
+  #left {
+    display: none;
+  }
+  #right {
+    display: none;
+  }
+}
 body {
   font-family: "Circular";
   display: flex;
@@ -458,6 +466,18 @@ body {
   min-height: 600px;
 }
 
+@media screen and (max-width: 992px) {
+  #central {
+    margin-left: initial;
+    width: 100%;
+  }
+  #central .main-head {
+    display: none;
+  }
+  #central .hero {
+    display: none;
+  }
+}
 footer {
   height: 97px;
   position: fixed;
@@ -613,7 +633,7 @@ footer {
   display: flex;
 }
 .grid-sm .card img {
-  width: 70ox;
+  width: 70px;
   height: 70px;
   border-top-left-radius: 5px;
   border-bottom-left-radius: 5px;
@@ -638,6 +658,9 @@ footer {
 .grid-lg .card-wrapper {
   width: 20%;
   padding: 0.3rem;
+}
+.grid-lg .card-wrapper i {
+  display: none;
 }
 .grid-lg .card-wrapper .card {
   background: rgba(255, 255, 255, 0.03);
@@ -668,6 +691,189 @@ footer {
   width: 100%;
 }
 
+@media screen and (max-width: 576px) {
+  .bg-main {
+    background-color: #000000;
+    background: linear-gradient(180deg, rgb(0, 0, 0) 100%, rgb(0, 0, 0) 100%, rgb(0, 0, 0) 100%, rgb(0, 0, 0) 100%, rgb(0, 0, 0) 100%, rgb(0, 0, 0) 100%, rgb(0, 0, 0) 100%);
+  }
+  .recents h4 {
+    font-size: 24px;
+  }
+  .grid-sm p {
+    font-size: 12px;
+  }
+  .grid-lg {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .grid-lg .card-wrapper {
+    width: 100%;
+    padding: initial;
+  }
+  .grid-lg .card-wrapper .card-body {
+    flex-grow: 1;
+    flex-shrink: 2;
+  }
+  .grid-lg .card-wrapper .card-body .playlist-title {
+    font-size: 20px;
+    margin-bottom: 0.5rem;
+  }
+  .grid-lg .card-wrapper .card-body .playlist-artist {
+    font-size: 16px;
+  }
+  .grid-lg .card-wrapper .card {
+    display: flex;
+    padding: 1rem;
+    gap: 1rem;
+    position: relative;
+    padding-bottom: 4rem;
+    background-color: rgba(70, 70, 70, 0.431372549);
+  }
+  .grid-lg .card-wrapper .card > a {
+    width: 50%;
+    flex-shrink: 0;
+    min-width: 100px;
+  }
+  .grid-lg .card-wrapper .card .card-body + div {
+    display: block;
+    position: absolute;
+    bottom: 0.5rem;
+    right: 1rem;
+    background-color: rgba(22, 16, 16, 0.7176470588);
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+  }
+  .grid-lg .card-wrapper i {
+    display: inline-block;
+    color: white;
+    font-size: 18px;
+    position: absolute;
+    bottom: 5px;
+    right: 7px;
+  }
+  .recents:nth-of-type(3) {
+    display: none;
+  }
+  .grid-lg .card-wrapper .card .card-body .playlist-title {
+    text-wrap: wrap;
+  }
+}
+@media screen and (max-width: 768px) {
+  .grid-sm .card {
+    width: 50%;
+  }
+  .grid-sm .card div {
+    width: inherit;
+    background-color: rgba(255, 255, 255, 0.0392156863);
+  }
+  .grid-sm .card p {
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+@media screen and (max-width: 768px) and (min-width: 576px) {
+  .recents h4 {
+    font-size: 24px;
+  }
+  .grid-sm p {
+    font-size: 12px;
+  }
+  .card-body .playlist-title {
+    font-size: 20px;
+    margin-bottom: 0.5rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .playlist-artist {
+    font-size: 16px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .grid-lg .card-wrapper .card > a {
+    width: 35%;
+    flex-shrink: 0;
+    min-width: 75px;
+  }
+}
+@media screen and (max-width: 992px) and (min-width: 576px) {
+  .bg-main {
+    background-color: #000000;
+    background: linear-gradient(180deg, rgb(0, 0, 0) 100%, rgb(0, 0, 0) 100%, rgb(0, 0, 0) 100%, rgb(0, 0, 0) 100%, rgb(0, 0, 0) 100%, rgb(0, 0, 0) 100%, rgb(0, 0, 0) 100%);
+  }
+  .grid-sm .card div {
+    background-color: rgba(255, 255, 255, 0.0392156863);
+  }
+  .grid-lg {
+    flex-direction: row;
+    gap: 1rem;
+  }
+  .grid-lg .card-wrapper {
+    width: calc(50% - 1rem);
+    padding: initial;
+  }
+  .grid-lg .card-wrapper .card-body {
+    flex-grow: 1;
+    flex-shrink: 2;
+  }
+  .grid-lg .card-wrapper .card {
+    display: flex;
+    padding: 1rem;
+    gap: 1rem;
+    position: relative;
+    padding-bottom: 4rem;
+    background-color: rgba(70, 70, 70, 0.431372549);
+  }
+  .grid-lg .card-wrapper .card > a {
+    width: 50%;
+    flex-shrink: 0;
+    min-width: 100px;
+  }
+  .grid-lg .card-wrapper .card .card-body + div {
+    display: block;
+    position: absolute;
+    bottom: 0.5rem;
+    right: 1rem;
+    background-color: rgba(22, 16, 16, 0.7176470588);
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+  }
+  .grid-lg .card-wrapper i {
+    display: inline-block;
+    color: white;
+    font-size: 18px;
+    position: absolute;
+    bottom: 5px;
+    right: 7px;
+  }
+  .recents:nth-of-type(3) {
+    display: none;
+  }
+  .grid-lg .card-wrapper .card .card-body {
+    width: 50%;
+    text-wrap: nowrap;
+  }
+  .grid-lg .card-wrapper .card .card-body .playlist-title {
+    font-size: 20px;
+    margin-bottom: 0.5rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .grid-lg .card-wrapper .card .card-body .playlist-artist {
+    font-size: 16px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+@media screen and (max-width: 992px) and (min-width: 768px) {
+  .recents h4 {
+    font-size: 30px;
+  }
+  .grid-sm p {
+    font-size: 16px;
+  }
+}
 #album-info,
 .under-hero {
   padding-inline: 25px;
@@ -1191,6 +1397,56 @@ input[type=range]::-webkit-slider-thumb {
   cursor: pointer;
 }
 
+@media screen and (max-width: 576px) {
+  #player {
+    justify-content: center;
+    padding: 0.5rem 0.5rem;
+    width: 95%;
+    margin-inline: auto;
+    border-radius: 5px;
+    background-color: #272727;
+  }
+}
+@media screen and (max-width: 768px) and (min-width: 576px) {
+  #player {
+    justify-content: center;
+    padding: 0.5rem 0.5rem;
+    width: 80%;
+    margin-inline: auto;
+    border-radius: 5px;
+    background-color: #272727;
+  }
+}
+@media screen and (max-width: 992px) and (min-width: 768px) {
+  #player {
+    justify-content: center;
+    padding: 0.5rem 0.5rem;
+    width: 70%;
+    margin-inline: auto;
+    border-radius: 5px;
+    background-color: #272727;
+  }
+}
+@media screen and (max-width: 992px) {
+  .song-info {
+    width: auto;
+    justify-content: end;
+  }
+  .progress-bar-container {
+    margin: initial;
+    align-items: start;
+    flex-grow: 0;
+  }
+  .progress-bar-container .controls button:not(button:nth-of-type(3)) {
+    display: none;
+  }
+  .progress-bar-container .progressBar-time-container {
+    display: none;
+  }
+  .volume-control {
+    display: none;
+  }
+}
 .hero {
   background-color: #333;
   padding: 20px;

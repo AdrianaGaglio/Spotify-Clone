@@ -151,3 +151,59 @@ input[type="range"]::-webkit-slider-thumb {
   background: #1ed760;
   cursor: pointer;
 }
+
+//media queries
+@media screen and (max-width: 576px) {
+  #player {
+    justify-content: center;
+    padding: 0.5rem 0.5rem;
+    width: 95%;
+    margin-inline: auto;
+    border-radius: 5px;
+    background-color: #272727;
+  }
+}
+
+@media screen and (max-width: 768px) and (min-width: 576px) {
+  #player {
+    justify-content: center;
+    padding: 0.5rem 0.5rem;
+    width: 80%;
+    margin-inline: auto;
+    border-radius: 5px;
+    background-color: #272727;
+  }
+}
+
+@media screen and (max-width: 992px) and (min-width: 768px) {
+  #player {
+    justify-content: center;
+    padding: 0.5rem 0.5rem;
+    width: 70%;
+    margin-inline: auto;
+    border-radius: 5px;
+    background-color: #272727;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .song-info {
+    width: auto;
+    justify-content: end;
+  }
+
+  .progress-bar-container {
+    margin: initial;
+    align-items: start;
+    flex-grow: 0;
+    .controls button:not(button:nth-of-type(3)) {
+      display: none;
+    }
+    .progressBar-time-container {
+      display: none;
+    }
+  }
+  .volume-control {
+    display: none;
+  }
+}

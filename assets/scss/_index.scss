@@ -22,6 +22,19 @@ body {
   }
 }
 
+@media screen and (max-width: 992px) {
+  #central {
+    margin-left: initial;
+    width: 100%;
+    .main-head {
+      display: none;
+    }
+    .hero {
+      display: none;
+    }
+  }
+}
+
 footer {
   height: 97px;
   position: fixed;
@@ -188,7 +201,7 @@ footer {
     padding: 0.2rem;
     display: flex;
     img {
-      width: 70ox;
+      width: 70px;
       height: 70px;
       border-top-left-radius: 5px;
       border-bottom-left-radius: 5px;
@@ -214,6 +227,10 @@ footer {
   .card-wrapper {
     width: 20%;
     padding: 0.3rem;
+
+    i {
+      display: none;
+    }
 
     .card {
       background: rgb(255 255 255 / 0.03);
@@ -243,5 +260,237 @@ footer {
   img {
     border-radius: 5px;
     width: 100%;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .bg-main {
+    background-color: #000000;
+    background: linear-gradient(
+      180deg,
+      rgb(0, 0, 0) 100%,
+      rgb(0, 0, 0) 100%,
+      rgb(0, 0, 0) 100%,
+      rgb(0, 0, 0) 100%,
+      rgb(0, 0, 0) 100%,
+      rgb(0, 0, 0) 100%,
+      rgb(0, 0, 0) 100%
+    );
+  }
+
+  .recents h4 {
+    font-size: 24px;
+  }
+
+  .grid-sm p {
+    font-size: 12px;
+  }
+
+  .grid-lg {
+    flex-direction: column;
+    gap: 1rem;
+    .card-wrapper {
+      width: 100%;
+      padding: initial;
+
+      .card-body {
+        flex-grow: 1;
+        flex-shrink: 2;
+        .playlist-title {
+          font-size: 20px;
+          margin-bottom: 0.5rem;
+        }
+        .playlist-artist {
+          font-size: 16px;
+        }
+      }
+    }
+
+    .card-wrapper .card {
+      display: flex;
+      padding: 1rem;
+      gap: 1rem;
+      position: relative;
+      padding-bottom: 4rem;
+      background-color: #4646466e;
+
+      & > a {
+        width: 50%;
+        flex-shrink: 0;
+        min-width: 100px;
+      }
+    }
+
+    .card-wrapper .card .card-body + div {
+      display: block;
+      position: absolute;
+      bottom: 0.5rem;
+      right: 1rem;
+      background-color: #161010b7;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+    }
+
+    .card-wrapper i {
+      display: inline-block;
+      color: white;
+      font-size: 18px;
+      position: absolute;
+      bottom: 5px;
+      right: 7px;
+    }
+  }
+
+  .recents:nth-of-type(3) {
+    display: none;
+  }
+
+  .grid-lg .card-wrapper .card .card-body .playlist-title {
+    text-wrap: wrap;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .grid-sm .card {
+    width: 50%;
+    div {
+      width: inherit;
+      background-color: #ffffff0a;
+    }
+    p {
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  }
+}
+
+@media screen and (max-width: 768px) and (min-width: 576px) {
+  .recents h4 {
+    font-size: 24px;
+  }
+
+  .grid-sm p {
+    font-size: 12px;
+  }
+
+  .card-body .playlist-title {
+    font-size: 20px;
+    margin-bottom: 0.5rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .playlist-artist {
+    font-size: 16px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .grid-lg .card-wrapper .card > a {
+    width: 35%;
+    flex-shrink: 0;
+    min-width: 75px;
+  }
+}
+
+@media screen and (max-width: 992px) and (min-width: 576px) {
+  .bg-main {
+    background-color: #000000;
+    background: linear-gradient(
+      180deg,
+      rgb(0, 0, 0) 100%,
+      rgb(0, 0, 0) 100%,
+      rgb(0, 0, 0) 100%,
+      rgb(0, 0, 0) 100%,
+      rgb(0, 0, 0) 100%,
+      rgb(0, 0, 0) 100%,
+      rgb(0, 0, 0) 100%
+    );
+  }
+
+  .grid-sm .card {
+    div {
+      background-color: #ffffff0a;
+    }
+  }
+
+  .grid-lg {
+    flex-direction: row;
+    gap: 1rem;
+    .card-wrapper {
+      width: calc(50% - 1rem);
+      padding: initial;
+
+      .card-body {
+        flex-grow: 1;
+        flex-shrink: 2;
+      }
+    }
+
+    .card-wrapper .card {
+      display: flex;
+      padding: 1rem;
+      gap: 1rem;
+      position: relative;
+      padding-bottom: 4rem;
+      background-color: #4646466e;
+
+      & > a {
+        width: 50%;
+        flex-shrink: 0;
+        min-width: 100px;
+      }
+    }
+
+    .card-wrapper .card .card-body + div {
+      display: block;
+      position: absolute;
+      bottom: 0.5rem;
+      right: 1rem;
+      background-color: #161010b7;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+    }
+
+    .card-wrapper i {
+      display: inline-block;
+      color: white;
+      font-size: 18px;
+      position: absolute;
+      bottom: 5px;
+      right: 7px;
+    }
+  }
+
+  .recents:nth-of-type(3) {
+    display: none;
+  }
+
+  .grid-lg .card-wrapper .card .card-body {
+    width: 50%;
+    text-wrap: nowrap;
+
+    .playlist-title {
+      font-size: 20px;
+      margin-bottom: 0.5rem;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .playlist-artist {
+      font-size: 16px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  }
+}
+
+@media screen and (max-width: 992px) and (min-width: 768px) {
+  .recents h4 {
+    font-size: 30px;
+  }
+
+  .grid-sm p {
+    font-size: 16px;
   }
 }

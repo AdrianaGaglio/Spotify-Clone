@@ -321,3 +321,13 @@
   scrollbar-width: thin;
   scrollbar-color: #4d4d4d #000000;
 }
+
+@media screen and (max-width: 992px) {
+  #left {
+    display: none;
+  }
+
+  #right {
+    display: none;
+  }
+}

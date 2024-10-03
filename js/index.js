@@ -132,6 +132,12 @@ const generateAlbumCards = (data) => {
           <a href="./album.html?albumID=${album.id}"><h6 class="playlist-title" title="${album.title}">${album.title}</h6></a>
           <a href="./artist.html?artistID=${artist.id}"><p class="playlist-artist">${artist.name}</p></a>
       </div>
+      <div>
+        <a href="./album.html?albumID=${album.id}">
+         <i class="fa-solid fa-play"></i>
+        </a>
+      </div>
+    </div>
     `;
   // aggiungo la card creata all'HTML
   albums.appendChild(cardWrapper);
