@@ -12,33 +12,31 @@ class TrackObj {
 }
 
 const playTrack = () => {
-  if (localStorage.getItem("track")) {
-    const trackInfo = JSON.parse(localStorage.getItem("track"));
-    const title = trackInfo.title;
-    const artist = trackInfo.artist;
-    const cover = trackInfo.cover;
-    const track = trackInfo.track;
-    const seconds = trackInfo.duration % 60;
-    let formattedSeconds;
-    if (seconds < 10) {
-      formattedSeconds = "0" + seconds;
-    } else {
-      formattedSeconds = seconds;
-    }
-    const duration = `${Math.trunc(trackInfo.duration / 60)}:${formattedSeconds}`;
-    const trackTitle = document.querySelector(".song-title");
-    trackTitle.innerText = title;
-    const trackArtist = document.querySelector(".song-artist");
-    trackArtist.innerText = artist;
-    const trackCover = document.querySelector(".song-info img");
-    trackCover.src = cover;
-    const trackDuration = document.querySelector(".time");
-    trackDuration.innerText = duration;
-    const playerAudio = document.getElementById("playerAudio");
-    const playerTrack = playerAudio.querySelector("source");
-    playerTrack.src = track;
-    playerAudio.load();
+  const trackInfo = JSON.parse(localStorage.getItem("track"));
+  const title = JSON.parse(localStorage.getItem("track")).title;
+  const artist = trackInfo.artist;
+  const cover = trackInfo.cover;
+  const track = trackInfo.track;
+  const seconds = trackInfo.duration % 60;
+  let formattedSeconds;
+  if (seconds < 10) {
+    formattedSeconds = "0" + seconds;
+  } else {
+    formattedSeconds = seconds;
   }
+  const duration = `${Math.trunc(trackInfo.duration / 60)}:${formattedSeconds}`;
+  const trackTitle = document.querySelector(".song-title");
+  trackTitle.innerText = title;
+  const trackArtist = document.querySelector(".song-artist");
+  trackArtist.innerText = artist;
+  const trackCover = document.querySelector(".song-info img");
+  trackCover.src = cover;
+  const trackDuration = document.querySelector(".time");
+  trackDuration.innerText = duration;
+  const playerAudio = document.getElementById("playerAudio");
+  const playerTrack = playerAudio.querySelector("source");
+  playerTrack.src = track;
+  playerAudio.load();
 
   // gestisce il passaggio alla traccia successiva quando finisce la traccia
   playerAudio.addEventListener("loadedmetadata", function () {
@@ -99,5 +97,3 @@ rangeAudio.addEventListener("input", function () {
 
   playerAudio.volume = value / 100;
 });
-
-playTrack();
