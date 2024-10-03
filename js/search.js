@@ -85,7 +85,7 @@ const relatedAlbumsRow = (relatedAlbums) => {
   <div class="albums-poster">
   <a href="./album.html?albumID=${singleAlbum.album.id}"><img src="${singleAlbum.album.cover}" alt="album poster" /></a>
   <p><a href="./album.html?albumID=${singleAlbum.album.id}">${singleAlbum.album.title}</a></p>
-  <p> <a href="./album.html?artistID=${singleAlbum.artist.id}">${singleAlbum.artist.name}</a></p>
+  <p> <a href="./artist.html?artistID=${singleAlbum.artist.id}">${singleAlbum.artist.name}</a></p>
   </div>
 </div>
               `;
