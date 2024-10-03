@@ -1,8 +1,9 @@
-const searchUrl = "https://striveschool-api.herokuapp.com/api/deezer/search?q=francesco renga";
+const searchUrl = "https://striveschool-api.herokuapp.com/api/deezer/search?q=";
 const artistTracklist = "https://striveschool-api.herokuapp.com/api/deezer/artist/";
+const searchKeyWord = "dean martin";
 
-const getSearchResult = () => {
-  fetch(searchUrl)
+const getSearchResult = (keyWord) => {
+  fetch(searchUrl + keyWord)
     .then((response) => {
       if (response.ok) {
         return response.json();
@@ -49,6 +50,7 @@ const getSearch = (searchResult) => {
 
 const showTopTracks = (topTracks) => {
   const tracksContainer = document.querySelector(".tracks");
+  tracksContainer.innerHTML = "";
   for (let i = 0; i < 4; i++) {
     const singleTrack = topTracks[i];
     const trackDiv = document.createElement("div");
@@ -71,4 +73,12 @@ const showTopTracks = (topTracks) => {
   }
 };
 
-getSearchResult();
+const searchForm = document.querySelector("form");
+searchForm.addEventListener("submit", (e) => {
+  e.preventDefault();
+  const inputValue = document.querySelector("input").value;
+  getSearchResult(inputValue);
+  // form.reset();
+});
+
+getSearchResult(searchKeyWord);

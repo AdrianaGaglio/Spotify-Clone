@@ -109,10 +109,10 @@
             </button>
           </div> -->
         <div class="search-bar">
-          <input type="text" id="search-input" placeholder="Inserisci parola chiave" />
-          <button class="search-button">
-            <i class="fa-solid fa-magnifying-glass"></i>
-          </button>
+          <form>
+            <input type="text" id="search-input" placeholder="Inserisci parola chiave" />
+            <button class="search-button"><i class="fa-solid fa-magnifying-glass"></i></button>
+          </form>
         </div>
         <section class="hero">
           <div>
@@ -129,8 +129,8 @@
             </div>
           </div>
           <div>
+            <h3>Brani</h3>
             <div class="tracks">
-              <h3>Brani</h3>
               <!-- <div class="single-track">
                 <img src="https://placehold.co/600x400/png" alt="" />
                 <div>
@@ -302,28 +302,43 @@
           </div>
           <button><i class="fa-regular fa-heart"></i></button>
         </div>
+
         <div class="progress-bar-container">
           <div class="controls">
             <button><i class="fas fa-random"></i></button>
-            <button><i class="fas fa-step-backward"></i></button>
+            <button id="prevTrack"><i class="fas fa-step-backward"></i></button>
             <button class="playPauseBtn">
               <i class="fas fa-play-circle btnPauseTrack"></i>
             </button>
-            <button><i class="fas fa-step-forward"></i></button>
-            <button><i class="fas fa-retweet"></i></button>
+            <button id="nextTrack"><i class="fas fa-step-forward"></i></button>
+            <button class="loopButton">
+              <i class="fa-solid fa-repeat"></i>
+            </button>
           </div>
-          <div class="progress">
-            <div class="current-time">0:00</div>
-            <input type="range" min="0" max="100" value="0" class="seek-bar" />
-            <div class="total-time">0:00</div>
+          <div class="progressBar-time-container">
+            <div class="progress-bar">
+              <div></div>
+            </div>
+            <div class="time"></div>
           </div>
         </div>
-        <div class="volume-bar">
-          <button><i class="fa-solid fa-volume-high"></i></button>
-          <input type="range" min="0" max="100" value="100" class="volume-slider" />
+        <audio id="playerAudio">
+          <source src="" type="audio/mp3" />
+        </audio>
+        <div class="volume-control">
+          <button><i class="fa-solid fa-microphone"></i></button>
+          <button><i class="fa-solid fa-bars"></i></button>
+          <button><i class="fa-solid fa-tablet-screen-button"></i></button>
+          <button class="speaker"><i class="fas fa-volume-up"></i></button>
+          <input id="rangeAudio" type="range" min="0" max="100" />
+          <button>
+            <i class="fa-solid fa-up-right-and-down-left-from-center"></i>
+          </button>
         </div>
       </div>
     </footer>
+    <script src="./js/player.js"></script>
+    <script src="./js/tracklist.js"></script>
     <script src="./js/search.js"></script>
   </body>
 </html>
