@@ -101,8 +101,6 @@ const heroSection = (data) => {
         }
         localStorage.setItem("tracklist", JSON.stringify(trackListArray));
         handleTrackList();
-        // playTrack();
-        // switchBtn();
       };
       const firstTrackElement = document.createElement("p");
       firstTrackElement.style.marginTop = "1rem";

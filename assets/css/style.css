@@ -1068,6 +1068,7 @@ footer {
   color: white;
   min-height: 295px;
   background-size: cover;
+  background-position-y: 50%;
   display: flex;
   flex-direction: column;
   padding-bottom: 1.5rem;
