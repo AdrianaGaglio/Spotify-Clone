@@ -450,6 +450,7 @@ body {
 
 .wrapper {
   display: flex;
+  height: 100vh;
 }
 
 #central {
@@ -1240,6 +1241,21 @@ footer {
   margin-block: 1rem;
 }
 
+@media screen and (max-width: 992px) {
+  .artist-section {
+    flex-direction: column-reverse;
+    margin-left: initial;
+  }
+  .artist-section .left-column {
+    width: 100%;
+  }
+  .artist-section .left-column td:nth-child(5) {
+    display: none;
+  }
+  .artist-section .right-column {
+    width: 100%;
+  }
+}
 #player {
   display: flex;
   align-items: center;

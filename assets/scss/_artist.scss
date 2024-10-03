@@ -219,3 +219,19 @@
     }
   }
 }
+
+@media screen and (max-width: 992px) {
+  .artist-section {
+    flex-direction: column-reverse;
+    margin-left: initial;
+    .left-column {
+      width: 100%;
+    }
+    .left-column td:nth-child(5) {
+      display: none;
+    }
+    .right-column {
+      width: 100%;
+    }
+  }
+}

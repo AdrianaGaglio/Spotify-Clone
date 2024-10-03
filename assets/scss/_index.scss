@@ -6,6 +6,7 @@ body {
 
 .wrapper {
   display: flex;
+  height: 100vh;
 }
 
 #central {
@@ -113,7 +114,12 @@ footer {
   .hero {
     min-height: 301px;
     background: rgb(0, 0, 0);
-    background: linear-gradient(30deg, rgba(0, 0, 0, 0.7) 30%, rgba(0, 0, 0, 0.5) 50%, rgba(0, 0, 0, 0.16299019607843135) 100%);
+    background: linear-gradient(
+      30deg,
+      rgba(0, 0, 0, 0.7) 30%,
+      rgba(0, 0, 0, 0.5) 50%,
+      rgba(0, 0, 0, 0.16299019607843135) 100%
+    );
     padding: 1.5rem;
     display: flex;
     img {
