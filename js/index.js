@@ -165,3 +165,16 @@ const generateArtistCards = (data) => {
 
 suggestedAlbum();
 indexPreview();
+
+//animazione della barra di ricerca
+const searchLink = document.getElementById("searchBar");
+searchLink.addEventListener("click", () => {
+  const searchModal = document.querySelector(".search-modal");
+  searchModal.classList.add("add-animation");
+  const searchForm = document.querySelector(".search-modal form");
+  searchForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const inputValue = document.getElementById("search-input").value;
+    location.href = `./search.html?searchKeyWord=${inputValue}`;
+  });
+});

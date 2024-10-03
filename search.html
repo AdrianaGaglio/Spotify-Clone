@@ -101,84 +101,83 @@
           </ul>
         </section>
       </aside>
-      <main id="central" class="bg-main bg-album">
-        <section class="hero">
-          <img src="immagine.jpg" alt="Immagine" class="hero-img" />
-          <h1 class="hero-title">Elemento da cercare</h1>
-          <div class="search-bar">
+      <main id="central">
+        <!-- <div class="search-bar">
             <input type="text" id="search-input" placeholder="Inserisci parola chiave" />
             <button class="search-button">
               <i class="fa-solid fa-magnifying-glass"></i>
             </button>
+          </div> -->
+        <div class="search-bar">
+          <form>
+            <input type="text" id="search-input" placeholder="Inserisci parola chiave" />
+            <button class="search-button"><i class="fa-solid fa-magnifying-glass"></i></button>
+          </form>
+        </div>
+        <section class="hero">
+          <div>
+            <h3>Risultati più rilevanti</h3>
+            <div class="results">
+              <div>
+                <img src="https://placehold.co/600x400/png" />
+                <button class="spotify-button">
+                  <i class="fa-solid fa-play"></i>
+                </button>
+              </div>
+
+              <h4>The Best of Nome artista</h4>
+            </div>
+          </div>
+          <div>
+            <h3>Brani</h3>
+            <div class="tracks">
+              <!-- <div class="single-track">
+                <img src="https://placehold.co/600x400/png" alt="" />
+                <div>
+                  <h5>Titolo</h5>
+                  <p>Artista</p>
+                </div>
+                <div>
+                  <p>Durata</p>
+                </div>
+              </div>
+              <div class="single-track">
+                <img src="https://placehold.co/600x400/png" alt="" />
+                <div>
+                  <h5>Titolo</h5>
+                  <p>Artista</p>
+                </div>
+                <div>
+                  <p>Durata</p>
+                </div>
+              </div>
+              <div class="single-track">
+                <img src="https://placehold.co/600x400/png" alt="" />
+                <div>
+                  <h5>Titolo</h5>
+                  <p>Artista</p>
+                </div>
+                <div>
+                  <p>Durata</p>
+                </div>
+              </div>
+              <div class="single-track">
+                <img src="https://placehold.co/600x400/png" alt="" />
+                <div>
+                  <h5>Titolo</h5>
+                  <p>Artista</p>
+                </div>
+                <div>
+                  <p>Durata</p>
+                </div>
+              </div> -->
+            </div>
           </div>
         </section>
-        <div id="search-info1" class="bg-results">
-          <div class="resultInfo">
-            <!-- <div class="resultName">
-              <h5>RISULTATI</h5>
-              
-            </div> -->
-          </div>
-        </div>
         <div class="under-hero">
-          <div class="result-list">
-            <table>
-              <thead>
-                <tr>
-                  <th class="result-title">TITOLO CANZONE</th>
-                  <th class="result-artist">ARTISTA</th>
-                  <th class="result-album">ALBUM</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td class="song-title">Titolo Esempio 1</td>
-                  <td class="artist-name">Artista Esempio 1</td>
-                  <td class="album-name">Album Esempio 1</td>
-                </tr>
-                <tr>
-                  <td class="song-title">Titolo Esempio 2</td>
-                  <td class="artist-name">Artista Esempio 2</td>
-                  <td class="album-name">Album Esempio 2</td>
-                </tr>
-                <tr>
-                  <td class="song-title">Titolo Esempio 2</td>
-                  <td class="artist-name">Artista Esempio 2</td>
-                  <td class="album-name">Album Esempio 2</td>
-                </tr>
-                <tr>
-                  <td class="song-title">Titolo Esempio 2</td>
-                  <td class="artist-name">Artista Esempio 2</td>
-                  <td class="album-name">Album Esempio 2</td>
-                </tr>
-                <tr>
-                  <td class="song-title">Titolo Esempio 2</td>
-                  <td class="artist-name">Artista Esempio 2</td>
-                  <td class="album-name">Album Esempio 2</td>
-                </tr>
-                <tr>
-                  <td class="song-title">Titolo Esempio 2</td>
-                  <td class="artist-name">Artista Esempio 2</td>
-                  <td class="album-name">Album Esempio 2</td>
-                </tr>
-                <tr>
-                  <td class="song-title">Titolo Esempio 2</td>
-                  <td class="artist-name">Artista Esempio 2</td>
-                  <td class="album-name">Album Esempio 2</td>
-                </tr>
-                <tr>
-                  <td class="song-title">Titolo Esempio 2</td>
-                  <td class="artist-name">Artista Esempio 2</td>
-                  <td class="album-name">Album Esempio 2</td>
-                </tr>
-                <tr>
-                  <td class="song-title">Titolo Esempio 2</td>
-                  <td class="artist-name">Artista Esempio 2</td>
-                  <td class="album-name">Album Esempio 2</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
+          <div class="related-albums">
+            <h4>Album correlati</h4>
+            <div class="album-row"></div>
         </div>
       </main>
       <aside id="right" class="bg-black sidebar-right">
@@ -243,25 +242,39 @@
         <div class="progress-bar-container">
           <div class="controls">
             <button><i class="fas fa-random"></i></button>
-            <button><i class="fas fa-step-backward"></i></button>
+            <button id="prevTrack"><i class="fas fa-step-backward"></i></button>
             <button class="playPauseBtn">
               <i class="fas fa-play-circle btnPauseTrack"></i>
             </button>
-            <button><i class="fas fa-step-forward"></i></button>
-            <button><i class="fas fa-retweet"></i></button>
+            <button id="nextTrack"><i class="fas fa-step-forward"></i></button>
+            <button class="loopButton">
+              <i class="fa-solid fa-repeat"></i>
+            </button>
           </div>
-          <div class="progress">
-            <div class="current-time">0:00</div>
-            <input type="range" min="0" max="100" value="0" class="seek-bar" />
-            <div class="total-time">0:00</div>
+          <div class="progressBar-time-container">
+            <div class="progress-bar">
+              <div></div>
+            </div>
+            <div class="time"></div>
           </div>
         </div>
-        <div class="volume-bar">
-          <button><i class="fa-solid fa-volume-high"></i></button>
-          <input type="range" min="0" max="100" value="100" class="volume-slider" />
+        <audio id="playerAudio">
+          <source src="" type="audio/mp3" />
+        </audio>
+        <div class="volume-control">
+          <button><i class="fa-solid fa-microphone"></i></button>
+          <button><i class="fa-solid fa-bars"></i></button>
+          <button><i class="fa-solid fa-tablet-screen-button"></i></button>
+          <button class="speaker"><i class="fas fa-volume-up"></i></button>
+          <input id="rangeAudio" type="range" min="0" max="100" />
+          <button>
+            <i class="fa-solid fa-up-right-and-down-left-from-center"></i>
+          </button>
         </div>
       </div>
     </footer>
-    <script src="./assets/js/spotify-clone.js"></script>
+    <script src="./js/player.js"></script>
+    <script src="./js/tracklist.js"></script>
+    <script src="./js/search.js"></script>
   </body>
 </html>
