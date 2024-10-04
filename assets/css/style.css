@@ -1692,7 +1692,12 @@ main {
   }
 }
 .add-animation {
+  display: block;
   animation: searchbarDown 1s both;
+}
+
+.hide-modal {
+  display: none;
 }
 
 .related-albums {

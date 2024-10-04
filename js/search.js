@@ -1,6 +1,7 @@
 const searchUrl = "https://striveschool-api.herokuapp.com/api/deezer/search?q=";
 const artistTracklist = "https://striveschool-api.herokuapp.com/api/deezer/artist/";
 const windowUrl = new URLSearchParams(location.search);
+
 const searchKeyWord = windowUrl.get("searchKeyWord");
 
 const getSearchResult = (keyWord) => {
@@ -122,15 +123,21 @@ const relatedAlbumsRow = (relatedAlbums) => {
   }
 };
 
+getSearchResult(searchKeyWord);
+
 const searchForm = document.querySelector("form");
 searchForm.addEventListener("submit", (e) => {
   e.preventDefault();
+  history.pushState({}, "", "./search.html");
   const inputValue = document.querySelector("input").value;
   getSearchResult(inputValue);
+<<<<<<< Updated upstream
+  // form.reset();
+=======
+  location.replace("./search.html");
   form.reset();
+>>>>>>> Stashed changes
 });
-
-getSearchResult(searchKeyWord);
 
 prevTrack.addEventListener("click", () => {
   highlightTrack();
