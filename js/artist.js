@@ -63,7 +63,8 @@ const tracksDefinition = (tracksArray) => {
     const newRow = document.createElement("tr");
     newRow.innerHTML = `<td>${i + 1}</td>
         <td><img src="${track.album.cover_small}" alt="" /></td>
-        <td id="${i + 1}">${track.title}</td>
+        <td id="${i + 1}">${track.title} 
+        <p>${new Intl.NumberFormat("it-IT").format(track.rank)}</p></td>
         <td>${new Intl.NumberFormat("it-IT").format(track.rank)}</td>
         <td>${Math.trunc(track.duration / 60)}:${seconds}</td>`;
     tableBody.appendChild(newRow);

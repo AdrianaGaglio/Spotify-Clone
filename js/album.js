@@ -44,9 +44,13 @@ const generateAlbumHero = (data) => {
   }
 
   if (albumDuration < 3600) {
-    durationAllTracks.innerHTML = `${Math.trunc(albumDuration / 60)} min ${seconds} sec.`;
+    durationAllTracks.innerHTML = `${Math.trunc(
+      albumDuration / 60
+    )} min ${seconds} sec.`;
   } else {
-    durationAllTracks.innerHTML = `${Math.trunc(albumDuration / 3600)} h ${Math.trunc((albumDuration % 3600) / 60)} min ${seconds} sec.`;
+    durationAllTracks.innerHTML = `${Math.trunc(
+      albumDuration / 3600
+    )} h ${Math.trunc((albumDuration % 3600) / 60)} min ${seconds} sec.`;
   }
 };
 
@@ -60,13 +64,18 @@ const generateTracks = (allTracks) => {
     }
     numOfTracks.innerHTML = `${i} brani, `; //i e non (i+1) perchè c'è una riga vuota in più per creare lo spazio sopra la prima riga
     const trackRow = document.createElement("tr");
-    trackRow.innerHTML = `<td id="${i + 1}" class="track-numbers listNum">${i + 1}</td>
+    trackRow.innerHTML = `<td id="${i + 1}" class="track-numbers listNum">${
+      i + 1
+    }</td>
         <td class="track-title">
             <p id="${i + 1}">${track.title}</p>
-            <a href="artist.html?artistID=${track.artist.id}">${track.artist.name}</a>
+            <a href="artist.html?artistID=${track.artist.id}">${
+      track.artist.name
+    }</a>
         </td>
         <td class="times-played">
         <p>${new Intl.NumberFormat("it-IT").format(track.rank)}</p>
+        <a><i class="fa-solid fa-ellipsis-vertical"></i></a>
         </td>
         <td class="track-lenght">
         <p>${Math.trunc(track.duration / 60)}:${seconds}</p>

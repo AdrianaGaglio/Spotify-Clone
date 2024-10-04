@@ -10,7 +10,12 @@
 
 .bg-album {
   background: rgb(166, 143, 59);
-  background: linear-gradient(0deg, rgba(166, 143, 59, 0) 0%, rgba(193, 166, 69, 0.6530987394957983) 54%, rgba(228, 197, 82, 1) 100%);
+  background: linear-gradient(
+    0deg,
+    rgba(166, 143, 59, 0) 0%,
+    rgba(193, 166, 69, 0.6530987394957983) 54%,
+    rgba(228, 197, 82, 1) 100%
+  );
 }
 
 .arrow-leftRight {
@@ -63,7 +68,11 @@
 
 .under-hero {
   background: rgb(0, 0, 0);
-  background: linear-gradient(0deg, rgba(0, 0, 0, 0.8491771708683473) 75%, rgba(0, 0, 0, 0.28895308123249297) 100%);
+  background: linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0.8491771708683473) 75%,
+    rgba(0, 0, 0, 0.28895308123249297) 100%
+  );
 }
 
 .other-icons {
@@ -163,4 +172,50 @@
 .track-list .track-played p,
 .track-list .track-played {
   color: #1ccc59;
+}
+
+@media screen and (max-width: 576px) {
+  .albumInfo {
+    flex-direction: column;
+    padding-bottom: 0.5rem;
+    > img {
+      margin-inline: auto;
+    }
+    .albumName {
+      padding-inline: 0;
+      h5 {
+        display: none;
+      }
+      h1 {
+        margin-top: 1rem;
+        margin-bottom: 0.5rem;
+        font-size: 24px;
+        padding-bottom: 0;
+      }
+    }
+  }
+  .other-icons {
+    padding-top: 0;
+    margin-top: 0.5rem;
+  }
+  .times-played p,
+  .track-lenght,
+  tbody tr:nth-of-type(1) {
+    display: none;
+  }
+  .track-list {
+    padding-top: 0;
+    .times-played {
+      width: 32%;
+    }
+    .track-numbers {
+      width: 10%;
+    }
+  }
+}
+
+@media screen and (min-width: 576px) {
+  .times-played a {
+    display: none;
+  }
 }

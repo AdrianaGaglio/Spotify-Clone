@@ -216,6 +216,11 @@
   }
 }
 
+.track-played,
+.track-played * {
+  color: #1ccc59 !important;
+}
+
 @media screen and (max-width: 992px) {
   .artist-section {
     flex-direction: column-reverse;
@@ -231,7 +236,33 @@
     }
   }
 }
-.track-played,
-.track-played * {
-  color: #1ccc59 !important;
+
+@media screen and (max-width: 576px) {
+  .artist-section .left-column td:nth-child(4) {
+    display: none;
+  }
+  .artist-section .left-column td:nth-child(3) p {
+    margin-top: 0.5rem;
+  }
+  .artist-section .left-column td:nth-child(3) {
+    width: initial;
+  }
+}
+
+@media screen and (min-width: 576px) {
+  .artist-section .left-column td:nth-child(3) p {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 576px) and (max-width: 768px) {
+  .artist-section .left-column td:nth-child(3) {
+    width: 70%;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 992px) {
+  .artist-section .left-column td:nth-child(3) {
+    width: 80%;
+  }
 }

@@ -1041,6 +1041,50 @@ footer {
   color: #1ccc59;
 }
 
+@media screen and (max-width: 576px) {
+  .albumInfo {
+    flex-direction: column;
+    padding-bottom: 0.5rem;
+  }
+  .albumInfo > img {
+    margin-inline: auto;
+  }
+  .albumInfo .albumName {
+    padding-inline: 0;
+  }
+  .albumInfo .albumName h5 {
+    display: none;
+  }
+  .albumInfo .albumName h1 {
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+    font-size: 24px;
+    padding-bottom: 0;
+  }
+  .other-icons {
+    padding-top: 0;
+    margin-top: 0.5rem;
+  }
+  .times-played p,
+  .track-lenght,
+  tbody tr:nth-of-type(1) {
+    display: none;
+  }
+  .track-list {
+    padding-top: 0;
+  }
+  .track-list .times-played {
+    width: 32%;
+  }
+  .track-list .track-numbers {
+    width: 10%;
+  }
+}
+@media screen and (min-width: 576px) {
+  .times-played a {
+    display: none;
+  }
+}
 .play-pause.play::before {
   content: "\f04b";
 }
@@ -1238,6 +1282,11 @@ footer {
   margin-block: 1rem;
 }
 
+.track-played,
+.track-played * {
+  color: #1ccc59 !important;
+}
+
 @media screen and (max-width: 992px) {
   .artist-section {
     flex-direction: column-reverse;
@@ -1253,11 +1302,32 @@ footer {
     width: 100%;
   }
 }
-.track-played,
-.track-played * {
-  color: #1ccc59 !important;
+@media screen and (max-width: 576px) {
+  .artist-section .left-column td:nth-child(4) {
+    display: none;
+  }
+  .artist-section .left-column td:nth-child(3) p {
+    margin-top: 0.5rem;
+  }
+  .artist-section .left-column td:nth-child(3) {
+    width: initial;
+  }
 }
-
+@media screen and (min-width: 576px) {
+  .artist-section .left-column td:nth-child(3) p {
+    display: none;
+  }
+}
+@media screen and (min-width: 576px) and (max-width: 768px) {
+  .artist-section .left-column td:nth-child(3) {
+    width: 70%;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 992px) {
+  .artist-section .left-column td:nth-child(3) {
+    width: 80%;
+  }
+}
 #player {
   display: flex;
   align-items: center;
@@ -1471,11 +1541,6 @@ input[type=range]::-webkit-slider-thumb {
     display: none;
   }
 }
-#central {
-  background: rgb(0, 0, 0);
-  background: linear-gradient(180deg, rgba(0, 0, 0, 0.8856792717) 47%, rgba(0, 0, 0, 0.6447829132) 100%);
-}
-
 #search .hero {
   display: flex;
   justify-content: space-between;
@@ -1518,7 +1583,7 @@ input[type=range]::-webkit-slider-thumb {
 }
 
 .results {
-  background-color: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.03);
   border-radius: 10px;
   flex-grow: 1;
   display: flex;
@@ -1548,13 +1613,21 @@ input[type=range]::-webkit-slider-thumb {
 }
 
 .search-bar input {
-  width: 80%;
+  height: 50px;
+  width: 50%;
   padding: 10px;
   font-size: 1em;
   border: 1px solid #555;
-  background-color: #444;
   color: white;
-  border-radius: 5px;
+  border-radius: 50px;
+}
+
+input[type=text] {
+  background-color: #444;
+}
+
+input[type=text]:hover {
+  border: 1px solid white;
 }
 
 .search-button i {
@@ -1620,7 +1693,7 @@ main {
 }
 
 .albums-poster {
-  background-color: #444;
+  background: rgba(158, 158, 158, 0.07);
   border-radius: 10px;
   padding: 0.5rem;
 }
