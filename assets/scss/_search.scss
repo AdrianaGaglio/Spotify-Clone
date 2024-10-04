@@ -158,18 +158,20 @@ main {
   }
 }
 
-h3,
-h4,
-h5,
-p {
-  color: white;
-}
-h4 {
-  font-size: 2rem;
-  font-weight: 700;
-}
-p {
-  color: rgb(255 255 255 / 0.4);
+#search {
+  h3,
+  h4,
+  h5,
+  p {
+    color: white;
+  }
+  h4 {
+    font-size: 2rem;
+    font-weight: 700;
+  }
+  p {
+    color: rgb(255 255 255 / 0.4);
+  }
 }
 
 .albums-poster > p:first-of-type {
