@@ -122,15 +122,16 @@ const relatedAlbumsRow = (relatedAlbums) => {
   }
 };
 
+getSearchResult(searchKeyWord);
+
 const searchForm = document.querySelector("form");
 searchForm.addEventListener("submit", (e) => {
   e.preventDefault();
+  history.pushState({}, "", "./search.html");
   const inputValue = document.querySelector("input").value;
   getSearchResult(inputValue);
-  form.reset();
+  // form.reset();
 });
-
-getSearchResult(searchKeyWord);
 
 prevTrack.addEventListener("click", () => {
   highlightTrack();
