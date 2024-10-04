@@ -53,11 +53,16 @@ const getArtistTopTracks = (artistID) => {
 const getSearch = (searchResult) => {
   const image = searchResult[0].artist.picture;
   const name = searchResult[0].artist.name;
+  const artistID = searchResult[0].artist.id;
+
   const artistName = document.querySelector(".results h4");
-  artistName.innerHTML = "The Best of " + name;
+  artistName.innerHTML = `<a href="./artist.html?artistID=${artistID}">The Best of ${name}</a>`;
   const artistImg = document.querySelector(".results img");
   artistImg.src = image;
-  const artistID = searchResult[0].artist.id;
+  artistImg.style.cursor = "pointer";
+  artistImg.onclick = () => {
+    location.href = `./artist.html?artistID=${artistID}`;
+  };
   getArtistTopTracks(artistID);
 };
 
@@ -69,6 +74,7 @@ const showTopTracks = (topTracks) => {
     const trackDiv = document.createElement("div");
     trackDiv.classList.add("trackRow");
     trackDiv.classList.add("single-track");
+    trackDiv.style.cursor = "pointer";
     let seconds = singleTrack.duration % 60;
     if (seconds < 10) {
       seconds = "0" + seconds.toString();
@@ -88,6 +94,11 @@ const showTopTracks = (topTracks) => {
       trackList(topTracks);
       counter = i;
       handleTrackList();
+      if (document.querySelector(".track-played")) {
+        const classToRemove = document.querySelector(".track-played");
+        classToRemove.classList.remove("track-played");
+      }
+      trackDiv.classList.add("track-played");
     });
   }
 };
