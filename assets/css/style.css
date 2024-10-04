@@ -467,18 +467,6 @@ body {
   min-height: 600px;
 }
 
-@media screen and (max-width: 992px) {
-  #central {
-    margin-left: initial;
-    width: 100%;
-  }
-  #central .main-head {
-    display: none;
-  }
-  #central .hero {
-    display: none;
-  }
-}
 footer {
   height: 97px;
   position: fixed;
@@ -875,6 +863,40 @@ footer {
     font-size: 16px;
   }
 }
+@media screen and (max-width: 992px) {
+  #central {
+    margin-left: initial;
+    width: 100%;
+  }
+  #central .main-head {
+    display: none;
+  }
+  #central .hero {
+    display: none;
+  }
+  footer {
+    height: 150px;
+  }
+  .menu-mobile {
+    display: flex;
+    color: white;
+    justify-content: space-evenly;
+    gap: 2rem;
+    background-color: rgba(0, 0, 0, 0.2705882353);
+    width: 95%;
+  }
+  .menu-mobile a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .menu-mobile .icons {
+    margin-right: 0;
+  }
+  .menu-mobile p {
+    font-size: 10px;
+  }
+}
 #album-info,
 .under-hero {
   padding-inline: 25px;
@@ -1234,10 +1256,10 @@ footer {
   width: 15%;
   text-align: end;
 }
-.artist-section .left-column a {
+.artist-section .left-column .other-content {
   display: block;
   font-weight: 700;
-  margin-top: 1rem;
+  margin-top: 2rem;
   text-decoration: none;
   color: white;
 }
@@ -1311,7 +1333,7 @@ footer {
   #hero h1 {
     font-size: 4rem;
   }
-  .artist-section .left-column td:nth-child(4) {
+  .artist-section .left-column td:nth-child(4) p {
     display: none;
   }
   .artist-section .left-column td:nth-child(3) p {
@@ -1319,11 +1341,6 @@ footer {
   }
   .artist-section .left-column td:nth-child(3) {
     width: initial;
-  }
-}
-@media screen and (min-width: 576px) {
-  .artist-section .left-column td:nth-child(3) p {
-    display: none;
   }
 }
 @media screen and (min-width: 576px) and (max-width: 768px) {
@@ -1334,6 +1351,11 @@ footer {
 @media screen and (min-width: 768px) and (max-width: 992px) {
   .artist-section .left-column td:nth-child(3) {
     width: 80%;
+  }
+}
+@media screen and (min-width: 576px) {
+  .artist-section .left-column td:nth-child(4) a {
+    display: none;
   }
 }
 #player {

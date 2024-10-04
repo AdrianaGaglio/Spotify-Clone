@@ -23,19 +23,6 @@ body {
   }
 }
 
-@media screen and (max-width: 992px) {
-  #central {
-    margin-left: initial;
-    width: 100%;
-    .main-head {
-      display: none;
-    }
-    .hero {
-      display: none;
-    }
-  }
-}
-
 footer {
   height: 97px;
   position: fixed;
@@ -114,12 +101,7 @@ footer {
   .hero {
     min-height: 301px;
     background: rgb(0, 0, 0);
-    background: linear-gradient(
-      30deg,
-      rgba(0, 0, 0, 0.7) 30%,
-      rgba(0, 0, 0, 0.5) 50%,
-      rgba(0, 0, 0, 0.16299019607843135) 100%
-    );
+    background: linear-gradient(30deg, rgba(0, 0, 0, 0.7) 30%, rgba(0, 0, 0, 0.5) 50%, rgba(0, 0, 0, 0.16299019607843135) 100%);
     padding: 1.5rem;
     display: flex;
     img {
@@ -498,5 +480,46 @@ footer {
 
   .grid-sm p {
     font-size: 16px;
+  }
+}
+
+//menu mobile
+@media screen and (max-width: 992px) {
+  #central {
+    margin-left: initial;
+    width: 100%;
+    .main-head {
+      display: none;
+    }
+    .hero {
+      display: none;
+    }
+  }
+
+  footer {
+    height: 150px;
+  }
+
+  .menu-mobile {
+    display: flex;
+    color: white;
+    justify-content: space-evenly;
+    gap: 2rem;
+    background-color: #00000045;
+    width: 95%;
+
+    a {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .icons {
+      margin-right: 0;
+    }
+
+    p {
+      font-size: 10px;
+    }
   }
 }
