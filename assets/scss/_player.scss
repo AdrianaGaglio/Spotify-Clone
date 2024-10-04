@@ -1,4 +1,5 @@
 #player {
+  min-height: 97.2px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -8,11 +9,16 @@
 }
 
 .song-info {
+  visibility: hidden;
   width: 20%;
   display: flex;
   gap: 5px;
   align-items: center;
   color: #fff;
+}
+
+.visibility {
+  visibility: visible;
 }
 
 .song-info img {

@@ -3,6 +3,8 @@ const albumUrl = "https://striveschool-api.herokuapp.com/api/deezer/album/";
 const windowUrl = new URLSearchParams(location.search);
 const albumId = windowUrl.get("albumID");
 
+const spotifyBtn = document.querySelector(".spotify-button");
+
 const getAlbum = () => {
   fetch(albumUrl + albumId)
     .then((response) => {
@@ -15,7 +17,17 @@ const getAlbum = () => {
     .then((data) => {
       generateAlbumHero(data);
       generateTracks(data.tracks.data);
-      trackList(data.tracks.data);
+
+      // al click sul pulsante spotify
+      if (document.querySelector(".spotify-button")) {
+        spotifyBtn.addEventListener("click", () => {
+          // crea la tracklist in localstorage
+          trackList(data.tracks.data);
+          // avvia la riproduzione della tracklist
+          handleTrackList();
+          highlightTrack();
+        });
+      }
     })
     .catch((error) => {
       console.log(error);
@@ -38,19 +50,17 @@ const generateAlbumHero = (data) => {
   const artist = document.querySelector(".moreInfo .artist-name");
   artist.innerText = `${artistName}`;
   const durationAllTracks = document.querySelector(".album-duration");
+
+  // controlla se i secondi sono meno di 10 per aggiungere lo 0 davanti es. 01
   let seconds = albumDuration % 60;
   if (seconds < 10) {
     seconds = "0" + seconds.toString();
   }
 
   if (albumDuration < 3600) {
-    durationAllTracks.innerHTML = `${Math.trunc(
-      albumDuration / 60
-    )} min ${seconds} sec.`;
+    durationAllTracks.innerHTML = `${Math.trunc(albumDuration / 60)} min ${seconds} sec.`;
   } else {
-    durationAllTracks.innerHTML = `${Math.trunc(
-      albumDuration / 3600
-    )} h ${Math.trunc((albumDuration % 3600) / 60)} min ${seconds} sec.`;
+    durationAllTracks.innerHTML = `${Math.trunc(albumDuration / 3600)} h ${Math.trunc((albumDuration % 3600) / 60)} min ${seconds} sec.`;
   }
 };
 
@@ -64,21 +74,19 @@ const generateTracks = (allTracks) => {
     }
     numOfTracks.innerHTML = `${i} brani, `; //i e non (i+1) perchè c'è una riga vuota in più per creare lo spazio sopra la prima riga
     const trackRow = document.createElement("tr");
-    trackRow.innerHTML = `<td id="${i + 1}" class="track-numbers listNum">${
-      i + 1
-    }</td>
-        <td class="track-title">
-            <p id="${i + 1}">${track.title}</p>
-            <a href="artist.html?artistID=${track.artist.id}">${
-      track.artist.name
-    }</a>
-        </td>
-        <td class="times-played">
-        <p>${new Intl.NumberFormat("it-IT").format(track.rank)}</p>
-        <a><i class="fa-solid fa-ellipsis-vertical"></i></a>
-        </td>
-        <td class="track-lenght">
-        <p>${Math.trunc(track.duration / 60)}:${seconds}</p>
+    trackRow.classList.add("trackRow");
+    trackRow.innerHTML = `
+        <td id="${i + 1}" class="track-numbers listNum">${i + 1}</td>
+          <td class="track-title">
+              <p class="song">${track.title}</p>
+              <a href="artist.html?artistID=${track.artist.id}">${track.artist.name}</a>
+          </td>
+          <td class="times-played">
+          <p>${new Intl.NumberFormat("it-IT").format(track.rank)}</p>
+          <a><i class="fa-solid fa-ellipsis-vertical"></i></a>
+          </td>
+          <td class="track-lenght">
+          <p>${Math.trunc(track.duration / 60)}:${seconds}</p>
         </td>`;
     const table = document.querySelector("table");
     table.appendChild(trackRow);
@@ -87,12 +95,14 @@ const generateTracks = (allTracks) => {
 
     trackRow.onmouseenter = (e) => {
       trackRow.onclick = () => {
+        trackList(allTracks);
         counter = trackRow.querySelector("td").id - 1;
         // const newTrack = new TrackObj(track.title, track.artist.name, track.album.cover_small, track.preview, track.duration);
         // localStorage.setItem("track", JSON.stringify(newTrack));
         // playTrack();
         // switchBtn();
         handleTrackList();
+        // evidenzia la traccia se cliccata
         if (document.querySelector(".track-played")) {
           //controlla se un elemento ha la classe e se esiste la toglie!
           const classAdded = document.querySelector(".track-played");
@@ -114,7 +124,6 @@ const generateTracks = (allTracks) => {
         listPlayTrack.innerHTML = `<i class="fa-solid fa-play"></i>`;
       }
     };
-
     trackRow.onmouseleave = (e) => {
       const listPlayTrack = e.currentTarget.querySelector(".listNum");
       listPlayTrack.innerHTML = `${i + 1}`;
@@ -136,23 +145,6 @@ searchLink.addEventListener("click", () => {
     location.href = `./search.html?searchKeyWord=${inputValue}`;
   });
 });
-
-const highlightTrack = () => {
-  const currentTrackObj = JSON.parse(localStorage.getItem("track"));
-  const currentTitle = currentTrackObj.title;
-  const allRows = document.querySelectorAll("tr");
-  console.log(allRows);
-  for (let i = 2; i < allRows.length; i++) {
-    row = allRows[i];
-    const title = row.querySelector("td:nth-of-type(2) p").innerHTML;
-    console.dir(title);
-    if (currentTitle === title && !playerAudio.paused) {
-      row.classList.add("track-played");
-    } else {
-      row.classList.remove("track-played");
-    }
-  }
-};
 
 // evidenzia canzone in riproduzione dalla lista
 nextTrack.addEventListener("click", () => {

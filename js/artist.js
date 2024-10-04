@@ -42,7 +42,18 @@ const getTracks = () => {
     })
     .then((data) => {
       tracksDefinition(data.data);
-      trackList(data.data);
+
+      // al click sul pulsante spotify
+      if (document.querySelector(".spotify-button")) {
+        const spotifyBtn = document.querySelector(".spotify-button");
+        spotifyBtn.addEventListener("click", () => {
+          // crea la tracklist in localstorage
+          trackList(data.data);
+          // avvia la riproduzione della tracklist
+          handleTrackList();
+          highlightTrack();
+        });
+      }
     })
     .catch((err) => {
       console.log(err);
@@ -61,10 +72,10 @@ const tracksDefinition = (tracksArray) => {
     }
 
     const newRow = document.createElement("tr");
+    newRow.classList.add("trackRow");
     newRow.innerHTML = `<td>${i + 1}</td>
         <td><img src="${track.album.cover_small}" alt="" /></td>
-        <td id="${i + 1}">${track.title} 
-        <p>${new Intl.NumberFormat("it-IT").format(track.rank)}</p></td>
+        <td class="song" id="${i + 1}">${track.title}</td>
         <td>${new Intl.NumberFormat("it-IT").format(track.rank)}</td>
         <td>${Math.trunc(track.duration / 60)}:${seconds}</td>`;
     tableBody.appendChild(newRow);
@@ -74,6 +85,7 @@ const tracksDefinition = (tracksArray) => {
 
     newRow.onmouseenter = (e) => {
       newRow.onclick = () => {
+        trackList(tracksArray);
         counter = newRow.querySelector("td:nth-of-type(3)").id - 1;
         // const artistTrack = new TrackObj(track.title, track.artist.name, track.album.cover_small, track.preview, track.duration);
         // if (localStorage.getItem("tracklist")) {
@@ -136,29 +148,15 @@ searchLink.addEventListener("click", () => {
   });
 });
 
-const highlightCurrentTrack = () => {
-  const currentTrackObj = JSON.parse(localStorage.getItem("track"));
-  const currentTitle = currentTrackObj.title;
-  const allRows = document.querySelectorAll("tr");
-  allRows.forEach((row, i) => {
-    const title = row.querySelector("td:nth-of-type(3)").innerHTML;
-    if (currentTitle === title && !playerAudio.paused) {
-      row.classList.add("track-played");
-    } else {
-      row.classList.remove("track-played");
-    }
-  });
-};
-
 // evidenzia canzone in riproduzione dalla lista
 nextTrack.addEventListener("click", () => {
-  highlightCurrentTrack();
+  highlightTrack();
 });
 
 prevTrack.addEventListener("click", () => {
-  highlightCurrentTrack();
+  highlightTrack();
 });
 
 playPauseBtn.addEventListener("click", () => {
-  highlightCurrentTrack();
+  highlightTrack();
 });
