@@ -57,6 +57,7 @@
     background-color: rgb(0 0 0 / 0.5);
   }
   h1 {
+    word-break: break-all;
     font-size: 5rem;
     font-weight: 900;
     margin-bottom: 2rem;
@@ -165,18 +166,20 @@
     }
 
     //reso i bordi della tr rounded lavorando sul primo e ultimo td della row!
-    tr:hover {
-      background-color: #4d4d4d;
-      cursor: pointer;
+    @media screen and (min-width: 992px) {
+      tr:hover {
+        background-color: #4d4d4d;
+        cursor: pointer;
+      }
     }
 
-    td:nth-child(1) {
+    td:first-child {
       width: 5%;
       border-top-left-radius: 5px;
       border-bottom-left-radius: 5px;
     }
 
-    td:nth-child(5) {
+    td:last-child {
       border-top-right-radius: 5px;
       border-bottom-right-radius: 5px;
     }
@@ -231,6 +234,7 @@
     .left-column td:nth-child(5) {
       display: none;
     }
+
     .right-column {
       width: 100%;
     }
@@ -238,6 +242,10 @@
 }
 
 @media screen and (max-width: 576px) {
+  #hero h1 {
+    font-size: 4rem;
+  }
+
   .artist-section .left-column td:nth-child(4) {
     display: none;
   }

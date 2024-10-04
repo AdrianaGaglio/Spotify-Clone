@@ -970,9 +970,11 @@ footer {
 .track-list table tr > td {
   vertical-align: middle;
 }
-.track-list table tr:hover:not(:nth-last-of-type(1), :nth-last-of-type(2)) {
-  background-color: #4d4d4d;
-  cursor: pointer;
+@media screen and (min-width: 992px) {
+  .track-list table .trackRow:hover {
+    background-color: #4d4d4d;
+    cursor: pointer;
+  }
 }
 .track-list table td:nth-child(1) {
   border-top-left-radius: 5px;
@@ -1067,7 +1069,7 @@ footer {
   }
   .times-played p,
   .track-lenght,
-  tbody tr:nth-of-type(1) {
+  #album tbody tr:nth-of-type(1) {
     display: none;
   }
   .track-list {
@@ -1145,6 +1147,7 @@ footer {
   background-color: rgba(0, 0, 0, 0.5);
 }
 #hero h1 {
+  word-break: break-all;
   font-size: 5rem;
   font-weight: 900;
   margin-bottom: 2rem;
@@ -1238,16 +1241,18 @@ footer {
   text-decoration: none;
   color: white;
 }
-.artist-section .left-column tr:hover {
-  background-color: #4d4d4d;
-  cursor: pointer;
+@media screen and (min-width: 992px) {
+  .artist-section .left-column tr:hover {
+    background-color: #4d4d4d;
+    cursor: pointer;
+  }
 }
-.artist-section .left-column td:nth-child(1) {
+.artist-section .left-column td:first-child {
   width: 5%;
   border-top-left-radius: 5px;
   border-bottom-left-radius: 5px;
 }
-.artist-section .left-column td:nth-child(5) {
+.artist-section .left-column td:last-child {
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
 }
@@ -1303,6 +1308,9 @@ footer {
   }
 }
 @media screen and (max-width: 576px) {
+  #hero h1 {
+    font-size: 4rem;
+  }
   .artist-section .left-column td:nth-child(4) {
     display: none;
   }
@@ -1329,7 +1337,6 @@ footer {
   }
 }
 #player {
-  min-height: 97.2px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -1545,6 +1552,11 @@ input[type=range]::-webkit-slider-thumb {
   }
   .volume-control {
     display: none;
+  }
+}
+@media screen and (min-width: 992px) {
+  #player {
+    min-height: 97.2px;
   }
 }
 #search .hero {

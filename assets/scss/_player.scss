@@ -1,5 +1,4 @@
 #player {
-  min-height: 97.2px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -217,5 +216,11 @@ input[type="range"]::-webkit-slider-thumb {
   }
   .volume-control {
     display: none;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  #player {
+    min-height: 97.2px;
   }
 }
