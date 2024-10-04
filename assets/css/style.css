@@ -1630,19 +1630,17 @@ main {
   padding-bottom: 0.5rem;
 }
 
-h3,
-h4,
-h5,
-p {
+#search h3,
+#search h4,
+#search h5,
+#search p {
   color: white;
 }
-
-h4 {
+#search h4 {
   font-size: 2rem;
   font-weight: 700;
 }
-
-p {
+#search p {
   color: rgba(255, 255, 255, 0.4);
 }
 

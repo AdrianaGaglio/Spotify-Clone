@@ -117,7 +117,6 @@ const highlightCurrent = () => {
     const title = row.querySelector("h5").innerHTML;
     if (currentTitle === title && !playerAudio.paused) {
       row.classList.add("track-played");
-      console.log("uguale");
     } else {
       row.classList.remove("track-played");
     }
