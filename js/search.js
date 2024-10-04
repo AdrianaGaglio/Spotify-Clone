@@ -131,12 +131,6 @@ searchForm.addEventListener("submit", (e) => {
   history.pushState({}, "", "./search.html");
   const inputValue = document.querySelector("input").value;
   getSearchResult(inputValue);
-<<<<<<< Updated upstream
-  // form.reset();
-=======
-  location.replace("./search.html");
-  form.reset();
->>>>>>> Stashed changes
 });
 
 prevTrack.addEventListener("click", () => {
