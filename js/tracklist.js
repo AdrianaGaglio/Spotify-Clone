@@ -17,7 +17,6 @@ const handleTrackList = () => {
   localStorage.setItem("track", JSON.stringify(track));
   playTrack();
   switchBtn();
-
   const audioPlayer = document.getElementById("playerAudio");
   //gestisce il button Loop della traccia
   const loopButton = document.querySelector(".loopButton");
@@ -28,16 +27,17 @@ const handleTrackList = () => {
   // gestisce il passaggio alla traccia successiva quando finisce la traccia
   audioPlayer.addEventListener("loadedmetadata", function () {
     // durata totale della traccia in riproduzione
-    let duration = audioPlayer.duration;
+    let duration = Math.trunc(audioPlayer.duration);
     let progressWidth = 0;
-    setInterval(() => {
+    let timer = setInterval(() => {
       // secondi correnti della traccia in riproduzione
-      let seconds = audioPlayer.currentTime;
+      let seconds = Math.trunc(playerAudio.currentTime);
       progressWidth = Math.trunc((100 * seconds) / duration);
       const progressBar = document.querySelector(".progress-bar > div");
       progressBar.style.width = `${progressWidth}%`;
       // controlla se i secondi correnti sono uguali alla durata totale
       if (duration === seconds) {
+        clearInterval(timer);
         // controlla se è l'ultima traccia
         if (counter === trackList.length - 1) {
           // se si, riparte dalla prima
@@ -48,6 +48,7 @@ const handleTrackList = () => {
         }
         // mette la traccia da playare in localstorage e chiama le funzioni per il play
         localStorage.setItem("track", JSON.stringify(trackList[counter]));
+        highlightTrack();
         playTrack();
         switchBtn();
       }

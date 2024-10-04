@@ -51,6 +51,7 @@ const getTracks = () => {
           trackList(data.data);
           // avvia la riproduzione della tracklist
           handleTrackList();
+          highlightTrack();
         });
       }
     })
@@ -71,9 +72,10 @@ const tracksDefinition = (tracksArray) => {
     }
 
     const newRow = document.createElement("tr");
+    newRow.classList.add("trackRow");
     newRow.innerHTML = `<td>${i + 1}</td>
         <td><img src="${track.album.cover_small}" alt="" /></td>
-        <td id="${i + 1}">${track.title}</td>
+        <td class="song" id="${i + 1}">${track.title}</td>
         <td>${new Intl.NumberFormat("it-IT").format(track.rank)}</td>
         <td>${Math.trunc(track.duration / 60)}:${seconds}</td>`;
     tableBody.appendChild(newRow);
@@ -146,29 +148,15 @@ searchLink.addEventListener("click", () => {
   });
 });
 
-const highlightCurrentTrack = () => {
-  const currentTrackObj = JSON.parse(localStorage.getItem("track"));
-  const currentTitle = currentTrackObj.title;
-  const allRows = document.querySelectorAll("tr");
-  allRows.forEach((row, i) => {
-    const title = row.querySelector("td:nth-of-type(3)").innerHTML;
-    if (currentTitle === title && !playerAudio.paused) {
-      row.classList.add("track-played");
-    } else {
-      row.classList.remove("track-played");
-    }
-  });
-};
-
 // evidenzia canzone in riproduzione dalla lista
 nextTrack.addEventListener("click", () => {
-  highlightCurrentTrack();
+  highlightTrack();
 });
 
 prevTrack.addEventListener("click", () => {
-  highlightCurrentTrack();
+  highlightTrack();
 });
 
 playPauseBtn.addEventListener("click", () => {
-  highlightCurrentTrack();
+  highlightTrack();
 });

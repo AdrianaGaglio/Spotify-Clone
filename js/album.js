@@ -3,6 +3,8 @@ const albumUrl = "https://striveschool-api.herokuapp.com/api/deezer/album/";
 const windowUrl = new URLSearchParams(location.search);
 const albumId = windowUrl.get("albumID");
 
+const spotifyBtn = document.querySelector(".spotify-button");
+
 const getAlbum = () => {
   fetch(albumUrl + albumId)
     .then((response) => {
@@ -18,12 +20,12 @@ const getAlbum = () => {
 
       // al click sul pulsante spotify
       if (document.querySelector(".spotify-button")) {
-        const spotifyBtn = document.querySelector(".spotify-button");
         spotifyBtn.addEventListener("click", () => {
           // crea la tracklist in localstorage
           trackList(data.tracks.data);
           // avvia la riproduzione della tracklist
           handleTrackList();
+          highlightTrack();
         });
       }
     })
@@ -72,10 +74,11 @@ const generateTracks = (allTracks) => {
     }
     numOfTracks.innerHTML = `${i} brani, `; //i e non (i+1) perchè c'è una riga vuota in più per creare lo spazio sopra la prima riga
     const trackRow = document.createElement("tr");
+    trackRow.classList.add("trackRow");
     trackRow.innerHTML = `
         <td id="${i + 1}" class="track-numbers listNum">${i + 1}</td>
           <td class="track-title">
-              <p>${track.title}</p>
+              <p class="song">${track.title}</p>
               <a href="artist.html?artistID=${track.artist.id}">${track.artist.name}</a>
           </td>
           <td class="times-played">
@@ -120,7 +123,6 @@ const generateTracks = (allTracks) => {
         listPlayTrack.innerHTML = `<i class="fa-solid fa-play"></i>`;
       }
     };
-
     trackRow.onmouseleave = (e) => {
       const listPlayTrack = e.currentTarget.querySelector(".listNum");
       listPlayTrack.innerHTML = `${i + 1}`;
@@ -142,23 +144,6 @@ searchLink.addEventListener("click", () => {
     location.href = `./search.html?searchKeyWord=${inputValue}`;
   });
 });
-
-const highlightTrack = () => {
-  const currentTrackObj = JSON.parse(localStorage.getItem("track"));
-  const currentTitle = currentTrackObj.title;
-  const allRows = document.querySelectorAll("tr");
-  console.log(allRows);
-  for (let i = 2; i < allRows.length; i++) {
-    row = allRows[i];
-    const title = row.querySelector("td:nth-of-type(2) p").innerHTML;
-    console.dir(title);
-    if (currentTitle === title && !playerAudio.paused) {
-      row.classList.add("track-played");
-    } else {
-      row.classList.remove("track-played");
-    }
-  }
-};
 
 // evidenzia canzone in riproduzione dalla lista
 nextTrack.addEventListener("click", () => {
