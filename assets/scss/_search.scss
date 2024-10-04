@@ -16,19 +16,7 @@
     font-weight: 700;
     margin-bottom: 0.5rem;
   }
-  h3,
-  h4,
-  h5,
-  p {
-    color: white;
-  }
-  h4 {
-    font-size: 2rem;
-    font-weight: 700;
-  }
-  .tracks p {
-    color: rgb(255 255 255 / 0.4);
-  }
+
   & > div {
     flex-grow: 1;
     padding: 1rem;
@@ -168,4 +156,18 @@ main {
     width: 100%;
     padding-bottom: 0.5rem;
   }
+}
+
+h3,
+h4,
+h5,
+p {
+  color: white;
+}
+h4 {
+  font-size: 2rem;
+  font-weight: 700;
+}
+p {
+  color: rgb(255 255 255 / 0.4);
 }

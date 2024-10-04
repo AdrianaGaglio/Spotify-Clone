@@ -128,8 +128,7 @@ searchLink.addEventListener("click", () => {
   });
 });
 
-// evidenzia canzone in riproduzione dalla lista
-nextTrack.onclick = () => {
+const highlightTrack = () => {
   const currentTrackObj = JSON.parse(localStorage.getItem("track"));
   const currentTitle = currentTrackObj.title;
   const allRows = document.querySelectorAll("tr");
@@ -146,19 +145,15 @@ nextTrack.onclick = () => {
   }
 };
 
-prevTrack.onclick = () => {
-  const currentTrackObj = JSON.parse(localStorage.getItem("track"));
-  const currentTitle = currentTrackObj.title;
-  const allRows = document.querySelectorAll("tr");
-  console.log(allRows);
-  for (let i = 2; i < allRows.length; i++) {
-    row = allRows[i];
-    const title = row.querySelector("td:nth-of-type(2) p").innerHTML;
-    console.dir(title);
-    if (currentTitle === title && !playerAudio.paused) {
-      row.classList.add("track-played");
-    } else {
-      row.classList.remove("track-played");
-    }
-  }
-};
+// evidenzia canzone in riproduzione dalla lista
+nextTrack.addEventListener("click", () => {
+  highlightTrack();
+});
+
+prevTrack.addEventListener("click", () => {
+  highlightTrack();
+});
+
+playPauseBtn.addEventListener("click", () => {
+  highlightTrack();
+});
