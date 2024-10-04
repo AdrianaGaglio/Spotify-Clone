@@ -450,7 +450,7 @@ body {
 
 .wrapper {
   display: flex;
-  height: 100vh;
+  min-height: 100vh;
 }
 
 #central {
@@ -1166,9 +1166,6 @@ footer {
   width: 60%;
   margin-right: 4rem;
 }
-.artist-section .left-column .track-played {
-  color: #1ccc59;
-}
 .artist-section .left-column .fa-play {
   color: white;
   font-size: 14px;
@@ -1256,6 +1253,11 @@ footer {
     width: 100%;
   }
 }
+.track-played,
+.track-played * {
+  color: #1ccc59 !important;
+}
+
 #player {
   display: flex;
   align-items: center;
@@ -1488,19 +1490,6 @@ input[type=range]::-webkit-slider-thumb {
   font-weight: 700;
   margin-bottom: 0.5rem;
 }
-#search .hero h3,
-#search .hero h4,
-#search .hero h5,
-#search .hero p {
-  color: white;
-}
-#search .hero h4 {
-  font-size: 2rem;
-  font-weight: 700;
-}
-#search .hero .tracks p {
-  color: rgba(255, 255, 255, 0.4);
-}
 #search .hero > div {
   flex-grow: 1;
   padding: 1rem;
@@ -1639,4 +1628,24 @@ main {
   border-radius: 10px;
   width: 100%;
   padding-bottom: 0.5rem;
+}
+
+h3,
+h4,
+h5,
+p {
+  color: white;
+}
+
+h4 {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+p {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.albums-poster > p:first-of-type {
+  color: white;
 }/*# sourceMappingURL=style.css.map */

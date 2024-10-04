@@ -130,10 +130,6 @@
     width: 60%;
     margin-right: 4rem;
 
-    .track-played {
-      color: #1ccc59;
-    }
-
     .fa-play {
       color: white;
       font-size: 14px;
@@ -234,4 +230,8 @@
       width: 100%;
     }
   }
+}
+.track-played,
+.track-played * {
+  color: #1ccc59 !important;
 }

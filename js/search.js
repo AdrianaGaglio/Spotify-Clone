@@ -31,6 +31,7 @@ const getArtistTopTracks = (artistID) => {
       }
     })
     .then((topTracks) => {
+      console.log(topTracks.data);
       showTopTracks(topTracks.data);
       trackList(topTracks.data);
     })
@@ -64,7 +65,7 @@ const showTopTracks = (topTracks) => {
     trackDiv.innerHTML = `
     <img src="${singleTrack.album.cover}" alt="${singleTrack.album.title}" />
     <div>
-        <h5>${singleTrack.album.title}</h5>
+        <h5>${singleTrack.title}</h5>
         <p>${singleTrack.artist.name}</p>
     </div>
     <div>
@@ -72,6 +73,10 @@ const showTopTracks = (topTracks) => {
     </div>
     `;
     tracksContainer.appendChild(trackDiv);
+    trackDiv.addEventListener("click", () => {
+      counter = i;
+      handleTrackList();
+    });
   }
 };
 
@@ -103,3 +108,30 @@ searchForm.addEventListener("submit", (e) => {
 });
 
 getSearchResult(searchKeyWord);
+
+const highlightCurrent = () => {
+  const currentTrackObj = JSON.parse(localStorage.getItem("track"));
+  const currentTitle = currentTrackObj.title;
+  const allRows = document.querySelectorAll(".single-track");
+  allRows.forEach((row, i) => {
+    const title = row.querySelector("h5").innerHTML;
+    if (currentTitle === title && !playerAudio.paused) {
+      row.classList.add("track-played");
+      console.log("uguale");
+    } else {
+      row.classList.remove("track-played");
+    }
+  });
+};
+
+prevTrack.addEventListener("click", () => {
+  highlightCurrent();
+});
+
+nextTrack.addEventListener("click", () => {
+  highlightCurrent();
+});
+
+playPauseBtn.addEventListener("click", () => {
+  highlightCurrent();
+});

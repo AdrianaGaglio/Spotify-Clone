@@ -122,14 +122,25 @@ const tracksDefinition = (tracksArray) => {
 getArtist();
 getTracks();
 
-// evidenzia canzone in riproduzione dalla lista
-nextTrack.onclick = () => {
+//animazione della barra di ricerca
+const searchLink = document.getElementById("searchBar");
+searchLink.addEventListener("click", () => {
+  const searchModal = document.querySelector(".search-modal");
+  searchModal.classList.add("add-animation");
+  const searchForm = document.querySelector(".search-modal form");
+  searchForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const inputValue = document.getElementById("search-input").value;
+    location.href = `./search.html?searchKeyWord=${inputValue}`;
+  });
+});
+
+const highlightCurrentTrack = () => {
   const currentTrackObj = JSON.parse(localStorage.getItem("track"));
   const currentTitle = currentTrackObj.title;
   const allRows = document.querySelectorAll("tr");
   allRows.forEach((row, i) => {
     const title = row.querySelector("td:nth-of-type(3)").innerHTML;
-    console.log(title);
     if (currentTitle === title && !playerAudio.paused) {
       row.classList.add("track-played");
     } else {
@@ -138,17 +149,15 @@ nextTrack.onclick = () => {
   });
 };
 
-prevTrack.onclick = () => {
-  const currentTrackObj = JSON.parse(localStorage.getItem("track"));
-  const currentTitle = currentTrackObj.title;
-  const allRows = document.querySelectorAll("tr");
-  allRows.forEach((row, i) => {
-    const title = row.querySelector("td:nth-of-type(3)").innerHTML;
-    console.log(title);
-    if (currentTitle === title && !playerAudio.paused) {
-      row.classList.add("track-played");
-    } else {
-      row.classList.remove("track-played");
-    }
-  });
-};
+// evidenzia canzone in riproduzione dalla lista
+nextTrack.addEventListener("click", () => {
+  highlightCurrentTrack();
+});
+
+prevTrack.addEventListener("click", () => {
+  highlightCurrentTrack();
+});
+
+playPauseBtn.addEventListener("click", () => {
+  highlightCurrentTrack();
+});
