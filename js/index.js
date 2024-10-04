@@ -95,10 +95,12 @@ const heroSection = (data) => {
         if (localStorage.getItem("tracklist")) {
           const stringOfTrackList = localStorage.getItem("tracklist");
           trackListArray = JSON.parse(stringOfTrackList);
-          trackListArray.unshift(track);
-        } else {
-          trackListArray.push(track);
+          // trackListArray.unshift(track);
         }
+        // else {
+        trackListArray.splice(counter, 0, track);
+        // trackListArray.push(track);
+        // }
         localStorage.setItem("tracklist", JSON.stringify(trackListArray));
         handleTrackList();
       };
