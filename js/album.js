@@ -15,6 +15,17 @@ const getAlbum = () => {
     .then((data) => {
       generateAlbumHero(data);
       generateTracks(data.tracks.data);
+
+      // al click sul pulsante spotify
+      if (document.querySelector(".spotify-button")) {
+        const spotifyBtn = document.querySelector(".spotify-button");
+        spotifyBtn.addEventListener("click", () => {
+          // crea la tracklist in localstorage
+          trackList(data.tracks.data);
+          // avvia la riproduzione della tracklist
+          handleTrackList();
+        });
+      }
     })
     .catch((error) => {
       console.log(error);
@@ -37,6 +48,8 @@ const generateAlbumHero = (data) => {
   const artist = document.querySelector(".moreInfo .artist-name");
   artist.innerText = `${artistName}`;
   const durationAllTracks = document.querySelector(".album-duration");
+
+  // controlla se i secondi sono meno di 10 per aggiungere lo 0 davanti es. 01
   let seconds = albumDuration % 60;
   if (seconds < 10) {
     seconds = "0" + seconds.toString();
@@ -59,16 +72,17 @@ const generateTracks = (allTracks) => {
     }
     numOfTracks.innerHTML = `${i} brani, `; //i e non (i+1) perchè c'è una riga vuota in più per creare lo spazio sopra la prima riga
     const trackRow = document.createElement("tr");
-    trackRow.innerHTML = `<td id="${i + 1}" class="track-numbers listNum">${i + 1}</td>
-        <td class="track-title">
-            <p id="${i + 1}">${track.title}</p>
-            <a href="artist.html?artistID=${track.artist.id}">${track.artist.name}</a>
-        </td>
-        <td class="times-played">
-        <p>${new Intl.NumberFormat("it-IT").format(track.rank)}</p>
-        </td>
-        <td class="track-lenght">
-        <p>${Math.trunc(track.duration / 60)}:${seconds}</p>
+    trackRow.innerHTML = `
+        <td id="${i + 1}" class="track-numbers listNum">${i + 1}</td>
+          <td class="track-title">
+              <p>${track.title}</p>
+              <a href="artist.html?artistID=${track.artist.id}">${track.artist.name}</a>
+          </td>
+          <td class="times-played">
+          <p>${new Intl.NumberFormat("it-IT").format(track.rank)}</p>
+          </td>
+          <td class="track-lenght">
+          <p>${Math.trunc(track.duration / 60)}:${seconds}</p>
         </td>`;
     const table = document.querySelector("table");
     table.appendChild(trackRow);
@@ -84,6 +98,7 @@ const generateTracks = (allTracks) => {
         // playTrack();
         // switchBtn();
         handleTrackList();
+        // evidenzia la traccia se cliccata
         if (document.querySelector(".track-played")) {
           //controlla se un elemento ha la classe e se esiste la toglie!
           const classAdded = document.querySelector(".track-played");

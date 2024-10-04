@@ -42,6 +42,17 @@ const getTracks = () => {
     })
     .then((data) => {
       tracksDefinition(data.data);
+
+      // al click sul pulsante spotify
+      if (document.querySelector(".spotify-button")) {
+        const spotifyBtn = document.querySelector(".spotify-button");
+        spotifyBtn.addEventListener("click", () => {
+          // crea la tracklist in localstorage
+          trackList(data.data);
+          // avvia la riproduzione della tracklist
+          handleTrackList();
+        });
+      }
     })
     .catch((err) => {
       console.log(err);

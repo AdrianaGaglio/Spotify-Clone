@@ -1523,6 +1523,10 @@ input[type=range]::-webkit-slider-thumb {
   padding: 1rem;
 }
 
+#search .search-bar {
+  padding-block: 1rem;
+}
+
 .search-bar form {
   display: flex;
   align-items: center;
@@ -1624,7 +1628,7 @@ main {
   font-size: 2rem;
   font-weight: 700;
 }
-#search p {
+#search .single-track p {
   color: rgba(255, 255, 255, 0.4);
 }
 

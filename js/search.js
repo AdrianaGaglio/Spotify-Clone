@@ -32,7 +32,17 @@ const getArtistTopTracks = (artistID) => {
     })
     .then((topTracks) => {
       showTopTracks(topTracks.data);
-      trackList(topTracks.data);
+
+      // al click sul pulsante spotify
+      if (document.querySelector(".spotify-button")) {
+        const spotifyBtn = document.querySelector(".spotify-button");
+        spotifyBtn.addEventListener("click", () => {
+          // crea la tracklist in localstorage
+          trackList(topTracks.data);
+          // avvia la riproduzione della tracklist
+          handleTrackList();
+        });
+      }
     })
     .catch((err) => {
       console.log(err);
@@ -57,7 +67,7 @@ const showTopTracks = (topTracks) => {
     const singleTrack = topTracks[i];
     const trackDiv = document.createElement("div");
     trackDiv.classList.add("single-track");
-    const seconds = singleTrack.duration % 60;
+    let seconds = singleTrack.duration % 60;
     if (seconds < 10) {
       seconds = "0" + seconds.toString();
     }
@@ -73,6 +83,7 @@ const showTopTracks = (topTracks) => {
     `;
     tracksContainer.appendChild(trackDiv);
     trackDiv.addEventListener("click", () => {
+      trackList(topTracks);
       counter = i;
       handleTrackList();
     });

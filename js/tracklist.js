@@ -67,13 +67,6 @@ const handleTrackList = () => {
   });
 };
 
-if (document.querySelector(".spotify-button")) {
-  const spotifyBtn = document.querySelector(".spotify-button");
-  spotifyBtn.addEventListener("click", () => {
-    handleTrackList();
-  });
-}
-
 // gestisce passaggio a traccia precedente con pulsante
 const prevTrack = document.getElementById("prevTrack");
 prevTrack.addEventListener("click", () => {
