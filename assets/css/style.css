@@ -1639,12 +1639,12 @@ input[type=text]:focus {
 }
 
 .search-button {
-  background-color: #2b2b2b;
   border: none;
-  color: white;
+  background: transparent;
   padding: 10px;
   border-radius: 5px;
   cursor: pointer;
+  color: white;
 }
 
 main {
