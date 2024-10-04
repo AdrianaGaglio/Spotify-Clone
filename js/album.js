@@ -15,7 +15,6 @@ const getAlbum = () => {
     .then((data) => {
       generateAlbumHero(data);
       generateTracks(data.tracks.data);
-      trackList(data.tracks.data);
     })
     .catch((error) => {
       console.log(error);
@@ -78,6 +77,7 @@ const generateTracks = (allTracks) => {
 
     trackRow.onmouseenter = (e) => {
       trackRow.onclick = () => {
+        trackList(allTracks);
         counter = trackRow.querySelector("td").id - 1;
         // const newTrack = new TrackObj(track.title, track.artist.name, track.album.cover_small, track.preview, track.duration);
         // localStorage.setItem("track", JSON.stringify(newTrack));

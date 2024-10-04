@@ -42,7 +42,6 @@ const getTracks = () => {
     })
     .then((data) => {
       tracksDefinition(data.data);
-      trackList(data.data);
     })
     .catch((err) => {
       console.log(err);
@@ -73,6 +72,7 @@ const tracksDefinition = (tracksArray) => {
 
     newRow.onmouseenter = (e) => {
       newRow.onclick = () => {
+        trackList(tracksArray);
         counter = newRow.querySelector("td:nth-of-type(3)").id - 1;
         // const artistTrack = new TrackObj(track.title, track.artist.name, track.album.cover_small, track.preview, track.duration);
         // if (localStorage.getItem("tracklist")) {

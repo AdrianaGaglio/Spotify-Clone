@@ -31,7 +31,6 @@ const getArtistTopTracks = (artistID) => {
       }
     })
     .then((topTracks) => {
-      console.log(topTracks.data);
       showTopTracks(topTracks.data);
       trackList(topTracks.data);
     })

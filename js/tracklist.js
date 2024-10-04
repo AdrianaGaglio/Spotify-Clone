@@ -10,11 +10,16 @@ const trackList = (tracklist) => {
   if (localStorage.getItem("tracklist")) {
     const stringOfTrackList = localStorage.getItem("tracklist");
     trackListArray = JSON.parse(stringOfTrackList);
+    console.log("array dalla fetch", tempArray);
+    console.log("array da local storage", trackListArray);
     trackListArray = tempArray.concat(trackListArray);
+    console.log("unione array", trackListArray);
   } else {
     trackListArray = tempArray.concat(trackListArray);
   }
+  // localStorage.setItem("track", JSON.stringify(trackListArray[0]));
   localStorage.setItem("tracklist", JSON.stringify(trackListArray));
+  // playTrack();
 };
 
 // gestisce riproduzione tracklist
